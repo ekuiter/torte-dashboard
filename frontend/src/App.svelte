@@ -9,7 +9,7 @@
   import Main from "./Main.svelte";
   import { onMount } from "svelte";
   let projects = [];
-  let plotOptions = [];
+  let plotOptions;
   let open = false;
   let selectedProject = null;
   function toggleSidebar() {
@@ -35,6 +35,9 @@
       const data = await response.json();
       projects = data["projects"];
       plotOptions = data["plots"];
+      console.log(Object.keys(plotOptions));
+      console.log(Object.entries(plotOptions));
+      console.log(Object.values(plotOptions));
     } catch (err) {
       console.log(err);
       error = err;

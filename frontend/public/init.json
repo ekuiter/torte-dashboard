@@ -67,8 +67,18 @@
         "xen",
         "zephyr"
     ],
-    "plots": [
-        "features",
-        "model-count"
-    ]
+    "plots": {
+        "Prediction Accuracy Configurations By Features": "prediction-accuracy-configurations-by-features",
+        "Configuration Evolution Total": "configuration-evolution-total",
+        "Jaccard Similarity": "jaccard-similarity",
+        "Features": "features",
+        "Configuration Evolution Arch": "configuration-evolution-arch",
+        "Model Count": "model-count",
+        "Feature Similarity": "feature-similarity",
+        "Model Count Time": "model-count-time",
+        "Sloc": "sloc",
+        "Share Feature Variables": "share-feature-variables",
+        "Prediction Accuracy Features": "prediction-accuracy-features",
+        "Prediction Accuracy Configurations": "prediction-accuracy-configurations"
+    }
 }

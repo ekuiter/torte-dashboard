@@ -10,14 +10,19 @@
     let selectedPlot = null;
     export let plotOptions;
     export let selectedProject;
+    let fetchPlotOption = null;
+    const onChange = () => {
+		fetchPlotOption = plotOptions[selectedPlot];
+	}
     const getPlot = () => {
         if (!selectedProject) {
             return;
         }
         const req = JSON.stringify({
             project: selectedProject,
-            plot: selectedPlot,
+            plot: fetchPlotOption,
         });
+        console.log(fetchPlotOption);
         fetch("/graph", {
             method: "POST",
             headers: {
@@ -44,20 +49,21 @@
 
 <Group position="center" spacing="xl">
     <NativeSelect
-        data={plotOptions}
+        data={plotOptions !== undefined? Object.keys(plotOptions) : []}
         placeholder={"Data to be drawn"}
         variant="filled"
         radius="md"
         size="md"
         bind:value={selectedPlot}
+        on:change={onChange}
     ></NativeSelect>
-    <Button on:click={() => getPlot("Linux-Sloc")} ripple>
+    <Button on:click={getPlot} ripple>
         Go!
         <img src="svgs/rocket.svg" alt="My Happy SVG" />
     </Button>
 </Group>
 <Stack override={{ height: 300 }} align="center">
-    <h2 hidden={selectedPlot == null}>Plot: {selectedPlot}</h2>
+    <h2 hidden={selectedPlot == null}>{selectedProject}: {selectedPlot}</h2>
 </Stack>
 <Center>
     <iframe

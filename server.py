@@ -28,10 +28,10 @@ def hello():
 @app.route('/graph', methods=["POST"])
 def graph():
     req = request.json
+    print(req)
     file_name = f"{req['plot']}-{req['project'].replace('/', '-')}.html"
     print(file_name)
-    # return send_from_directory(os.path.join(FIGURE_FOLDER, req["plot"]), file_name)
-    return send_from_directory(FIGURE_FOLDER, "sloc.html")
+    return send_from_directory(os.path.join(FIGURE_FOLDER, req["plot"]), file_name)
 
 @app.route('/init')
 def init():
