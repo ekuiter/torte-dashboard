@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<link rel="icon" href="./svgs/favicon.svg" type="image/svg+xml">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Centered Iframe with Top Bar</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		body {
+			font-family: Arial, sans-serif;
+			display: flex;
+			flex-direction: column;
+			height: 100vh;
+			background-color: #f4f4f4;
+		}
+
+		#top-bar {
+			width: 100%;
+			background-color: #333;
+			color: white;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 10px 20px;
+		}
+
+		#title {
+			font-size: 24px;
+		}
+
+		#menu-button,
+		#button {
+			padding: 8px 16px;
+			font-size: 16px;
+			background-color: #555;
+			color: white;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+			margin-right: 10px;
+		}
+
+		#menu-button:hover,
+		#button:hover {
+			background-color: #777;
+		}
+
+		#side-menu {
+			position: fixed;
+			top: 0;
+			left: -250px;
+			width: 250px;
+			height: 100%;
+			background-color: #222;
+			color: white;
+			padding: 20px;
+			transition: left 0.3s ease;
+			overflow-y: auto;
+		}
+
+		#side-menu.active {
+			left: 0;
+		}
+
+		#close-menu {
+			background: none;
+			border: none;
+			color: white;
+			font-size: 18px;
+			cursor: pointer;
+			display: block;
+			margin-bottom: 20px;
+		}
+
+		.menu-list {
+			list-style: none;
+			padding: 0;
+			max-height: 80vh;
+			overflow-y: auto;
+		}
+
+		.menu-list li {
+			padding: 10px;
+			border-bottom: 1px solid #444;
+			cursor: pointer;
+		}
+
+		.menu-list li:hover {
+			background-color: #333;
+		}
+
+		#iframe-container {
+			flex-grow: 1;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			padding: 20px;
+		}
+
+		iframe {
+			width: 80vw;
+			height: 70vh;
+			border: none;
+			max-width: 1200px;
+			max-height: 800px;
+			min-width: 600px;
+			min-height: 400px;
+			transition: width 0.3s ease, height 0.3s ease;
+			display: block;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="side-menu">
+		<button id="close-menu">Close</button>
+		<ul class="menu-list" id="menu-items">
+		</ul>
+	</div>
+
+	<!-- Top Bar -->
+	<div id="top-bar">
+		<button id="menu-button">☰</button>
+
+		<div id="title">Torte Dashboard</div>
+		<div id="selected"></div>
+		<button id="button">Go</button>
+		<select id="dataSelector">
+		</select>
+	</div>
+
+	<div id="iframe-container">
+		<!-- Iframe that will load an external URL, such as a website -->
+		<!-- <iframe src="https://www.example.com" title="Dynamic Iframe"></iframe> -->
+		<iframe align="center" title="Plot" id="plot"
+			style="height:800px;width:1510px;border:none;display:block"></iframe>
+	</div>
+
+
+	<script>
+		let keys = [];
+		let selectedPlot = "";
+		let selectedProj = "";
+		let titleProj = document.getElementById("selected");
+		let s = document.getElementById("dataSelector");
+		s.addEventListener("change", (event) => {
+			selectedPlot = event.target.selectedOptions[0].id
+			console.log(selectedPlot)
+		});
+
+		// Function to load and display JSON data
+		function loadJsonData() {
+			fetch('public/init.json')  // Fetch the JSON file
+				.then(response => response.json())  // Parse it as JSON
+				.then(data => {
+					keys = Array.from(Object.keys(data["plots"]))
+					let i = 0;
+					for (var key in data["plots"]) {
+						var value = data["plots"][key]
+						var o = document.createElement('option');
+						o.id = key
+						o.value = `option${i}`
+						o.innerText = value["title"]
+						s.appendChild(o);
+						i++;
+					}
+
+					let m = document.getElementById("menu-items");
+					let projects = Array.from(data["projects"])
+					console.log(projects)
+					for (const proj of projects) {
+						var o = document.createElement('li');
+						o.id = proj
+						o.addEventListener("click", function () {
+							document.getElementById("side-menu").classList.remove("active");
+							titleProj.innerText = `Selected Project: ${proj}`
+							selectedProj = proj;
+						})
+						o.innerText = proj
+						console.log(o)
+						m.appendChild(o);
+					}
+				})
+				.catch(error => {
+					console.error('Error loading JSON:', error);
+				});
+			}
+			
+		function getPlot() {
+			const path = `./public/figures/${selectedPlot}/${selectedPlot}-${selectedProj.replace("/", "-")}.html`
+			document.getElementById("plot").src = path
+
+		}
+		document.getElementById("menu-button").addEventListener("click", function () {
+			document.getElementById("side-menu").classList.add("active");
+		});
+		document.getElementById("close-menu").addEventListener("click", function () {
+			document.getElementById("side-menu").classList.remove("active");
+		});
+		// Call loadJsonData on page load
+		window.addEventListener('load', loadJsonData);
+		document.getElementById('button').addEventListener('click', getPlot);
+
+	</script>
+</body>
+
+</html>
