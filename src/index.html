@@ -171,10 +171,10 @@
 			fetch('public/init.json')  // Fetch the JSON file
 				.then(response => response.json())  // Parse it as JSON
 				.then(data => {
-					keys = Array.from(Object.keys(data["plots"]))
+					keys = Array.from(Object.keys(data["linux"]["plots"]))
 					let i = 0;
-					for (var key in data["plots"]) {
-						var value = data["plots"][key]
+					for (var key in data["linux"]["plots"]) {
+						var value = data["linux"]["plots"][key]
 						var o = document.createElement('option');
 						o.id = key
 						o.value = `option${i}`
@@ -188,7 +188,7 @@
 						i++;
 					}
 					let m = document.getElementById("menu-items");
-					let projects = Array.from(data["projects"])
+					let projects = Array.from(data["linux"]["projects"])
 					console.log(projects)
 					i = 0;
 					for (const proj of projects) {
