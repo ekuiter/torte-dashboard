@@ -1,15 +1,6 @@
 {
     "projects": [
-        "amazon-freertos",
-        "arm-trusted-firmware",
-        "barebox",
-        "bluez",
-        "busybox",
-        "coreboot",
-        "dpdk",
-        "freebsd",
-        "glibc",
-        "grub",
+        "linux/all",
         "linux/alpha",
         "linux/arc",
         "linux/arm",
@@ -54,67 +45,68 @@
         "linux/v850",
         "linux/x86",
         "linux/x86_64",
-        "linux/xtensa",
-        "llvm",
-        "mesa",
-        "musl",
-        "ofono",
-        "op-tee",
-        "qemu",
-        "toybox",
-        "u-boot",
-        "uclibc-ng",
-        "xen",
-        "zephyr"
+        "linux/xtensa"
     ],
     "plots": {
-        "prediction-accuracy-configurations-by-features": {
-            "title": "Prediction Accuracy Configurations By Features",
-            "desc": ""
+        "configuration-evolution-arch": {
+            "title": "Configuration Evolution Arch",
+            "desc": "Configuration Evolution Arch: Information, Description etc."
         },
         "configuration-evolution-total": {
             "title": "Configuration Evolution Total",
-            "desc": ""
+            "desc": "Configuration Evolution Total: Information, Description etc."
         },
-        "jaccard-similarity": {
-            "title": "Jaccard Similarity",
-            "desc": ""
+        "configuration-similarity": {
+            "title": "Configuration Similarity",
+            "desc": "Configuration Similarity: Information, Description etc."
+        },
+        "feature-evolution-arch": {
+            "title": "Feature Evolution Arch",
+            "desc": "Feature Evolution Arch: Information, Description etc."
+        },
+        "feature-evolution-total": {
+            "title": "Feature Evolution Total",
+            "desc": "Feature Evolution Total: Information, Description etc."
         },
         "features": {
             "title": "Features",
-            "desc": ""
+            "desc": "Features: Information, Description etc."
         },
-        "configuration-evolution-arch": {
-            "title": "Configuration Evolution Arch",
-            "desc": ""
+        "jaccard-similarity": {
+            "title": "Jaccard Similarity of Features",
+            "desc": "Jaccard Similarity of Features: Information, Description etc."
         },
         "model-count": {
             "title": "Model Count",
-            "desc": ""
-        },
-        "feature-similarity": {
-            "title": "Feature Similarity",
-            "desc": ""
+            "desc": "Model Count: Information, Description etc."
         },
         "model-count-time": {
             "title": "Model Count Time",
-            "desc": ""
-        },
-        "sloc": {
-            "title": "Sloc",
-            "desc": ""
-        },
-        "share-feature-variables": {
-            "title": "Share Feature Variables",
-            "desc": ""
-        },
-        "prediction-accuracy-features": {
-            "title": "Prediction Accuracy Features",
-            "desc": ""
+            "desc": "Model Count Time: Information, Description etc."
         },
         "prediction-accuracy-configurations": {
             "title": "Prediction Accuracy Configurations",
-            "desc": ""
+            "desc": "Prediction Accuracy Configurations: Information, Description etc."
+        },
+        "prediction-accuracy-configurations-by-features": {
+            "title": "Prediction Accuracy Configurations By Features",
+            "desc": "Prediction Accuracy Configurations By Features: Information, Description etc."
+        },
+        "prediction-accuracy-features": {
+            "title": "Prediction Accuracy Features",
+            "desc": "Prediction Accuracy Features: Information, Description etc."
+        },
+        "share-of-feature-variables": {
+            "title": "Share of Feature Variables",
+            "desc": "Share of Feature Variables: Information, Description etc."
+        },
+        "sloc": {
+            "title": "Source Lines of Code",
+            "desc": "Source Lines of Code: Information, Description etc."
+        },
+        "total-features": {
+            "title": "Total Features",
+            "desc": "Total Features: Information, Description etc."
         }
     }
 }

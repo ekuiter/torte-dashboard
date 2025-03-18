@@ -35,7 +35,7 @@
 			font-size: 24px;
 		}
 
-		#menu-button,
+		.menu-button,
 		#button {
 			padding: 8px 16px;
 			font-size: 16px;
@@ -47,7 +47,7 @@
 			margin-right: 10px;
 		}
 
-		#menu-button:hover,
+		.menu-button:hover,
 		#button:hover {
 			background-color: #777;
 		}
@@ -55,8 +55,8 @@
 		#side-menu {
 			position: fixed;
 			top: 0;
-			left: -250px;
-			width: 250px;
+			left: -300px;
+			width: 300px;
 			height: 100%;
 			background-color: #222;
 			color: white;
@@ -69,16 +69,6 @@
 			left: 0;
 		}
 
-		#close-menu {
-			background: none;
-			border: none;
-			color: white;
-			font-size: 18px;
-			cursor: pointer;
-			display: block;
-			margin-bottom: 20px;
-		}
-
 		.menu-list {
 			list-style: none;
 			padding: 0;
@@ -87,6 +77,7 @@
 		}
 
 		.menu-list li {
+			text-align: center;
 			padding: 10px;
 			border-bottom: 1px solid #444;
 			cursor: pointer;
@@ -104,14 +95,33 @@
 			padding: 20px;
 		}
 
+		#query-container {
+			display: flex;
+			align-items: center;
+			margin-bottom: 10px;
+		}
+
+		#query-container label {
+			margin-right: 10px;
+		}
+
+		#query-input {
+			flex-grow: 1;
+			padding: 5px;
+			border: 1px solid #444;
+			border-radius: 4px;
+			background-color: #333;
+			color: white;
+		}
+
 		iframe {
 			width: 80vw;
 			height: 70vh;
 			border: none;
-			max-width: 1200px;
+			/* max-width: 1200px;
 			max-height: 800px;
 			min-width: 600px;
-			min-height: 400px;
+			min-height: 400px; */
 			transition: width 0.3s ease, height 0.3s ease;
 			display: block;
 		}
@@ -120,20 +130,23 @@
 
 <body>
 	<div id="side-menu">
-		<button id="close-menu">Close</button>
+		<button id="close-menu" class="menu-button" style="margin-bottom: 8px;">&#x2715;</button>
+		<div id="query-container">
+			<label for="query-input">Search:</label>
+			<input type="text" id="archQuery" placeholder="Architecture or Project" , value="" style="height: 30px">
+		</div>
 		<ul class="menu-list" id="menu-items">
 		</ul>
 	</div>
 
 	<!-- Top Bar -->
 	<div id="top-bar">
-		<button id="menu-button">☰</button>
-
+		<button id="menu-button" class="menu-button">☰</button>
 		<div id="title">Torte Dashboard</div>
 		<div id="selected"></div>
-		<button id="button">Go</button>
-		<select id="dataSelector">
+		<select id="dataSelector" style="height:30px; padding: 8px">
 		</select>
+		<button id="button">Go</button>
 	</div>
 
 	<div id="iframe-container">
@@ -142,8 +155,6 @@
 		<iframe align="center" title="Plot" id="plot"
 			style="height:800px;width:1510px;border:none;display:block"></iframe>
 	</div>
-
-
 	<script>
 		let keys = [];
 		let selectedPlot = "";
@@ -167,15 +178,24 @@
 						var o = document.createElement('option');
 						o.id = key
 						o.value = `option${i}`
+						if (i == 0) {
+							selectedPlot = key
+							s.value = o.value;
+						}
+						o.title = value["desc"]
 						o.innerText = value["title"]
 						s.appendChild(o);
 						i++;
 					}
-
 					let m = document.getElementById("menu-items");
 					let projects = Array.from(data["projects"])
 					console.log(projects)
+					i = 0;
 					for (const proj of projects) {
+						if (i == 0) {
+							titleProj.innerText = `Selected Project: ${proj} (Default)`
+							selectedProj = proj
+						}
 						var o = document.createElement('li');
 						o.id = proj
 						o.addEventListener("click", function () {
@@ -184,15 +204,16 @@
 							selectedProj = proj;
 						})
 						o.innerText = proj
-						console.log(o)
 						m.appendChild(o);
+						i++
 					}
+
 				})
 				.catch(error => {
 					console.error('Error loading JSON:', error);
 				});
-			}
-			
+		}
+
 		function getPlot() {
 			const path = `./public/figures/${selectedPlot}/${selectedPlot}-${selectedProj.replace("/", "-")}.html`
 			document.getElementById("plot").src = path
@@ -207,6 +228,27 @@
 		// Call loadJsonData on page load
 		window.addEventListener('load', loadJsonData);
 		document.getElementById('button').addEventListener('click', getPlot);
+		document.getElementById("archQuery").addEventListener("input", (event) => {
+			let root = document.getElementById("menu-items");
+			for (var child in root.childNodes) {
+				let element = root.childNodes[child];
+				if (event.target.value === "") {
+					element.hidden = false;
+					continue;
+				}
+				if (element.tagName != "LI") {
+					continue
+				}
+				let lowerStr1 = event.target.value.toLowerCase();
+				let lowerStr2 = element.innerText.toLowerCase();
+
+				if (lowerStr2.includes(lowerStr1)) {
+					element.hidden = false;
+				} else {
+					element.hidden = true;
+				}
+			}
+		});
 
 	</script>
 </body>
