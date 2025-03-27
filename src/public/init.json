@@ -1,114 +1,128 @@
 {
-    "linux": {
-        "projects": [
-            "linux/all",
-            "linux/alpha",
-            "linux/arc",
-            "linux/arm",
-            "linux/arm26",
-            "linux/arm64",
-            "linux/avr32",
-            "linux/blackfin",
-            "linux/c6x",
-            "linux/cris",
-            "linux/csky",
-            "linux/frv",
-            "linux/h8300",
-            "linux/hexagon",
-            "linux/i386",
-            "linux/ia64",
-            "linux/loongarch",
-            "linux/m32r",
-            "linux/m68k",
-            "linux/m68knommu",
-            "linux/metag",
-            "linux/microblaze",
-            "linux/mips",
-            "linux/mips64",
-            "linux/mn10300",
-            "linux/nds32",
-            "linux/nios2",
-            "linux/openrisc",
-            "linux/parisc",
-            "linux/powerpc",
-            "linux/ppc",
-            "linux/ppc64",
-            "linux/riscv",
-            "linux/s390",
-            "linux/s390x",
-            "linux/score",
-            "linux/sh",
-            "linux/sh64",
-            "linux/sparc",
-            "linux/sparc64",
-            "linux/tile",
-            "linux/unicore32",
-            "linux/v850",
-            "linux/x86",
-            "linux/x86_64",
-            "linux/xtensa"
-        ],
-        "plots": {
-            "configuration-evolution-arch": {
-                "title": "Configuration Evolution Arch",
-                "desc": "Configuration Evolution Arch: Information, Description etc."
-            },
-            "configuration-evolution-total": {
-                "title": "Configuration Evolution Total",
-                "desc": "Configuration Evolution Total: Information, Description etc."
-            },
-            "configuration-similarity": {
-                "title": "Configuration Similarity",
-                "desc": "Configuration Similarity: Information, Description etc."
-            },
-            "feature-evolution-arch": {
-                "title": "Feature Evolution Arch",
-                "desc": "Feature Evolution Arch: Information, Description etc."
-            },
-            "feature-evolution-total": {
-                "title": "Feature Evolution Total",
-                "desc": "Feature Evolution Total: Information, Description etc."
-            },
-            "features": {
-                "title": "Features",
-                "desc": "Features: Information, Description etc."
-            },
-            "jaccard-similarity": {
-                "title": "Jaccard Similarity of Features",
-                "desc": "Jaccard Similarity of Features: Information, Description etc."
-            },
-            "model-count": {
-                "title": "Model Count",
-                "desc": "Model Count: Information, Description etc."
-            },
-            "model-count-time": {
-                "title": "Model Count Time",
-                "desc": "Model Count Time: Information, Description etc."
-            },
-            "prediction-accuracy-configurations": {
-                "title": "Prediction Accuracy Configurations",
-                "desc": "Prediction Accuracy Configurations: Information, Description etc."
-            },
-            "prediction-accuracy-configurations-by-features": {
-                "title": "Prediction Accuracy Configurations By Features",
-                "desc": "Prediction Accuracy Configurations By Features: Information, Description etc."
-            },
-            "prediction-accuracy-features": {
-                "title": "Prediction Accuracy Features",
-                "desc": "Prediction Accuracy Features: Information, Description etc."
-            },
-            "share-of-feature-variables": {
-                "title": "Share of Feature Variables",
-                "desc": "Share of Feature Variables: Information, Description etc."
-            },
-            "sloc": {
-                "title": "Source Lines of Code",
-                "desc": "Source Lines of Code: Information, Description etc."
-            },
-            "total-features": {
-                "title": "Total Features",
-                "desc": "Total Features: Information, Description etc."
-            }
+    "projects": [
+        "busybox",
+        "linux/all",
+        "linux/alpha",
+        "linux/arc",
+        "linux/arm",
+        "linux/arm26",
+        "linux/arm64",
+        "linux/avr32",
+        "linux/blackfin",
+        "linux/c6x",
+        "linux/cris",
+        "linux/csky",
+        "linux/frv",
+        "linux/h8300",
+        "linux/hexagon",
+        "linux/i386",
+        "linux/ia64",
+        "linux/loongarch",
+        "linux/m32r",
+        "linux/m68k",
+        "linux/m68knommu",
+        "linux/metag",
+        "linux/microblaze",
+        "linux/mips",
+        "linux/mips64",
+        "linux/mn10300",
+        "linux/nds32",
+        "linux/nios2",
+        "linux/openrisc",
+        "linux/parisc",
+        "linux/powerpc",
+        "linux/ppc",
+        "linux/ppc64",
+        "linux/riscv",
+        "linux/s390",
+        "linux/s390x",
+        "linux/score",
+        "linux/sh",
+        "linux/sh64",
+        "linux/sparc",
+        "linux/sparc64",
+        "linux/tile",
+        "linux/unicore32",
+        "linux/v850",
+        "linux/x86",
+        "linux/x86_64",
+        "linux/xtensa"
+    ],
+    "plots": {
+        "configuration-evolution-arch": {
+            "title": "Configuration Evolution Arch",
+            "linuxOnly": true,
+            "desc": "Configuration Evolution Arch: Information, Description etc."
+        },
+        "configuration-evolution-total": {
+            "title": "Configuration Evolution Total",
+            "linuxOnly": true,
+            "desc": "Configuration Evolution Total: Information, Description etc."
+        },
+        "configuration-similarity": {
+            "title": "Configuration Similarity",
+            "linuxOnly": true,
+            "desc": "Configuration Similarity: Information, Description etc."
+        },
+        "feature-evolution-arch": {
+            "title": "Feature Evolution Arch",
+            "linuxOnly": true,
+            "desc": "Feature Evolution Arch: Information, Description etc."
+        },
+        "feature-evolution-total": {
+            "title": "Feature Evolution Total",
+            "linuxOnly": true,
+            "desc": "Feature Evolution Total: Information, Description etc."
+        },
+        "features": {
+            "title": "Features",
+            "linuxOnly": false,
+            "desc": "Features: Information, Description etc."
+        },
+        "jaccard-similarity": {
+            "title": "Jaccard Similarity of Features",
+            "linuxOnly": true,
+            "desc": "Jaccard Similarity of Features: Information, Description etc."
+        },
+        "model-count": {
+            "title": "Model Count",
+            "linuxOnly": false,
+            "desc": "Model Count: Information, Description etc."
+        },
+        "model-count-time": {
+            "title": "Model Count Time",
+            "linuxOnly": false,
+            "desc": "Model Count Time: Information, Description etc."
+        },
+        "prediction-accuracy-configurations": {
+            "title": "Prediction Accuracy Configurations",
+            "linuxOnly": true,
+            "desc": "Prediction Accuracy Configurations: Information, Description etc."
+        },
+        "prediction-accuracy-configurations-by-features": {
+            "title": "Prediction Accuracy Configurations By Features",
+            "linuxOnly": true,
+            "desc": "Prediction Accuracy Configurations By Features: Information, Description etc."
+        },
+        "prediction-accuracy-features": {
+            "title": "Prediction Accuracy Features",
+            "linuxOnly": true,
+            "desc": "Prediction Accuracy Features: Information, Description etc."
+        },
+        "share-of-feature-variables": {
+            "title": "Share of Feature Variables",
+            "linuxOnly": true,
+            "desc": "Share of Feature Variables: Information, Description etc."
+        },
+        "sloc": {
+            "title": "Source Lines of Code",
+            "linuxOnly": false,
+            "desc": "Source Lines of Code: Information, Description etc."
+        },
+        "total-features": {
+            "title": "Total Features",
+            "linuxOnly": false,
+            "desc": "Total Features: Information, Description etc."
         }
     }
 }

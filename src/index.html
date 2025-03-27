@@ -171,26 +171,9 @@
 			fetch('public/init.json')  // Fetch the JSON file
 				.then(response => response.json())  // Parse it as JSON
 				.then(data => {
-					keys = Array.from(Object.keys(data["linux"]["plots"]))
-					let i = 0;
-					for (var key in data["linux"]["plots"]) {
-						var value = data["linux"]["plots"][key]
-						var o = document.createElement('option');
-						o.id = key
-						o.value = `option${i}`
-						if (i == 0) {
-							selectedPlot = key
-							s.value = o.value;
-						}
-						o.title = value["desc"]
-						o.innerText = value["title"]
-						s.appendChild(o);
-						i++;
-					}
+					let projects = Array.from(data["projects"])
 					let m = document.getElementById("menu-items");
-					let projects = Array.from(data["linux"]["projects"])
-					console.log(projects)
-					i = 0;
+					let i = 0;
 					for (const proj of projects) {
 						if (i == 0) {
 							titleProj.innerText = `Selected Project: ${proj} (Default)`
@@ -202,10 +185,68 @@
 							document.getElementById("side-menu").classList.remove("active");
 							titleProj.innerText = `Selected Project: ${proj}`
 							selectedProj = proj;
+							let updated = false;
+							Array.from(s.options).forEach(function (option_element) {
+								if (!selectedProj.includes("linux") && option_element.classList.contains("linuxOnly")) {
+									option_element.hidden = true;
+								}
+								else if (selectedProj.includes("linux") && option_element.classList.contains("linuxOnly")){
+									option_element.hidden = false;
+									if (!option_element.selected && !updated) {
+										console.log(`${selectedProj} selected: ${s.value}`)
+										updated = true;
+									}
+								}
+								else { // busybox && non-linux-specific
+									option_element.hidden = false;
+									if (!option_element.selected && !updated) {
+										console.log(`${selectedProj} selected: ${s.value}`)
+										option_element.selected = true
+										updated = true;
+										selectedPlot = option_element.id
+									}
+								}
+							});
 						})
 						o.innerText = proj
 						m.appendChild(o);
 						i++
+					}
+
+					keys = Array.from(Object.keys(data["plots"]))
+					i = 0;
+					let setDefault = false;
+					for (var key in data["plots"]) {
+						var value = data["plots"][key]
+						var o = document.createElement('option');
+						o.id = key
+						o.value = `option${i}`
+						o.title = value["desc"]
+						o.innerText = value["title"]
+						if (value["linuxOnly"] == true) {
+							o.classList.add("linuxOnly")
+							if (!selectedProj.includes("linux")) {
+								console.log(`3: ${selectedProj} ${value["linuxOnly"]}`)
+								o.hidden = true;
+							}
+						}
+						if (!setDefault) {
+							if (selectedProj.includes("linux") && value["linuxOnly"] == true) {
+								console.log("1")
+								selectedPlot = key;
+								o.selected = true
+								setDefault = true;
+							}
+							else
+								if (!selectedProj.includes("linux") && value["linuxOnly"] == false) {
+									console.log(`setting s.value to ${o.value} = ${value["title"]} ${i} ${key}`)
+									selectedPlot = key;
+									o.selected = true
+									setDefault = true;
+								}
+						}
+						s.appendChild(o);
+						i++;
 					}
 
 				})

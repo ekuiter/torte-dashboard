@@ -3,4 +3,4 @@ frontend/node_modules
 frontend/public/bundle.*
 .vscode
 __pycache__
-output-linux*
+output-*/**
