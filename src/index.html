@@ -4,128 +4,9 @@
 <head>
 	<meta charset="UTF-8">
 	<link rel="icon" href="./svgs/favicon.svg" type="image/svg+xml">
+	<link rel="stylesheet" href="styles.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Centered Iframe with Top Bar</title>
-	<style>
-		* {
-			margin: 0;
-			padding: 0;
-			box-sizing: border-box;
-		}
-
-		body {
-			font-family: Arial, sans-serif;
-			display: flex;
-			flex-direction: column;
-			height: 100vh;
-			background-color: #f4f4f4;
-		}
-
-		#top-bar {
-			width: 100%;
-			background-color: #333;
-			color: white;
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-			padding: 10px 20px;
-		}
-
-		#title {
-			font-size: 24px;
-		}
-
-		.menu-button,
-		#button {
-			padding: 8px 16px;
-			font-size: 16px;
-			background-color: #555;
-			color: white;
-			border: none;
-			border-radius: 4px;
-			cursor: pointer;
-			margin-right: 10px;
-		}
-
-		.menu-button:hover,
-		#button:hover {
-			background-color: #777;
-		}
-
-		#side-menu {
-			position: fixed;
-			top: 0;
-			left: -300px;
-			width: 300px;
-			height: 100%;
-			background-color: #222;
-			color: white;
-			padding: 20px;
-			transition: left 0.3s ease;
-			overflow-y: auto;
-		}
-
-		#side-menu.active {
-			left: 0;
-		}
-
-		.menu-list {
-			list-style: none;
-			padding: 0;
-			max-height: 80vh;
-			overflow-y: auto;
-		}
-
-		.menu-list li {
-			text-align: center;
-			padding: 10px;
-			border-bottom: 1px solid #444;
-			cursor: pointer;
-		}
-
-		.menu-list li:hover {
-			background-color: #333;
-		}
-
-		#iframe-container {
-			flex-grow: 1;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			padding: 20px;
-		}
-
-		#query-container {
-			display: flex;
-			align-items: center;
-			margin-bottom: 10px;
-		}
-
-		#query-container label {
-			margin-right: 10px;
-		}
-
-		#query-input {
-			flex-grow: 1;
-			padding: 5px;
-			border: 1px solid #444;
-			border-radius: 4px;
-			background-color: #333;
-			color: white;
-		}
-
-		iframe {
-			width: 80vw;
-			height: 70vh;
-			border: none;
-			/* max-width: 1200px;
-			max-height: 800px;
-			min-width: 600px;
-			min-height: 400px; */
-			transition: width 0.3s ease, height 0.3s ease;
-			display: block;
-		}
-	</style>
 </head>
 
 <body>
@@ -141,29 +22,55 @@
 
 	<!-- Top Bar -->
 	<div id="top-bar">
-		<button id="menu-button" class="menu-button">☰</button>
-		<div id="title">Torte Dashboard</div>
-		<div id="selected"></div>
-		<select id="dataSelector" style="height:30px; padding: 8px">
-		</select>
-		<button id="button">Go</button>
+		<div>
+
+			<button id="menu-button" class="menu-button">☰</button>
+		</div>
+		<div style="text-align: center;">
+
+			<div id="title">Torte Dashboard</div>
+		</div>
+		<div>
+
+			<select id="dataSelector" style="height:30px; padding: 8px; float:right">
+			</select>
+		</div>
 	</div>
 
-	<div id="iframe-container">
-		<!-- Iframe that will load an external URL, such as a website -->
-		<!-- <iframe src="https://www.example.com" title="Dynamic Iframe"></iframe> -->
-		<iframe align="center" title="Plot" id="plot"
-			style="height:800px;width:1510px;border:none;display:block"></iframe>
+	<div class="grid-container">
+		<div class="card" style="grid-column-start: 1; grid-column-end: 2;">
+			<h2>Current Value<h2>
+		</div>
+		<div class="card" style="grid-column-start: 2; grid-column-end: 6; grid-row-start: 1; grid-row-end: 4;">
+			<h2 id="iframeHeader"></h2>
+			<div id="iframe-container">
+				<iframe align="center" title="Plot" id="plot"
+					style="height:800px;width:1510px;border:none;display:block"></iframe>
+			</div>
+		</div>
+		<div class="card" style="grid-column-start: 6; grid-column-end: 7; grid-row-start: 1; grid-row-end: 4;">
+			<h2>Description:<h2>
+					<p id="plotDesc"></p>
+		</div>
+		<div class="card" style="grid-column-start: 1; grid-column-end: 2; grid-row-start: 2; grid-row-end: 3;">
+			<h2>Compared to last Week:<h2>
+		</div>
+		<div class="card" style="grid-column-start: 1; grid-column-end: 2; grid-row-start: 3; grid-row-end: 4;">
+			<h2>Compared to last month:</h2>
+		</div>
 	</div>
 	<script>
 		let keys = [];
 		let selectedPlot = "";
 		let selectedProj = "";
-		let titleProj = document.getElementById("selected");
+		let titleProj = document.getElementById("iframeHeader");
 		let s = document.getElementById("dataSelector");
+		let plotDesc = document.getElementById("plotDesc")
+		let allData = {}
 		s.addEventListener("change", (event) => {
 			selectedPlot = event.target.selectedOptions[0].id
-			console.log(selectedPlot)
+			titleProj.innerText = `Selected: ${allData["plots"][selectedPlot]["title"]} for ${selectedProj}`
+			getPlot()
 		});
 
 		// Function to load and display JSON data
@@ -171,19 +78,20 @@
 			fetch('public/init.json')  // Fetch the JSON file
 				.then(response => response.json())  // Parse it as JSON
 				.then(data => {
+					allData = data;
 					let projects = Array.from(data["projects"])
 					let m = document.getElementById("menu-items");
 					let i = 0;
 					for (const proj of projects) {
 						if (i == 0) {
-							titleProj.innerText = `Selected Project: ${proj} (Default)`
+							titleProj.innerText = `Selected: ${selectedPlot} for ${proj} (Default)`
 							selectedProj = proj
 						}
 						var o = document.createElement('li');
 						o.id = proj
 						o.addEventListener("click", function () {
 							document.getElementById("side-menu").classList.remove("active");
-							titleProj.innerText = `Selected Project: ${proj}`
+							titleProj.innerText = `Selected ${selectedPlot} for ${proj}`
 							selectedProj = proj;
 							let updated = false;
 							Array.from(s.options).forEach(function (option_element) {
@@ -207,6 +115,7 @@
 									}
 								}
 							});
+							getPlot()
 						})
 						o.innerText = proj
 						m.appendChild(o);
@@ -257,8 +166,9 @@
 
 		function getPlot() {
 			const path = `./public/figures/${selectedPlot}/${selectedPlot}-${selectedProj.replace("/", "-")}.html`
+			titleProj.innerText = `Selected ${allData["plots"][selectedPlot]["title"]} for ${selectedProj}`
 			document.getElementById("plot").src = path
-
+			plotDesc.innerText = allData["plots"][selectedPlot]["desc"]
 		}
 		document.getElementById("menu-button").addEventListener("click", function () {
 			document.getElementById("side-menu").classList.add("active");
@@ -268,7 +178,6 @@
 		});
 		// Call loadJsonData on page load
 		window.addEventListener('load', loadJsonData);
-		document.getElementById('button').addEventListener('click', getPlot);
 		document.getElementById("archQuery").addEventListener("input", (event) => {
 			let root = document.getElementById("menu-items");
 			for (var child in root.childNodes) {
