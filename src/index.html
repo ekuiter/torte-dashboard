@@ -11,7 +11,7 @@
 
 <body>
 	<div id="side-menu">
-		<button id="close-menu" class="menu-button" style="margin-bottom: 8px;">&#x2715;</button>
+		<button id="close-menu" class="menu-button" style="margin-bottom: 8px;">Close &#x2715;</button>
 		<div id="query-container">
 			<label for="query-input">Search:</label>
 			<input type="text" id="archQuery" placeholder="Architecture or Project" , value="" style="height: 30px">
@@ -24,7 +24,7 @@
 	<div id="top-bar">
 		<div>
 
-			<button id="menu-button" class="menu-button">☰</button>
+			<button id="menu-button" class="menu-button">Switch Project ☰</button>
 		</div>
 		<div style="text-align: center;">
 
@@ -40,6 +40,7 @@
 	<div class="grid-container">
 		<div class="card" style="grid-column-start: 1; grid-column-end: 2;">
 			<h2>Current Value<h2>
+			<p id="currentValue"></p>
 		</div>
 		<div class="card" style="grid-column-start: 2; grid-column-end: 6; grid-row-start: 1; grid-row-end: 4;">
 			<h2 id="iframeHeader"></h2>
@@ -50,13 +51,15 @@
 		</div>
 		<div class="card" style="grid-column-start: 6; grid-column-end: 7; grid-row-start: 1; grid-row-end: 4;">
 			<h2>Description:<h2>
-					<p id="plotDesc"></p>
+			<p id="plotDesc"></p>
 		</div>
 		<div class="card" style="grid-column-start: 1; grid-column-end: 2; grid-row-start: 2; grid-row-end: 3;">
 			<h2>Compared to last Week:<h2>
+			<p id="lastWeek"></p>
 		</div>
 		<div class="card" style="grid-column-start: 1; grid-column-end: 2; grid-row-start: 3; grid-row-end: 4;">
-			<h2>Compared to last month:</h2>
+			<h2>Compared to last month:<h2>
+			<p id="lastMonth"></p>
 		</div>
 	</div>
 	<script>
@@ -66,10 +69,13 @@
 		let titleProj = document.getElementById("iframeHeader");
 		let s = document.getElementById("dataSelector");
 		let plotDesc = document.getElementById("plotDesc")
+		let lastWeekP = document.getElementById("lastWeek")
+		let lastMonthP = document.getElementById("lastMonth")
+		let currentValueP = document.getElementById("currentValue")
 		let allData = {}
 		s.addEventListener("change", (event) => {
 			selectedPlot = event.target.selectedOptions[0].id
-			titleProj.innerText = `Selected: ${allData["plots"][selectedPlot]["title"]} for ${selectedProj}`
+			titleProj.innerText = `Selected: ${allData.plotData[selectedPlot]["title"]} for ${selectedProj}`
 			getPlot()
 		});
 
@@ -79,13 +85,41 @@
 				.then(response => response.json())  // Parse it as JSON
 				.then(data => {
 					allData = data;
-					let projects = Array.from(data["projects"])
+					console.log(allData)
+					let projects = Array.from(Object.keys(data.projectData))
+					let plots = Array.from(Object.keys(data.plotData))
+					console.log(plots)
 					let m = document.getElementById("menu-items");
 					let i = 0;
+					console.log()
 					for (const proj of projects) {
 						if (i == 0) {
-							titleProj.innerText = `Selected: ${selectedPlot} for ${proj} (Default)`
-							selectedProj = proj
+							selectedProj = proj;
+							let j = 0;
+							let setDef = false;
+							for (const plot of plots) {
+								console.log(plot)
+								var o = document.createElement('option');
+								o.id = plot
+								o.value = `option${j}`
+								o.title = data.plotData[plot]["title"]
+								o.innerText = data.plotData[plot]["title"]
+								if (plot in data.projectData[proj]) {
+									o.hidden = false
+									if (setDef == false) {
+										selectedPlot = o.id
+										titleProj.innerText = `Selected: ${selectedPlot} for ${proj} (Default)`
+										o.selected = true;
+										setDef = true;
+									}
+								}
+								else {
+									o.classList.add("linuxOnly")
+									o.hidden = true;
+								}
+								j++;
+								s.appendChild(o);
+							}
 						}
 						var o = document.createElement('li');
 						o.id = proj
@@ -95,24 +129,18 @@
 							selectedProj = proj;
 							let updated = false;
 							Array.from(s.options).forEach(function (option_element) {
-								if (!selectedProj.includes("linux") && option_element.classList.contains("linuxOnly")) {
-									option_element.hidden = true;
-								}
-								else if (selectedProj.includes("linux") && option_element.classList.contains("linuxOnly")){
-									option_element.hidden = false;
-									if (!option_element.selected && !updated) {
-										console.log(`${selectedProj} selected: ${s.value}`)
-										updated = true;
-									}
-								}
-								else { // busybox && non-linux-specific
-									option_element.hidden = false;
-									if (!option_element.selected && !updated) {
-										console.log(`${selectedProj} selected: ${s.value}`)
+								if (!(selectedPlot in allData.projectData[selectedProj])) {
+									if (!updated && option_element.id in allData.projectData[selectedProj]) {
 										option_element.selected = true
 										updated = true;
 										selectedPlot = option_element.id
 									}
+								}
+								if (option_element.id in allData.projectData[selectedProj]) {
+									option_element.hidden = false;
+								}
+								else {
+									option_element.hidden = true;
 								}
 							});
 							getPlot()
@@ -121,42 +149,7 @@
 						m.appendChild(o);
 						i++
 					}
-
-					keys = Array.from(Object.keys(data["plots"]))
-					i = 0;
-					let setDefault = false;
-					for (var key in data["plots"]) {
-						var value = data["plots"][key]
-						var o = document.createElement('option');
-						o.id = key
-						o.value = `option${i}`
-						o.title = value["desc"]
-						o.innerText = value["title"]
-						if (value["linuxOnly"] == true) {
-							o.classList.add("linuxOnly")
-							if (!selectedProj.includes("linux")) {
-								console.log(`3: ${selectedProj} ${value["linuxOnly"]}`)
-								o.hidden = true;
-							}
-						}
-						if (!setDefault) {
-							if (selectedProj.includes("linux") && value["linuxOnly"] == true) {
-								console.log("1")
-								selectedPlot = key;
-								o.selected = true
-								setDefault = true;
-							}
-							else
-								if (!selectedProj.includes("linux") && value["linuxOnly"] == false) {
-									console.log(`setting s.value to ${o.value} = ${value["title"]} ${i} ${key}`)
-									selectedPlot = key;
-									o.selected = true
-									setDefault = true;
-								}
-						}
-						s.appendChild(o);
-						i++;
-					}
+					getPlot()
 
 				})
 				.catch(error => {
@@ -166,9 +159,12 @@
 
 		function getPlot() {
 			const path = `./public/figures/${selectedPlot}/${selectedPlot}-${selectedProj.replace("/", "-")}.html`
-			titleProj.innerText = `Selected ${allData["plots"][selectedPlot]["title"]} for ${selectedProj}`
+			titleProj.innerText = `Selected ${allData.plotData[selectedPlot]["title"]} for ${selectedProj}`
 			document.getElementById("plot").src = path
-			plotDesc.innerText = allData["plots"][selectedPlot]["desc"]
+			plotDesc.innerText = allData.plotData[selectedPlot]["desc"]
+			currentValueP.innerText = allData.projectData[selectedProj][selectedPlot].currentValue ?? "n.A."
+			lastWeekP.innerText = allData.projectData[selectedProj][selectedPlot].cmpLastWeek ?? "n.A."
+			lastMonthP.innerText = allData.projectData[selectedProj][selectedPlot].cmpLastMonth ?? "n.A."
 		}
 		document.getElementById("menu-button").addEventListener("click", function () {
 			document.getElementById("side-menu").classList.add("active");
