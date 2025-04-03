@@ -58,8 +58,8 @@
 			<p id="lastWeek"></p>
 		</div>
 		<div class="card" style="grid-column-start: 1; grid-column-end: 2; grid-row-start: 3; grid-row-end: 4;">
-			<h2>Compared to last month:<h2>
-			<p id="lastMonth"></p>
+			<h2>Compared to last Revision:<h2>
+			<p id="cmpLastRevision"></p>
 		</div>
 	</div>
 	<script>
@@ -70,7 +70,7 @@
 		let s = document.getElementById("dataSelector");
 		let plotDesc = document.getElementById("plotDesc")
 		let lastWeekP = document.getElementById("lastWeek")
-		let lastMonthP = document.getElementById("lastMonth")
+		let cmpLastRev = document.getElementById("cmpLastRevision")
 		let currentValueP = document.getElementById("currentValue")
 		let allData = {}
 		s.addEventListener("change", (event) => {
@@ -164,7 +164,7 @@
 			plotDesc.innerText = allData.plotData[selectedPlot]["desc"]
 			currentValueP.innerText = allData.projectData[selectedProj][selectedPlot].currentValue ?? "n.A."
 			lastWeekP.innerText = allData.projectData[selectedProj][selectedPlot].cmpLastWeek ?? "n.A."
-			lastMonthP.innerText = allData.projectData[selectedProj][selectedPlot].cmpLastMonth ?? "n.A."
+			cmpLastRev.innerText = allData.projectData[selectedProj][selectedPlot].cmpLastRevision ?? "n.A."
 		}
 		document.getElementById("menu-button").addEventListener("click", function () {
 			document.getElementById("side-menu").classList.add("active");

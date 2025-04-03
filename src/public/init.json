@@ -63,11 +63,6 @@
     },
     "projectData": {
         "busybox": {
-            "features": {
-                "cmpLastMonth": null,
-                "cmpLastWeek": null,
-                "currentValue": "1138"
-            },
             "model-count": {
                 "cmpLastMonth": null,
                 "cmpLastWeek": null,
@@ -81,7 +76,8 @@
             "source_lines_of_code": {
                 "cmpLastMonth": null,
                 "cmpLastWeek": null,
-                "currentValue": "209492"
+                "currentValue": "209492 loc",
+                "cmpLastRevision": "+1.8%"
             },
             "total-features": {
                 "cmpLastMonth": null,
@@ -155,7 +151,7 @@
                 "cmpLastWeek": null,
                 "cmpLastMonth": null
             },
-            "sloc": {
+            "source_lines_of_code": {
                 "currentValue": null,
                 "cmpLastWeek": null,
                 "cmpLastMonth": null
@@ -232,10 +228,11 @@
                 "cmpLastWeek": null,
                 "cmpLastMonth": null
             },
-            "sloc": {
-                "currentValue": null,
+            "source_lines_of_code": {
+                "currentValue": "24874347 loc",
                 "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "cmpLastMonth": null,
+                "cmpLastRevision": "+39.4%"
             },
             "total-features": {
                 "currentValue": null,
@@ -309,10 +306,11 @@
                 "cmpLastWeek": null,
                 "cmpLastMonth": null
             },
-            "sloc": {
-                "currentValue": null,
+            "source_lines_of_code": {
+                "currentValue": "24874347 loc",
                 "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "cmpLastMonth": null,
+                "cmpLastRevision": "+39.4%"
             },
             "total-features": {
                 "currentValue": null,
@@ -386,10 +384,11 @@
                 "cmpLastWeek": null,
                 "cmpLastMonth": null
             },
-            "sloc": {
-                "currentValue": null,
+            "source_lines_of_code": {
+                "currentValue": "24874347 loc",
                 "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "cmpLastMonth": null,
+                "cmpLastRevision": "+39.4%"
             },
             "total-features": {
                 "currentValue": null,
@@ -463,10 +462,11 @@
                 "cmpLastWeek": null,
                 "cmpLastMonth": null
             },
-            "sloc": {
-                "currentValue": null,
+            "source_lines_of_code": {
+                "currentValue": 5465319,
                 "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "cmpLastMonth": null,
+                "cmpLastRevision": "+100% (No Prior Revision)"
             },
             "total-features": {
                 "currentValue": null,
@@ -540,10 +540,11 @@
                 "cmpLastWeek": null,
                 "cmpLastMonth": null
             },
-            "sloc": {
-                "currentValue": null,
+            "source_lines_of_code": {
+                "currentValue": "24874347 loc",
                 "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "cmpLastMonth": null,
+                "cmpLastRevision": "+39.4%"
             },
             "total-features": {
                 "currentValue": null,
@@ -617,10 +618,11 @@
                 "cmpLastWeek": null,
                 "cmpLastMonth": null
             },
-            "sloc": {
-                "currentValue": null,
+            "source_lines_of_code": {
+                "currentValue": "12882579 loc",
                 "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "cmpLastMonth": null,
+                "cmpLastRevision": "+32.0%"
             },
             "total-features": {
                 "currentValue": null,
@@ -694,10 +696,11 @@
                 "cmpLastWeek": null,
                 "cmpLastMonth": null
             },
-            "sloc": {
-                "currentValue": null,
+            "source_lines_of_code": {
+                "currentValue": "12882579 loc",
                 "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "cmpLastMonth": null,
+                "cmpLastRevision": "+32.0%"
             },
             "total-features": {
                 "currentValue": null,
@@ -771,10 +774,11 @@
                 "cmpLastWeek": null,
                 "cmpLastMonth": null
             },
-            "sloc": {
-                "currentValue": null,
+            "source_lines_of_code": {
+                "currentValue": "17848657 loc",
                 "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "cmpLastMonth": null,
+                "cmpLastRevision": "+38.5%"
             },
             "total-features": {
                 "currentValue": null,
@@ -848,10 +852,11 @@
                 "cmpLastWeek": null,
                 "cmpLastMonth": null
             },
-            "sloc": {
-                "currentValue": null,
+            "source_lines_of_code": {
+                "currentValue": "12882579 loc",
                 "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "cmpLastMonth": null,
+                "cmpLastRevision": "+32.0%"
             },
             "total-features": {
                 "currentValue": null,
@@ -925,10 +930,11 @@
                 "cmpLastWeek": null,
                 "cmpLastMonth": null
             },
-            "sloc": {
-                "currentValue": null,
+            "source_lines_of_code": {
+                "currentValue": "24874347 loc",
                 "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "cmpLastMonth": null,
+                "cmpLastRevision": "+39.4%"
             },
             "total-features": {
                 "currentValue": null,
@@ -1002,10 +1008,11 @@
                 "cmpLastWeek": null,
                 "cmpLastMonth": null
             },
-            "sloc": {
-                "currentValue": null,
+            "source_lines_of_code": {
+                "currentValue": "12882579 loc",
                 "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "cmpLastMonth": null,
+                "cmpLastRevision": "+32.0%"
             },
             "total-features": {
                 "currentValue": null,
@@ -1079,10 +1086,11 @@
                 "cmpLastWeek": null,
                 "cmpLastMonth": null
             },
-            "sloc": {
-                "currentValue": null,
+            "source_lines_of_code": {
+                "currentValue": 17848657,
                 "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "cmpLastMonth": null,
+                "cmpLastRevision": "+100% (No Prior Revision)"
             },
             "total-features": {
                 "currentValue": null,
@@ -1156,10 +1164,11 @@
                 "cmpLastWeek": null,
                 "cmpLastMonth": null
             },
-            "sloc": {
-                "currentValue": null,
+            "source_lines_of_code": {
+                "currentValue": "24874347 loc",
                 "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "cmpLastMonth": null,
+                "cmpLastRevision": "+39.4%"
             },
             "total-features": {
                 "currentValue": null,
@@ -1233,10 +1242,11 @@
                 "cmpLastWeek": null,
                 "cmpLastMonth": null
             },
-            "sloc": {
-                "currentValue": null,
+            "source_lines_of_code": {
+                "currentValue": 5518242,
                 "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "cmpLastMonth": null,
+                "cmpLastRevision": "+100% (No Prior Revision)"
             },
             "total-features": {
                 "currentValue": null,
@@ -1310,10 +1320,11 @@
                 "cmpLastWeek": null,
                 "cmpLastMonth": null
             },
-            "sloc": {
-                "currentValue": null,
+            "source_lines_of_code": {
+                "currentValue": "24874347 loc",
                 "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "cmpLastMonth": null,
+                "cmpLastRevision": "+39.4%"
             },
             "total-features": {
                 "currentValue": null,
@@ -1387,10 +1398,11 @@
                 "cmpLastWeek": null,
                 "cmpLastMonth": null
             },
-            "sloc": {
-                "currentValue": null,
+            "source_lines_of_code": {
+                "currentValue": 24874347,
                 "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "cmpLastMonth": null,
+                "cmpLastRevision": "+100% (No Prior Revision)"
             },
             "total-features": {
                 "currentValue": null,
@@ -1464,10 +1476,11 @@
                 "cmpLastWeek": null,
                 "cmpLastMonth": null
             },
-            "sloc": {
-                "currentValue": null,
+            "source_lines_of_code": {
+                "currentValue": "12882579 loc",
                 "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "cmpLastMonth": null,
+                "cmpLastRevision": "+32.0%"
             },
             "total-features": {
                 "currentValue": null,
@@ -1541,10 +1554,11 @@
                 "cmpLastWeek": null,
                 "cmpLastMonth": null
             },
-            "sloc": {
-                "currentValue": null,
+            "source_lines_of_code": {
+                "currentValue": "24874347 loc",
                 "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "cmpLastMonth": null,
+                "cmpLastRevision": "+39.4%"
             },
             "total-features": {
                 "currentValue": null,
@@ -1618,10 +1632,11 @@
                 "cmpLastWeek": null,
                 "cmpLastMonth": null
             },
-            "sloc": {
-                "currentValue": null,
+            "source_lines_of_code": {
+                "currentValue": 9468369,
                 "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "cmpLastMonth": null,
+                "cmpLastRevision": "+100% (No Prior Revision)"
             },
             "total-features": {
                 "currentValue": null,
@@ -1695,10 +1710,11 @@
                 "cmpLastWeek": null,
                 "cmpLastMonth": null
             },
-            "sloc": {
-                "currentValue": null,
+            "source_lines_of_code": {
+                "currentValue": 12882579,
                 "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "cmpLastMonth": null,
+                "cmpLastRevision": "+100% (No Prior Revision)"
             },
             "total-features": {
                 "currentValue": null,
@@ -1772,10 +1788,11 @@
                 "cmpLastWeek": null,
                 "cmpLastMonth": null
             },
-            "sloc": {
-                "currentValue": null,
+            "source_lines_of_code": {
+                "currentValue": "24874347 loc",
                 "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "cmpLastMonth": null,
+                "cmpLastRevision": "+39.4%"
             },
             "total-features": {
                 "currentValue": null,
@@ -1849,10 +1866,11 @@
                 "cmpLastWeek": null,
                 "cmpLastMonth": null
             },
-            "sloc": {
-                "currentValue": null,
+            "source_lines_of_code": {
+                "currentValue": "24874347 loc",
                 "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "cmpLastMonth": null,
+                "cmpLastRevision": "+39.4%"
             },
             "total-features": {
                 "currentValue": null,
@@ -1926,10 +1944,11 @@
                 "cmpLastWeek": null,
                 "cmpLastMonth": null
             },
-            "sloc": {
-                "currentValue": null,
+            "source_lines_of_code": {
+                "currentValue": 3740466,
                 "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "cmpLastMonth": null,
+                "cmpLastRevision": "+100% (No Prior Revision)"
             },
             "total-features": {
                 "currentValue": null,
@@ -2003,10 +2022,11 @@
                 "cmpLastWeek": null,
                 "cmpLastMonth": null
             },
-            "sloc": {
-                "currentValue": null,
+            "source_lines_of_code": {
+                "currentValue": "12882579 loc",
                 "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "cmpLastMonth": null,
+                "cmpLastRevision": "+32.0%"
             },
             "total-features": {
                 "currentValue": null,
@@ -2080,10 +2100,11 @@
                 "cmpLastWeek": null,
                 "cmpLastMonth": null
             },
-            "sloc": {
-                "currentValue": null,
+            "source_lines_of_code": {
+                "currentValue": 17848657,
                 "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "cmpLastMonth": null,
+                "cmpLastRevision": "+100% (No Prior Revision)"
             },
             "total-features": {
                 "currentValue": null,
@@ -2157,10 +2178,11 @@
                 "cmpLastWeek": null,
                 "cmpLastMonth": null
             },
-            "sloc": {
-                "currentValue": null,
+            "source_lines_of_code": {
+                "currentValue": "24874347 loc",
                 "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "cmpLastMonth": null,
+                "cmpLastRevision": "+39.4%"
             },
             "total-features": {
                 "currentValue": null,
@@ -2234,10 +2256,11 @@
                 "cmpLastWeek": null,
                 "cmpLastMonth": null
             },
-            "sloc": {
-                "currentValue": null,
+            "source_lines_of_code": {
+                "currentValue": "24874347 loc",
                 "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "cmpLastMonth": null,
+                "cmpLastRevision": "+39.4%"
             },
             "total-features": {
                 "currentValue": null,
@@ -2311,10 +2334,11 @@
                 "cmpLastWeek": null,
                 "cmpLastMonth": null
             },
-            "sloc": {
-                "currentValue": null,
+            "source_lines_of_code": {
+                "currentValue": "24874347 loc",
                 "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "cmpLastMonth": null,
+                "cmpLastRevision": "+39.4%"
             },
             "total-features": {
                 "currentValue": null,
@@ -2388,10 +2412,11 @@
                 "cmpLastWeek": null,
                 "cmpLastMonth": null
             },
-            "sloc": {
-                "currentValue": null,
+            "source_lines_of_code": {
+                "currentValue": "24874347 loc",
                 "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "cmpLastMonth": null,
+                "cmpLastRevision": "+39.4%"
             },
             "total-features": {
                 "currentValue": null,
@@ -2465,10 +2490,11 @@
                 "cmpLastWeek": null,
                 "cmpLastMonth": null
             },
-            "sloc": {
-                "currentValue": null,
+            "source_lines_of_code": {
+                "currentValue": 6038869,
                 "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "cmpLastMonth": null,
+                "cmpLastRevision": "+100% (No Prior Revision)"
             },
             "total-features": {
                 "currentValue": null,
@@ -2542,10 +2568,11 @@
                 "cmpLastWeek": null,
                 "cmpLastMonth": null
             },
-            "sloc": {
-                "currentValue": null,
+            "source_lines_of_code": {
+                "currentValue": 4624754,
                 "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "cmpLastMonth": null,
+                "cmpLastRevision": "+100% (No Prior Revision)"
             },
             "total-features": {
                 "currentValue": null,
@@ -2619,10 +2646,11 @@
                 "cmpLastWeek": null,
                 "cmpLastMonth": null
             },
-            "sloc": {
-                "currentValue": null,
+            "source_lines_of_code": {
+                "currentValue": "24874347 loc",
                 "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "cmpLastMonth": null,
+                "cmpLastRevision": "+39.4%"
             },
             "total-features": {
                 "currentValue": null,
@@ -2696,10 +2724,11 @@
                 "cmpLastWeek": null,
                 "cmpLastMonth": null
             },
-            "sloc": {
-                "currentValue": null,
+            "source_lines_of_code": {
+                "currentValue": "24874347 loc",
                 "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "cmpLastMonth": null,
+                "cmpLastRevision": "+39.4%"
             },
             "total-features": {
                 "currentValue": null,
@@ -2773,10 +2802,11 @@
                 "cmpLastWeek": null,
                 "cmpLastMonth": null
             },
-            "sloc": {
-                "currentValue": null,
+            "source_lines_of_code": {
+                "currentValue": 3634003,
                 "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "cmpLastMonth": null,
+                "cmpLastRevision": "+100% (No Prior Revision)"
             },
             "total-features": {
                 "currentValue": null,
@@ -2850,10 +2880,11 @@
                 "cmpLastWeek": null,
                 "cmpLastMonth": null
             },
-            "sloc": {
-                "currentValue": null,
+            "source_lines_of_code": {
+                "currentValue": "12882579 loc",
                 "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "cmpLastMonth": null,
+                "cmpLastRevision": "+32.0%"
             },
             "total-features": {
                 "currentValue": null,
@@ -2927,10 +2958,11 @@
                 "cmpLastWeek": null,
                 "cmpLastMonth": null
             },
-            "sloc": {
-                "currentValue": null,
+            "source_lines_of_code": {
+                "currentValue": "24874347 loc",
                 "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "cmpLastMonth": null,
+                "cmpLastRevision": "+39.4%"
             },
             "total-features": {
                 "currentValue": null,
@@ -3004,10 +3036,11 @@
                 "cmpLastWeek": null,
                 "cmpLastMonth": null
             },
-            "sloc": {
-                "currentValue": null,
+            "source_lines_of_code": {
+                "currentValue": 5703916,
                 "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "cmpLastMonth": null,
+                "cmpLastRevision": "+100% (No Prior Revision)"
             },
             "total-features": {
                 "currentValue": null,
@@ -3081,10 +3114,11 @@
                 "cmpLastWeek": null,
                 "cmpLastMonth": null
             },
-            "sloc": {
-                "currentValue": null,
+            "source_lines_of_code": {
+                "currentValue": "24874347 loc",
                 "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "cmpLastMonth": null,
+                "cmpLastRevision": "+39.4%"
             },
             "total-features": {
                 "currentValue": null,
@@ -3158,10 +3192,11 @@
                 "cmpLastWeek": null,
                 "cmpLastMonth": null
             },
-            "sloc": {
-                "currentValue": null,
+            "source_lines_of_code": {
+                "currentValue": 6468971,
                 "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "cmpLastMonth": null,
+                "cmpLastRevision": "+100% (No Prior Revision)"
             },
             "total-features": {
                 "currentValue": null,
@@ -3235,10 +3270,11 @@
                 "cmpLastWeek": null,
                 "cmpLastMonth": null
             },
-            "sloc": {
-                "currentValue": null,
+            "source_lines_of_code": {
+                "currentValue": "12882579 loc",
                 "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "cmpLastMonth": null,
+                "cmpLastRevision": "+32.0%"
             },
             "total-features": {
                 "currentValue": null,
@@ -3312,10 +3348,11 @@
                 "cmpLastWeek": null,
                 "cmpLastMonth": null
             },
-            "sloc": {
-                "currentValue": null,
+            "source_lines_of_code": {
+                "currentValue": "17848657 loc",
                 "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "cmpLastMonth": null,
+                "cmpLastRevision": "+38.5%"
             },
             "total-features": {
                 "currentValue": null,
@@ -3389,10 +3426,11 @@
                 "cmpLastWeek": null,
                 "cmpLastMonth": null
             },
-            "sloc": {
-                "currentValue": null,
+            "source_lines_of_code": {
+                "currentValue": 6038869,
                 "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "cmpLastMonth": null,
+                "cmpLastRevision": "+100% (No Prior Revision)"
             },
             "total-features": {
                 "currentValue": null,
@@ -3466,10 +3504,11 @@
                 "cmpLastWeek": null,
                 "cmpLastMonth": null
             },
-            "sloc": {
-                "currentValue": null,
+            "source_lines_of_code": {
+                "currentValue": "24874347 loc",
                 "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "cmpLastMonth": null,
+                "cmpLastRevision": "+39.4%"
             },
             "total-features": {
                 "currentValue": null,
@@ -3543,10 +3582,11 @@
                 "cmpLastWeek": null,
                 "cmpLastMonth": null
             },
-            "sloc": {
-                "currentValue": null,
+            "source_lines_of_code": {
+                "currentValue": 5518242,
                 "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "cmpLastMonth": null,
+                "cmpLastRevision": "+100% (No Prior Revision)"
             },
             "total-features": {
                 "currentValue": null,
@@ -3620,10 +3660,11 @@
                 "cmpLastWeek": null,
                 "cmpLastMonth": null
             },
-            "sloc": {
-                "currentValue": null,
+            "source_lines_of_code": {
+                "currentValue": "24874347 loc",
                 "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "cmpLastMonth": null,
+                "cmpLastRevision": "+39.4%"
             },
             "total-features": {
                 "currentValue": null,
