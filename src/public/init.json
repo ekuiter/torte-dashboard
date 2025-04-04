@@ -1,5 +1,4 @@
-{
-    "plotData": {
+{"plotData": {
         "configuration-evolution-arch": {
             "title": "Configuration Evolution Arch",
             "desc": "Configuration Evolution Arch: Information, Description etc."
@@ -85,23 +84,17 @@
             }
         },
         "linux/all": {
-            "configuration-evolution-arch": {
-            },
-            "configuration-evolution-total": {
-            },
-            "configuration-similarity": {
-            },
-            "feature-evolution-arch": {
-            },
-            "feature-evolution-total": {
-            },
+            "configuration-evolution-arch": {},
+            "configuration-evolution-total": {},
+            "configuration-similarity": {},
+            "feature-evolution-arch": {},
+            "feature-evolution-total": {},
             "features": {
                 "currentValue": null,
                 "cmpLastWeek": null,
                 "cmpLastMonth": null
             },
-            "jaccard-similarity": {
-            },
+            "jaccard-similarity": {},
             "model-count": {
                 "currentValue": null,
                 "cmpLastWeek": null,
@@ -112,14 +105,10 @@
                 "cmpLastWeek": null,
                 "cmpLastMonth": null
             },
-            "prediction-accuracy-configurations": {
-            },
-            "prediction-accuracy-configurations-by-features": {
-            },
-            "prediction-accuracy-features": {
-            },
-            "share-of-feature-variables": {
-            },
+            "prediction-accuracy-configurations": {},
+            "prediction-accuracy-configurations-by-features": {},
+            "prediction-accuracy-features": {},
+            "share-of-feature-variables": {},
             "source_lines_of_code": {
                 "currentValue": null,
                 "cmpLastWeek": null,
