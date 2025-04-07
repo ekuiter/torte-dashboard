@@ -58,6 +58,7 @@ function showScatterPlot() {
   return selectedPlot.value != null  && data.plotData[selectedPlot.value].plotType == 'scatter'
 }
 function getCurrentScatterData() {
+  console.log("currentscatter: ", currentScatterData.value?.currentValue)
   return currentScatterData.value?.currentValue
 }
 function getPlotsForProj() {

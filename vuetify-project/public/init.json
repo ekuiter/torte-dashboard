@@ -96,7 +96,7 @@
             "model-count": {
                 "cmpLastMonth": null,
                 "cmpLastWeek": null,
-                "currentValue": "5200"
+                "currentValue": "5200 models"
             },
             "model-count-time": {
                 "cmpLastMonth": null,
@@ -121,11 +121,6 @@
             "configuration-similarity": {},
             "feature-evolution-arch": {},
             "feature-evolution-total": {},
-            "features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
-            },
             "jaccard-similarity": {},
             "model-count": {
                 "currentValue": null,
@@ -224,11 +219,6 @@
                 "cmpLastWeek": null,
                 "cmpLastMonth": null,
                 "cmpLastRevision": "+39.4%"
-            },
-            "total-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
             }
         },
         "linux/arc": {
@@ -302,11 +292,6 @@
                 "cmpLastWeek": null,
                 "cmpLastMonth": null,
                 "cmpLastRevision": "+39.4%"
-            },
-            "total-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
             }
         },
         "linux/arm": {
@@ -380,11 +365,6 @@
                 "cmpLastWeek": null,
                 "cmpLastMonth": null,
                 "cmpLastRevision": "+39.4%"
-            },
-            "total-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
             }
         },
         "linux/arm26": {
@@ -458,11 +438,6 @@
                 "cmpLastWeek": null,
                 "cmpLastMonth": null,
                 "cmpLastRevision": "+100% (No Prior Revision)"
-            },
-            "total-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
             }
         },
         "linux/arm64": {
@@ -536,11 +511,6 @@
                 "cmpLastWeek": null,
                 "cmpLastMonth": null,
                 "cmpLastRevision": "+39.4%"
-            },
-            "total-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
             }
         },
         "linux/avr32": {
@@ -614,11 +584,6 @@
                 "cmpLastWeek": null,
                 "cmpLastMonth": null,
                 "cmpLastRevision": "+32.0%"
-            },
-            "total-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
             }
         },
         "linux/blackfin": {
@@ -692,11 +657,6 @@
                 "cmpLastWeek": null,
                 "cmpLastMonth": null,
                 "cmpLastRevision": "+32.0%"
-            },
-            "total-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
             }
         },
         "linux/c6x": {
@@ -770,11 +730,6 @@
                 "cmpLastWeek": null,
                 "cmpLastMonth": null,
                 "cmpLastRevision": "+38.5%"
-            },
-            "total-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
             }
         },
         "linux/cris": {
@@ -848,11 +803,6 @@
                 "cmpLastWeek": null,
                 "cmpLastMonth": null,
                 "cmpLastRevision": "+32.0%"
-            },
-            "total-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
             }
         },
         "linux/csky": {
@@ -926,11 +876,6 @@
                 "cmpLastWeek": null,
                 "cmpLastMonth": null,
                 "cmpLastRevision": "+39.4%"
-            },
-            "total-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
             }
         },
         "linux/frv": {
@@ -1004,11 +949,6 @@
                 "cmpLastWeek": null,
                 "cmpLastMonth": null,
                 "cmpLastRevision": "+32.0%"
-            },
-            "total-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
             }
         },
         "linux/h8300": {
@@ -1082,11 +1022,6 @@
                 "cmpLastWeek": null,
                 "cmpLastMonth": null,
                 "cmpLastRevision": "+100% (No Prior Revision)"
-            },
-            "total-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
             }
         },
         "linux/hexagon": {
@@ -1160,11 +1095,6 @@
                 "cmpLastWeek": null,
                 "cmpLastMonth": null,
                 "cmpLastRevision": "+39.4%"
-            },
-            "total-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
             }
         },
         "linux/i386": {
@@ -1238,11 +1168,6 @@
                 "cmpLastWeek": null,
                 "cmpLastMonth": null,
                 "cmpLastRevision": "+100% (No Prior Revision)"
-            },
-            "total-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
             }
         },
         "linux/ia64": {
@@ -1316,11 +1241,6 @@
                 "cmpLastWeek": null,
                 "cmpLastMonth": null,
                 "cmpLastRevision": "+39.4%"
-            },
-            "total-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
             }
         },
         "linux/loongarch": {
@@ -1394,11 +1314,6 @@
                 "cmpLastWeek": null,
                 "cmpLastMonth": null,
                 "cmpLastRevision": "+100% (No Prior Revision)"
-            },
-            "total-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
             }
         },
         "linux/m32r": {
@@ -1472,11 +1387,6 @@
                 "cmpLastWeek": null,
                 "cmpLastMonth": null,
                 "cmpLastRevision": "+32.0%"
-            },
-            "total-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
             }
         },
         "linux/m68k": {
@@ -1550,11 +1460,6 @@
                 "cmpLastWeek": null,
                 "cmpLastMonth": null,
                 "cmpLastRevision": "+39.4%"
-            },
-            "total-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
             }
         },
         "linux/m68knommu": {
@@ -1628,11 +1533,6 @@
                 "cmpLastWeek": null,
                 "cmpLastMonth": null,
                 "cmpLastRevision": "+100% (No Prior Revision)"
-            },
-            "total-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
             }
         },
         "linux/metag": {
@@ -1706,11 +1606,6 @@
                 "cmpLastWeek": null,
                 "cmpLastMonth": null,
                 "cmpLastRevision": "+100% (No Prior Revision)"
-            },
-            "total-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
             }
         },
         "linux/microblaze": {
@@ -1784,11 +1679,6 @@
                 "cmpLastWeek": null,
                 "cmpLastMonth": null,
                 "cmpLastRevision": "+39.4%"
-            },
-            "total-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
             }
         },
         "linux/mips": {
@@ -1862,11 +1752,6 @@
                 "cmpLastWeek": null,
                 "cmpLastMonth": null,
                 "cmpLastRevision": "+39.4%"
-            },
-            "total-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
             }
         },
         "linux/mips64": {
@@ -1940,11 +1825,6 @@
                 "cmpLastWeek": null,
                 "cmpLastMonth": null,
                 "cmpLastRevision": "+100% (No Prior Revision)"
-            },
-            "total-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
             }
         },
         "linux/mn10300": {
@@ -2018,11 +1898,6 @@
                 "cmpLastWeek": null,
                 "cmpLastMonth": null,
                 "cmpLastRevision": "+32.0%"
-            },
-            "total-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
             }
         },
         "linux/nds32": {
@@ -2096,11 +1971,6 @@
                 "cmpLastWeek": null,
                 "cmpLastMonth": null,
                 "cmpLastRevision": "+100% (No Prior Revision)"
-            },
-            "total-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
             }
         },
         "linux/nios2": {
@@ -2174,11 +2044,6 @@
                 "cmpLastWeek": null,
                 "cmpLastMonth": null,
                 "cmpLastRevision": "+39.4%"
-            },
-            "total-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
             }
         },
         "linux/openrisc": {
@@ -2252,11 +2117,6 @@
                 "cmpLastWeek": null,
                 "cmpLastMonth": null,
                 "cmpLastRevision": "+39.4%"
-            },
-            "total-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
             }
         },
         "linux/parisc": {
@@ -2330,11 +2190,6 @@
                 "cmpLastWeek": null,
                 "cmpLastMonth": null,
                 "cmpLastRevision": "+39.4%"
-            },
-            "total-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
             }
         },
         "linux/powerpc": {
@@ -2408,11 +2263,6 @@
                 "cmpLastWeek": null,
                 "cmpLastMonth": null,
                 "cmpLastRevision": "+39.4%"
-            },
-            "total-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
             }
         },
         "linux/ppc": {
@@ -2486,11 +2336,6 @@
                 "cmpLastWeek": null,
                 "cmpLastMonth": null,
                 "cmpLastRevision": "+100% (No Prior Revision)"
-            },
-            "total-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
             }
         },
         "linux/ppc64": {
@@ -2564,11 +2409,6 @@
                 "cmpLastWeek": null,
                 "cmpLastMonth": null,
                 "cmpLastRevision": "+100% (No Prior Revision)"
-            },
-            "total-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
             }
         },
         "linux/riscv": {
@@ -2642,11 +2482,6 @@
                 "cmpLastWeek": null,
                 "cmpLastMonth": null,
                 "cmpLastRevision": "+39.4%"
-            },
-            "total-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
             }
         },
         "linux/s390": {
@@ -2720,11 +2555,6 @@
                 "cmpLastWeek": null,
                 "cmpLastMonth": null,
                 "cmpLastRevision": "+39.4%"
-            },
-            "total-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
             }
         },
         "linux/s390x": {
@@ -2798,11 +2628,6 @@
                 "cmpLastWeek": null,
                 "cmpLastMonth": null,
                 "cmpLastRevision": "+100% (No Prior Revision)"
-            },
-            "total-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
             }
         },
         "linux/score": {
@@ -2876,11 +2701,6 @@
                 "cmpLastWeek": null,
                 "cmpLastMonth": null,
                 "cmpLastRevision": "+32.0%"
-            },
-            "total-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
             }
         },
         "linux/sh": {
@@ -2954,11 +2774,6 @@
                 "cmpLastWeek": null,
                 "cmpLastMonth": null,
                 "cmpLastRevision": "+39.4%"
-            },
-            "total-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
             }
         },
         "linux/sh64": {
@@ -3032,11 +2847,6 @@
                 "cmpLastWeek": null,
                 "cmpLastMonth": null,
                 "cmpLastRevision": "+100% (No Prior Revision)"
-            },
-            "total-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
             }
         },
         "linux/sparc": {
@@ -3110,11 +2920,6 @@
                 "cmpLastWeek": null,
                 "cmpLastMonth": null,
                 "cmpLastRevision": "+39.4%"
-            },
-            "total-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
             }
         },
         "linux/sparc64": {
@@ -3188,11 +2993,6 @@
                 "cmpLastWeek": null,
                 "cmpLastMonth": null,
                 "cmpLastRevision": "+100% (No Prior Revision)"
-            },
-            "total-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
             }
         },
         "linux/tile": {
@@ -3266,11 +3066,6 @@
                 "cmpLastWeek": null,
                 "cmpLastMonth": null,
                 "cmpLastRevision": "+32.0%"
-            },
-            "total-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
             }
         },
         "linux/unicore32": {
@@ -3344,11 +3139,6 @@
                 "cmpLastWeek": null,
                 "cmpLastMonth": null,
                 "cmpLastRevision": "+38.5%"
-            },
-            "total-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
             }
         },
         "linux/v850": {
@@ -3422,11 +3212,6 @@
                 "cmpLastWeek": null,
                 "cmpLastMonth": null,
                 "cmpLastRevision": "+100% (No Prior Revision)"
-            },
-            "total-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
             }
         },
         "linux/x86": {
@@ -3500,11 +3285,6 @@
                 "cmpLastWeek": null,
                 "cmpLastMonth": null,
                 "cmpLastRevision": "+39.4%"
-            },
-            "total-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
             }
         },
         "linux/x86_64": {
@@ -3578,11 +3358,6 @@
                 "cmpLastWeek": null,
                 "cmpLastMonth": null,
                 "cmpLastRevision": "+100% (No Prior Revision)"
-            },
-            "total-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
             }
         },
         "linux/xtensa": {
@@ -3656,11 +3431,6 @@
                 "cmpLastWeek": null,
                 "cmpLastMonth": null,
                 "cmpLastRevision": "+39.4%"
-            },
-            "total-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
             }
         }
     }

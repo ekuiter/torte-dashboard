@@ -2,7 +2,7 @@
     <v-container>
         <v-row>
             <v-col cols="12" lg="12">
-                <v-card class="overflow-y-auto" max-height="50vh" v-scroll.self="onScroll">
+                <v-card class="overflow-y-auto" v-scroll.self="onScroll">
                     <template v-slot:title>
                         <span class="font-weight-black text-wrap">{{ plotData?.displayName }}</span>
                     </template>
@@ -22,7 +22,7 @@
                         <h2 id="iframeHeader"></h2>
                         <div id="iframe-container">
                             <iframe align="center" title="Plot" id="plot" :src="plotPath"
-                                style="height:60vh;width:70vw;border:none;display:block"></iframe>
+                                style="height:800px;width:1510px;border:none;display:block"></iframe>
                         </div>
                     </v-card>
                 </v-sheet>
