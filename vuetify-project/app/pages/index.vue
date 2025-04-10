@@ -2,6 +2,6 @@
 </script>
 
 <template>
-  <HelloWorld />
+  <MainPage />
 </template>
 

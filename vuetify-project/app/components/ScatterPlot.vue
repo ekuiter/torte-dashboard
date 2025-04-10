@@ -1,21 +1,24 @@
 <template>
     <v-container>
         <v-row>
-            <v-col cols="12" lg="2">
-                <v-card class="overflow-y-auto" max-height="50vh" v-scroll.self="onScroll">
-                    <template v-slot:title>
-                        <span class="font-weight-black text-wrap">{{ plotData?.displayName }}</span>
-                    </template>
+            <v-col>
 
-                    <v-card-text class="bg-surface-light pt-4">
-                        {{ plotData?.description }}
-                        <br>
-                        This description field grows automatically
-                    </v-card-text>
-                </v-card>
+                <info-card :title="plotData?.displayName" :value="plotData?.description" :textAlign="'text-left'">
+                </info-card>
+            </v-col>
+        </v-row>
+        <v-row>
+            <v-col v-if="currentValue != null">
+                <info-card v-if="typeof currentValue[Object.keys(currentValue)[0]] === 'string'" title="Current Value" :value="currentValue.value" :date="currentValue.date">
+                </info-card>
+                <info-card v-else-if="currentValue != null"
+                    v-for="item in Object.entries(currentValue)" :key="item" :title="`Current Value&#13;(${item[0]})`"
+                    :value="item[1].value" :date="item[1].date">
+                </info-card>
+
             </v-col>
 
-            <v-col cols="12" md="8">
+            <v-col>
                 <v-sheet rounded="lg">
                     <v-card :v-else-if="plotPath != null">
                         <h2 id="iframeHeader"></h2>
@@ -26,30 +29,16 @@
                     </v-card>
                 </v-sheet>
             </v-col>
-
-            <v-col cols="12" lg="2">
-
-                <v-card class=" ma-2" min-height="10vh" v-scroll.self="onScroll">
-                    <template v-slot:title>
-                        <span class="font-weight-black text-wrap">Current Value</span>
-                    </template>
-
-                    <v-card-text class="bg-surface-light pt-4" v-text="currentValue">
-                    </v-card-text>
-                </v-card>
-
-
-            </v-col>
         </v-row>
     </v-container>
 </template>
 <script setup lang="ts">
-import type { PlotData, ScatterData } from './interfaces';
+import type { PlotData, ScatterData, ByExtractor } from './interfaces';
 
-defineProps<{
+const props = defineProps<{
     plotPath?: string | null,
     plotData?: PlotData | null,
-    currentValue?: string | null
+    currentValue?: ByExtractor | Scatterdata | null
 }>()
 
 const scrollInvoked = ref(0)

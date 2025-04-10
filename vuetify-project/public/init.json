@@ -32,9 +32,9 @@
         },
         "features": {
             "idName": "features",
-            "displayName": "Features",
+            "displayName": "Number of Features",
             "plotType": "scatter",
-            "description": "Features: Information, description etc."
+            "description": "Number of Features: Information, description etc."
         },
         "jaccard-similarity": {
             "idName": "jaccard-similarity",
@@ -44,15 +44,15 @@
         },
         "model-count": {
             "idName": "model-count",
-            "displayName": "Model Count",
+            "displayName": "Formula length",
             "plotType": "scatter",
-            "description": "Model Count: Information, description etc."
+            "description": "Formula length: Information, description etc."
         },
         "model-count-time": {
             "idName": "model-count-time",
-            "displayName": "Model Count Time",
+            "displayName": "Time for Counting",
             "plotType": "scatter",
-            "description": "Model Count Time: Information, description etc."
+            "description": "Time for Counting: Information, description etc."
         },
         "prediction-accuracy-configurations": {
             "idName": "prediction-accuracy-configurations",
@@ -80,39 +80,43 @@
         },
         "source_lines_of_code": {
             "idName": "source_lines_of_code",
-            "displayName": "Source Lines of Code",
+            "displayName": "Number of Source Lines of Code",
             "plotType": "scatter",
-            "description": "Source Lines of Code: Information, description etc."
+            "description": "Number of Source Lines of Code: Information, description etc."
         },
         "total-features": {
             "idName": "total-features",
-            "displayName": "Total Features",
+            "displayName": "Total Number of Features",
             "plotType": "scatter",
-            "description": "Total Features: Information, description etc."
+            "description": "Total Number of Features: Information, description etc."
         }
     },
     "projectData": {
         "busybox": {
             "model-count": {
-                "cmpLastMonth": null,
-                "cmpLastWeek": null,
-                "currentValue": "5200 models"
+                "currentValue": {
+                    "value": "5200 models",
+                    "date": "From January 03, 2023"
+                }
             },
             "model-count-time": {
-                "cmpLastMonth": null,
-                "cmpLastWeek": null,
-                "currentValue": "7745479537"
+                "currentValue": {
+                    "value": "7 s",
+                    "date": "From January 03, 2023"
+                }
             },
             "source_lines_of_code": {
-                "cmpLastMonth": null,
-                "cmpLastWeek": null,
-                "currentValue": "209492 loc",
+                "currentValue": {
+                    "value": "209492 loc",
+                    "date": "From January 03, 2023"
+                },
                 "cmpLastRevision": "+1.8%"
             },
             "total-features": {
-                "cmpLastMonth": null,
-                "cmpLastWeek": null,
-                "currentValue": "1138"
+                "currentValue": {
+                    "value": "1138 features",
+                    "date": "From January 03, 2023"
+                }
             }
         },
         "linux/all": {
@@ -123,3313 +127,3425 @@
             "feature-evolution-total": {},
             "jaccard-similarity": {},
             "model-count": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "10^428 models",
+                        "date": "From May 19, 2011"
+                    },
+                    "KClause": {
+                        "value": "10^434 models",
+                        "date": "From June 30, 2013"
+                    }
+                }
             },
             "model-count-time": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "10^428 s",
+                        "date": "From May 19, 2011"
+                    },
+                    "KClause": {
+                        "value": "10^434 s",
+                        "date": "From June 30, 2013"
+                    }
+                }
             },
             "prediction-accuracy-configurations": {},
             "prediction-accuracy-configurations-by-features": {},
             "prediction-accuracy-features": {},
             "share-of-feature-variables": {},
             "source_lines_of_code": {
-                "currentValue": "24874347 loc",
-                "cmpLastWeek": null,
-                "cmpLastMonth": null,
+                "currentValue": {
+                    "value": "27889126 loc",
+                    "date": "From September 15, 2024"
+                },
                 "cmpLastRevision": "+39.4%"
             },
             "total-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "19869 features",
+                        "date": "From September 15, 2024"
+                    },
+                    "KClause": {
+                        "value": "20024 features",
+                        "date": "From September 15, 2024"
+                    }
+                }
             }
         },
         "linux/alpha": {
             "configuration-evolution-arch": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "configuration-evolution-total": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "configuration-similarity": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "feature-evolution-arch": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "feature-evolution-total": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "features": {
-                "currentValue": "12939 features",
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "13109 features",
+                        "date": "From September 15, 2024"
+                    },
+                    "KClause": {
+                        "value": "12939 features",
+                        "date": "From September 15, 2024"
+                    }
+                }
             },
             "jaccard-similarity": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "model-count": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "10^836 models",
+                        "date": "From June 18, 2006"
+                    },
+                    "KClause": {
+                        "value": "10^705 models",
+                        "date": "From April 17, 2008"
+                    }
+                }
             },
             "model-count-time": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "10^280 s",
+                        "date": "From June 18, 2006"
+                    },
+                    "KClause": {
+                        "value": "10^2219 s",
+                        "date": "From April 17, 2008"
+                    }
+                }
             },
             "prediction-accuracy-configurations": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "prediction-accuracy-configurations-by-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "prediction-accuracy-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "share-of-feature-variables": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "source_lines_of_code": {
-                "currentValue": "24874347 loc",
-                "cmpLastWeek": null,
-                "cmpLastMonth": null,
+                "currentValue": {
+                    "value": "27889126 loc",
+                    "date": "From September 15, 2024"
+                },
                 "cmpLastRevision": "+39.4%"
             }
         },
         "linux/arc": {
             "configuration-evolution-arch": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "configuration-evolution-total": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "configuration-similarity": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "feature-evolution-arch": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "feature-evolution-total": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "features": {
-                "currentValue": "12869 features",
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "12869 features",
+                        "date": "From September 15, 2024"
+                    },
+                    "KClause": {
+                        "value": "12692 features",
+                        "date": "From September 15, 2024"
+                    }
+                }
             },
             "jaccard-similarity": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "model-count": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "0 models",
+                        "date": " Date not Found"
+                    },
+                    "KClause": {
+                        "value": "0 models",
+                        "date": " Date not Found"
+                    }
+                }
             },
             "model-count-time": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "0 s",
+                        "date": " Date not Found"
+                    },
+                    "KClause": {
+                        "value": "0 s",
+                        "date": " Date not Found"
+                    }
+                }
             },
             "prediction-accuracy-configurations": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "prediction-accuracy-configurations-by-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "prediction-accuracy-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "share-of-feature-variables": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "source_lines_of_code": {
-                "currentValue": "24874347 loc",
-                "cmpLastWeek": null,
-                "cmpLastMonth": null,
+                "currentValue": {
+                    "value": "27889126 loc",
+                    "date": "From September 15, 2024"
+                },
                 "cmpLastRevision": "+39.4%"
             }
         },
         "linux/arm": {
             "configuration-evolution-arch": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "configuration-evolution-total": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "configuration-similarity": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "feature-evolution-arch": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "feature-evolution-total": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "features": {
-                "currentValue": "15325 features",
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "15448 features",
+                        "date": "From September 15, 2024"
+                    },
+                    "KClause": {
+                        "value": "15325 features",
+                        "date": "From September 15, 2024"
+                    }
+                }
             },
             "jaccard-similarity": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "model-count": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "10^828 models",
+                        "date": "From March 20, 2006"
+                    },
+                    "KClause": {
+                        "value": "10^664 models",
+                        "date": "From October 09, 2007"
+                    }
+                }
             },
             "model-count-time": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "10^892 s",
+                        "date": "From March 20, 2006"
+                    },
+                    "KClause": {
+                        "value": "10^1653 s",
+                        "date": "From October 09, 2007"
+                    }
+                }
             },
             "prediction-accuracy-configurations": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "prediction-accuracy-configurations-by-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "prediction-accuracy-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "share-of-feature-variables": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "source_lines_of_code": {
-                "currentValue": "24874347 loc",
-                "cmpLastWeek": null,
-                "cmpLastMonth": null,
+                "currentValue": {
+                    "value": "27889126 loc",
+                    "date": "From September 15, 2024"
+                },
                 "cmpLastRevision": "+39.4%"
             }
         },
         "linux/arm26": {
             "configuration-evolution-arch": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "configuration-evolution-total": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "configuration-similarity": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "feature-evolution-arch": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "feature-evolution-total": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "features": {
-                "currentValue": "1639 features",
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "1639 features",
+                        "date": "From July 08, 2007"
+                    },
+                    "KClause": {
+                        "value": "1583 features",
+                        "date": "From July 08, 2007"
+                    }
+                }
             },
             "jaccard-similarity": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "model-count": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "10^509 models",
+                        "date": "From July 08, 2007"
+                    },
+                    "KClause": {
+                        "value": "10^344 models",
+                        "date": "From July 08, 2007"
+                    }
+                }
             },
             "model-count-time": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "10^1104 s",
+                        "date": "From July 08, 2007"
+                    },
+                    "KClause": {
+                        "value": "10^2 s",
+                        "date": "From July 08, 2007"
+                    }
+                }
             },
             "prediction-accuracy-configurations": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "prediction-accuracy-configurations-by-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "prediction-accuracy-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "share-of-feature-variables": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "source_lines_of_code": {
-                "currentValue": 5465319,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null,
+                "currentValue": {
+                    "value": "5465319 loc",
+                    "date": "From July 08, 2007"
+                },
                 "cmpLastRevision": "+100% (No Prior Revision)"
             }
         },
         "linux/arm64": {
             "configuration-evolution-arch": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "configuration-evolution-total": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "configuration-similarity": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "feature-evolution-arch": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "feature-evolution-total": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "features": {
-                "currentValue": "15000 features",
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "15000 features",
+                        "date": "From September 15, 2024"
+                    },
+                    "KClause": {
+                        "value": "14884 features",
+                        "date": "From September 15, 2024"
+                    }
+                }
             },
             "jaccard-similarity": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "model-count": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "0 models",
+                        "date": " Date not Found"
+                    },
+                    "KClause": {
+                        "value": "0 models",
+                        "date": " Date not Found"
+                    }
+                }
             },
             "model-count-time": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "0 s",
+                        "date": " Date not Found"
+                    },
+                    "KClause": {
+                        "value": "0 s",
+                        "date": " Date not Found"
+                    }
+                }
             },
             "prediction-accuracy-configurations": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "prediction-accuracy-configurations-by-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "prediction-accuracy-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "share-of-feature-variables": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "source_lines_of_code": {
-                "currentValue": "24874347 loc",
-                "cmpLastWeek": null,
-                "cmpLastMonth": null,
+                "currentValue": {
+                    "value": "27889126 loc",
+                    "date": "From September 15, 2024"
+                },
                 "cmpLastRevision": "+39.4%"
             }
         },
         "linux/avr32": {
             "configuration-evolution-arch": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "configuration-evolution-total": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "configuration-similarity": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "feature-evolution-arch": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "feature-evolution-total": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "features": {
-                "currentValue": "6841 features",
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "6841 features",
+                        "date": "From May 01, 2017"
+                    },
+                    "KClause": {
+                        "value": "6827 features",
+                        "date": "From May 01, 2017"
+                    }
+                }
             },
             "jaccard-similarity": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "model-count": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "10^788 models",
+                        "date": "From December 24, 2008"
+                    },
+                    "KClause": {
+                        "value": "10^636 models",
+                        "date": "From December 03, 2009"
+                    }
+                }
             },
             "model-count-time": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "10^1897 s",
+                        "date": "From December 24, 2008"
+                    },
+                    "KClause": {
+                        "value": "10^3358 s",
+                        "date": "From December 03, 2009"
+                    }
+                }
             },
             "prediction-accuracy-configurations": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "prediction-accuracy-configurations-by-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "prediction-accuracy-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "share-of-feature-variables": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "source_lines_of_code": {
-                "currentValue": "12882579 loc",
-                "cmpLastWeek": null,
-                "cmpLastMonth": null,
+                "currentValue": {
+                    "value": "15520118 loc",
+                    "date": "From May 01, 2017"
+                },
                 "cmpLastRevision": "+32.0%"
             }
         },
         "linux/blackfin": {
             "configuration-evolution-arch": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "configuration-evolution-total": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "configuration-similarity": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "feature-evolution-arch": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "feature-evolution-total": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "features": {
-                "currentValue": "8327 features",
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "8327 features",
+                        "date": "From April 01, 2018"
+                    },
+                    "KClause": {
+                        "value": "8267 features",
+                        "date": "From April 01, 2018"
+                    }
+                }
             },
             "jaccard-similarity": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "model-count": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "0 models",
+                        "date": " Date not Found"
+                    },
+                    "KClause": {
+                        "value": "617 models",
+                        "date": "From June 10, 2009"
+                    }
+                }
             },
             "model-count-time": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "0 s",
+                        "date": " Date not Found"
+                    },
+                    "KClause": {
+                        "value": "2683 s",
+                        "date": "From June 10, 2009"
+                    }
+                }
             },
             "prediction-accuracy-configurations": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "prediction-accuracy-configurations-by-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "prediction-accuracy-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "share-of-feature-variables": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "source_lines_of_code": {
-                "currentValue": "12882579 loc",
-                "cmpLastWeek": null,
-                "cmpLastMonth": null,
+                "currentValue": {
+                    "value": "17320111 loc",
+                    "date": "From April 01, 2018"
+                },
                 "cmpLastRevision": "+32.0%"
             }
         },
         "linux/c6x": {
             "configuration-evolution-arch": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "configuration-evolution-total": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "configuration-similarity": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "feature-evolution-arch": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "feature-evolution-total": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "features": {
-                "currentValue": "8735 features",
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "8936 features",
+                        "date": "From February 14, 2021"
+                    },
+                    "KClause": {
+                        "value": "8735 features",
+                        "date": "From February 14, 2021"
+                    }
+                }
             },
             "jaccard-similarity": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "model-count": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "0 models",
+                        "date": " Date not Found"
+                    },
+                    "KClause": {
+                        "value": "0 models",
+                        "date": " Date not Found"
+                    }
+                }
             },
             "model-count-time": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "0 s",
+                        "date": " Date not Found"
+                    },
+                    "KClause": {
+                        "value": "0 s",
+                        "date": " Date not Found"
+                    }
+                }
             },
             "prediction-accuracy-configurations": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "prediction-accuracy-configurations-by-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "prediction-accuracy-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "share-of-feature-variables": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "source_lines_of_code": {
-                "currentValue": "17848657 loc",
-                "cmpLastWeek": null,
-                "cmpLastMonth": null,
+                "currentValue": {
+                    "value": "21167409 loc",
+                    "date": "From February 14, 2021"
+                },
                 "cmpLastRevision": "+38.5%"
             }
         },
         "linux/cris": {
             "configuration-evolution-arch": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "configuration-evolution-total": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "configuration-similarity": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "feature-evolution-arch": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "feature-evolution-total": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "features": {
-                "currentValue": "8537 features",
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "8537 features",
+                        "date": "From April 01, 2018"
+                    },
+                    "KClause": {
+                        "value": "8418 features",
+                        "date": "From April 01, 2018"
+                    }
+                }
             },
             "jaccard-similarity": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "model-count": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "10^662 models",
+                        "date": "From July 13, 2008"
+                    },
+                    "KClause": {
+                        "value": "10^552 models",
+                        "date": "From October 20, 2010"
+                    }
+                }
             },
             "model-count-time": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "10^320 s",
+                        "date": "From July 13, 2008"
+                    },
+                    "KClause": {
+                        "value": "10^1752 s",
+                        "date": "From October 20, 2010"
+                    }
+                }
             },
             "prediction-accuracy-configurations": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "prediction-accuracy-configurations-by-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "prediction-accuracy-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "share-of-feature-variables": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "source_lines_of_code": {
-                "currentValue": "12882579 loc",
-                "cmpLastWeek": null,
-                "cmpLastMonth": null,
+                "currentValue": {
+                    "value": "17320111 loc",
+                    "date": "From April 01, 2018"
+                },
                 "cmpLastRevision": "+32.0%"
             }
         },
         "linux/csky": {
             "configuration-evolution-arch": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "configuration-evolution-total": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "configuration-similarity": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "feature-evolution-arch": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "feature-evolution-total": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "features": {
-                "currentValue": "12817 features",
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "12817 features",
+                        "date": "From September 15, 2024"
+                    },
+                    "KClause": {
+                        "value": "12644 features",
+                        "date": "From September 15, 2024"
+                    }
+                }
             },
             "jaccard-similarity": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "model-count": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "0 models",
+                        "date": " Date not Found"
+                    },
+                    "KClause": {
+                        "value": "0 models",
+                        "date": " Date not Found"
+                    }
+                }
             },
             "model-count-time": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "0 s",
+                        "date": " Date not Found"
+                    },
+                    "KClause": {
+                        "value": "0 s",
+                        "date": " Date not Found"
+                    }
+                }
             },
             "prediction-accuracy-configurations": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "prediction-accuracy-configurations-by-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "prediction-accuracy-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "share-of-feature-variables": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "source_lines_of_code": {
-                "currentValue": "24874347 loc",
-                "cmpLastWeek": null,
-                "cmpLastMonth": null,
+                "currentValue": {
+                    "value": "27889126 loc",
+                    "date": "From September 15, 2024"
+                },
                 "cmpLastRevision": "+39.4%"
             }
         },
         "linux/frv": {
             "configuration-evolution-arch": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "configuration-evolution-total": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "configuration-similarity": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "feature-evolution-arch": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "feature-evolution-total": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "features": {
-                "currentValue": "8356 features",
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "8356 features",
+                        "date": "From April 01, 2018"
+                    },
+                    "KClause": {
+                        "value": "8289 features",
+                        "date": "From April 01, 2018"
+                    }
+                }
             },
             "jaccard-similarity": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "model-count": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "10^754 models",
+                        "date": "From September 20, 2006"
+                    },
+                    "KClause": {
+                        "value": "10^656 models",
+                        "date": "From July 13, 2008"
+                    }
+                }
             },
             "model-count-time": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "10^730 s",
+                        "date": "From September 20, 2006"
+                    },
+                    "KClause": {
+                        "value": "10^1404 s",
+                        "date": "From July 13, 2008"
+                    }
+                }
             },
             "prediction-accuracy-configurations": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "prediction-accuracy-configurations-by-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "prediction-accuracy-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "share-of-feature-variables": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "source_lines_of_code": {
-                "currentValue": "12882579 loc",
-                "cmpLastWeek": null,
-                "cmpLastMonth": null,
+                "currentValue": {
+                    "value": "17320111 loc",
+                    "date": "From April 01, 2018"
+                },
                 "cmpLastRevision": "+32.0%"
             }
         },
         "linux/h8300": {
             "configuration-evolution-arch": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "configuration-evolution-total": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "configuration-similarity": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "feature-evolution-arch": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "feature-evolution-total": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "features": {
-                "currentValue": "10121 features",
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "10121 features",
+                        "date": "From May 22, 2022"
+                    },
+                    "KClause": {
+                        "value": "9933 features",
+                        "date": "From May 22, 2022"
+                    }
+                }
             },
             "jaccard-similarity": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "model-count": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "10^534 models",
+                        "date": "From October 20, 2010"
+                    },
+                    "KClause": {
+                        "value": "10^433 models",
+                        "date": "From June 30, 2013"
+                    }
+                }
             },
             "model-count-time": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "10^3474 s",
+                        "date": "From October 20, 2010"
+                    },
+                    "KClause": {
+                        "value": "10^822 s",
+                        "date": "From June 30, 2013"
+                    }
+                }
             },
             "prediction-accuracy-configurations": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "prediction-accuracy-configurations-by-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "prediction-accuracy-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "share-of-feature-variables": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "source_lines_of_code": {
-                "currentValue": 17848657,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null,
+                "currentValue": {
+                    "value": "23340406 loc",
+                    "date": "From May 22, 2022"
+                },
                 "cmpLastRevision": "+100% (No Prior Revision)"
             }
         },
         "linux/hexagon": {
             "configuration-evolution-arch": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "configuration-evolution-total": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "configuration-similarity": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "feature-evolution-arch": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "feature-evolution-total": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "features": {
-                "currentValue": "11446 features",
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "11446 features",
+                        "date": "From September 15, 2024"
+                    },
+                    "KClause": {
+                        "value": "11262 features",
+                        "date": "From September 15, 2024"
+                    }
+                }
             },
             "jaccard-similarity": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "model-count": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "0 models",
+                        "date": " Date not Found"
+                    },
+                    "KClause": {
+                        "value": "0 models",
+                        "date": " Date not Found"
+                    }
+                }
             },
             "model-count-time": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "0 s",
+                        "date": " Date not Found"
+                    },
+                    "KClause": {
+                        "value": "0 s",
+                        "date": " Date not Found"
+                    }
+                }
             },
             "prediction-accuracy-configurations": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "prediction-accuracy-configurations-by-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "prediction-accuracy-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "share-of-feature-variables": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "source_lines_of_code": {
-                "currentValue": "24874347 loc",
-                "cmpLastWeek": null,
-                "cmpLastMonth": null,
+                "currentValue": {
+                    "value": "27889126 loc",
+                    "date": "From September 15, 2024"
+                },
                 "cmpLastRevision": "+39.4%"
             }
         },
         "linux/i386": {
             "configuration-evolution-arch": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "configuration-evolution-total": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "configuration-similarity": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "feature-evolution-arch": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "feature-evolution-total": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "features": {
-                "currentValue": "3436 features",
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "3459 features",
+                        "date": "From October 09, 2007"
+                    },
+                    "KClause": {
+                        "value": "3436 features",
+                        "date": "From October 09, 2007"
+                    }
+                }
             },
             "jaccard-similarity": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "model-count": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "10^876 models",
+                        "date": "From August 28, 2005"
+                    },
+                    "KClause": {
+                        "value": "10^745 models",
+                        "date": "From October 09, 2007"
+                    }
+                }
             },
             "model-count-time": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "10^22076 s",
+                        "date": "From August 28, 2005"
+                    },
+                    "KClause": {
+                        "value": "10^6560 s",
+                        "date": "From October 09, 2007"
+                    }
+                }
             },
             "prediction-accuracy-configurations": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "prediction-accuracy-configurations-by-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "prediction-accuracy-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "share-of-feature-variables": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "source_lines_of_code": {
-                "currentValue": 5518242,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null,
+                "currentValue": {
+                    "value": "5518242 loc",
+                    "date": "From October 09, 2007"
+                },
                 "cmpLastRevision": "+100% (No Prior Revision)"
             }
         },
         "linux/ia64": {
             "configuration-evolution-arch": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "configuration-evolution-total": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "configuration-similarity": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "feature-evolution-arch": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "feature-evolution-total": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "features": {
-                "currentValue": "12891 features",
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "12891 features",
+                        "date": "From October 30, 2023"
+                    },
+                    "KClause": {
+                        "value": "12737 features",
+                        "date": "From October 30, 2023"
+                    }
+                }
             },
             "jaccard-similarity": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "model-count": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "10^790 models",
+                        "date": "From September 20, 2006"
+                    },
+                    "KClause": {
+                        "value": "10^671 models",
+                        "date": "From April 17, 2008"
+                    }
+                }
             },
             "model-count-time": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "10^2463 s",
+                        "date": "From September 20, 2006"
+                    },
+                    "KClause": {
+                        "value": "10^536 s",
+                        "date": "From April 17, 2008"
+                    }
+                }
             },
             "prediction-accuracy-configurations": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "prediction-accuracy-configurations-by-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "prediction-accuracy-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "share-of-feature-variables": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "source_lines_of_code": {
-                "currentValue": "24874347 loc",
-                "cmpLastWeek": null,
-                "cmpLastMonth": null,
+                "currentValue": {
+                    "value": "26227646 loc",
+                    "date": "From October 30, 2023"
+                },
                 "cmpLastRevision": "+39.4%"
             }
         },
         "linux/loongarch": {
             "configuration-evolution-arch": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "configuration-evolution-total": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "configuration-similarity": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "feature-evolution-arch": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "feature-evolution-total": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "features": {
-                "currentValue": "13957 features",
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "13957 features",
+                        "date": "From September 15, 2024"
+                    },
+                    "KClause": {
+                        "value": "13830 features",
+                        "date": "From September 15, 2024"
+                    }
+                }
             },
             "jaccard-similarity": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "model-count": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "0 models",
+                        "date": " Date not Found"
+                    },
+                    "KClause": {
+                        "value": "0 models",
+                        "date": " Date not Found"
+                    }
+                }
             },
             "model-count-time": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "0 s",
+                        "date": " Date not Found"
+                    },
+                    "KClause": {
+                        "value": "0 s",
+                        "date": " Date not Found"
+                    }
+                }
             },
             "prediction-accuracy-configurations": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "prediction-accuracy-configurations-by-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "prediction-accuracy-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "share-of-feature-variables": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "source_lines_of_code": {
-                "currentValue": 24874347,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null,
+                "currentValue": {
+                    "value": "27889126 loc",
+                    "date": "From September 15, 2024"
+                },
                 "cmpLastRevision": "+100% (No Prior Revision)"
             }
         },
         "linux/m32r": {
             "configuration-evolution-arch": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "configuration-evolution-total": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "configuration-similarity": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "feature-evolution-arch": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "feature-evolution-total": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "features": {
-                "currentValue": "7209 features",
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "7277 features",
+                        "date": "From April 01, 2018"
+                    },
+                    "KClause": {
+                        "value": "7209 features",
+                        "date": "From April 01, 2018"
+                    }
+                }
             },
             "jaccard-similarity": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "model-count": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "10^634 models",
+                        "date": "From December 24, 2008"
+                    },
+                    "KClause": {
+                        "value": "10^556 models",
+                        "date": "From October 20, 2010"
+                    }
+                }
             },
             "model-count-time": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "10^790 s",
+                        "date": "From December 24, 2008"
+                    },
+                    "KClause": {
+                        "value": "10^1440 s",
+                        "date": "From October 20, 2010"
+                    }
+                }
             },
             "prediction-accuracy-configurations": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "prediction-accuracy-configurations-by-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "prediction-accuracy-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "share-of-feature-variables": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "source_lines_of_code": {
-                "currentValue": "12882579 loc",
-                "cmpLastWeek": null,
-                "cmpLastMonth": null,
+                "currentValue": {
+                    "value": "17320111 loc",
+                    "date": "From April 01, 2018"
+                },
                 "cmpLastRevision": "+32.0%"
             }
         },
         "linux/m68k": {
             "configuration-evolution-arch": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "configuration-evolution-total": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "configuration-similarity": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "feature-evolution-arch": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "feature-evolution-total": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "features": {
-                "currentValue": "13042 features",
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "13211 features",
+                        "date": "From September 15, 2024"
+                    },
+                    "KClause": {
+                        "value": "13042 features",
+                        "date": "From September 15, 2024"
+                    }
+                }
             },
             "jaccard-similarity": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "model-count": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "10^709 models",
+                        "date": "From December 24, 2008"
+                    },
+                    "KClause": {
+                        "value": "10^564 models",
+                        "date": "From February 24, 2010"
+                    }
+                }
             },
             "model-count-time": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "10^2369 s",
+                        "date": "From December 24, 2008"
+                    },
+                    "KClause": {
+                        "value": "10^2933 s",
+                        "date": "From February 24, 2010"
+                    }
+                }
             },
             "prediction-accuracy-configurations": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "prediction-accuracy-configurations-by-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "prediction-accuracy-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "share-of-feature-variables": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "source_lines_of_code": {
-                "currentValue": "24874347 loc",
-                "cmpLastWeek": null,
-                "cmpLastMonth": null,
+                "currentValue": {
+                    "value": "27889126 loc",
+                    "date": "From September 15, 2024"
+                },
                 "cmpLastRevision": "+39.4%"
             }
         },
         "linux/m68knommu": {
             "configuration-evolution-arch": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "configuration-evolution-total": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "configuration-similarity": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "feature-evolution-arch": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "feature-evolution-total": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "features": {
-                "currentValue": "3494 features",
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "3258 features",
+                        "date": "From October 20, 2010"
+                    },
+                    "KClause": {
+                        "value": "3421 features",
+                        "date": "From March 15, 2011"
+                    }
+                }
             },
             "jaccard-similarity": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "model-count": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "10^796 models",
+                        "date": "From April 26, 2007"
+                    },
+                    "KClause": {
+                        "value": "10^642 models",
+                        "date": "From May 16, 2010"
+                    }
+                }
             },
             "model-count-time": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "10^2770 s",
+                        "date": "From April 26, 2007"
+                    },
+                    "KClause": {
+                        "value": "10^697 s",
+                        "date": "From May 16, 2010"
+                    }
+                }
             },
             "prediction-accuracy-configurations": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "prediction-accuracy-configurations-by-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "prediction-accuracy-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "share-of-feature-variables": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "source_lines_of_code": {
-                "currentValue": 9468369,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null,
+                "currentValue": {
+                    "value": "9468369 loc",
+                    "date": "From March 15, 2011"
+                },
                 "cmpLastRevision": "+100% (No Prior Revision)"
             }
         },
         "linux/metag": {
             "configuration-evolution-arch": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "configuration-evolution-total": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "configuration-similarity": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "feature-evolution-arch": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "feature-evolution-total": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "features": {
-                "currentValue": "7377 features",
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "7377 features",
+                        "date": "From April 01, 2018"
+                    },
+                    "KClause": {
+                        "value": "7310 features",
+                        "date": "From April 01, 2018"
+                    }
+                }
             },
             "jaccard-similarity": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "model-count": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "0 models",
+                        "date": " Date not Found"
+                    },
+                    "KClause": {
+                        "value": "0 models",
+                        "date": " Date not Found"
+                    }
+                }
             },
             "model-count-time": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "0 s",
+                        "date": " Date not Found"
+                    },
+                    "KClause": {
+                        "value": "0 s",
+                        "date": " Date not Found"
+                    }
+                }
             },
             "prediction-accuracy-configurations": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "prediction-accuracy-configurations-by-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "prediction-accuracy-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "share-of-feature-variables": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "source_lines_of_code": {
-                "currentValue": 12882579,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null,
+                "currentValue": {
+                    "value": "17320111 loc",
+                    "date": "From April 01, 2018"
+                },
                 "cmpLastRevision": "+100% (No Prior Revision)"
             }
         },
         "linux/microblaze": {
             "configuration-evolution-arch": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "configuration-evolution-total": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "configuration-similarity": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "feature-evolution-arch": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "feature-evolution-total": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "features": {
-                "currentValue": "12888 features",
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "13033 features",
+                        "date": "From September 15, 2024"
+                    },
+                    "KClause": {
+                        "value": "12888 features",
+                        "date": "From September 15, 2024"
+                    }
+                }
             },
             "jaccard-similarity": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "model-count": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "0 models",
+                        "date": " Date not Found"
+                    },
+                    "KClause": {
+                        "value": "629 models",
+                        "date": "From February 24, 2010"
+                    }
+                }
             },
             "model-count-time": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "0 s",
+                        "date": " Date not Found"
+                    },
+                    "KClause": {
+                        "value": "3479 s",
+                        "date": "From February 24, 2010"
+                    }
+                }
             },
             "prediction-accuracy-configurations": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "prediction-accuracy-configurations-by-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "prediction-accuracy-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "share-of-feature-variables": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "source_lines_of_code": {
-                "currentValue": "24874347 loc",
-                "cmpLastWeek": null,
-                "cmpLastMonth": null,
+                "currentValue": {
+                    "value": "27889126 loc",
+                    "date": "From September 15, 2024"
+                },
                 "cmpLastRevision": "+39.4%"
             }
         },
         "linux/mips": {
             "configuration-evolution-arch": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "configuration-evolution-total": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "configuration-similarity": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "feature-evolution-arch": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "feature-evolution-total": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "features": {
-                "currentValue": "14139 features",
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "14139 features",
+                        "date": "From September 15, 2024"
+                    },
+                    "KClause": {
+                        "value": "14256 features",
+                        "date": "From September 15, 2024"
+                    }
+                }
             },
             "jaccard-similarity": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "model-count": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "10^747 models",
+                        "date": "From August 14, 2004"
+                    },
+                    "KClause": {
+                        "value": "10^644 models",
+                        "date": "From October 09, 2007"
+                    }
+                }
             },
             "model-count-time": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "10^1401 s",
+                        "date": "From August 14, 2004"
+                    },
+                    "KClause": {
+                        "value": "10^1287 s",
+                        "date": "From October 09, 2007"
+                    }
+                }
             },
             "prediction-accuracy-configurations": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "prediction-accuracy-configurations-by-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "prediction-accuracy-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "share-of-feature-variables": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "source_lines_of_code": {
-                "currentValue": "24874347 loc",
-                "cmpLastWeek": null,
-                "cmpLastMonth": null,
+                "currentValue": {
+                    "value": "27889126 loc",
+                    "date": "From September 15, 2024"
+                },
                 "cmpLastRevision": "+39.4%"
             }
         },
         "linux/mips64": {
             "configuration-evolution-arch": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "configuration-evolution-total": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "configuration-similarity": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "feature-evolution-arch": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "feature-evolution-total": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "features": {
-                "currentValue": "1976 features",
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "1976 features",
+                        "date": "From July 10, 2003"
+                    },
+                    "KClause": {
+                        "value": "1976 features",
+                        "date": "From July 10, 2003"
+                    }
+                }
             },
             "jaccard-similarity": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "model-count": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "10^671 models",
+                        "date": "From July 10, 2003"
+                    },
+                    "KClause": {
+                        "value": "10^451 models",
+                        "date": "From July 10, 2003"
+                    }
+                }
             },
             "model-count-time": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "10^53 s",
+                        "date": "From July 10, 2003"
+                    },
+                    "KClause": {
+                        "value": "10^3 s",
+                        "date": "From July 10, 2003"
+                    }
+                }
             },
             "prediction-accuracy-configurations": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "prediction-accuracy-configurations-by-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "prediction-accuracy-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "share-of-feature-variables": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "source_lines_of_code": {
-                "currentValue": 3740466,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null,
+                "currentValue": {
+                    "value": "3740466 loc",
+                    "date": "From July 10, 2003"
+                },
                 "cmpLastRevision": "+100% (No Prior Revision)"
             }
         },
         "linux/mn10300": {
             "configuration-evolution-arch": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "configuration-evolution-total": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "configuration-similarity": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "feature-evolution-arch": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "feature-evolution-total": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "features": {
-                "currentValue": "8345 features",
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "8404 features",
+                        "date": "From April 01, 2018"
+                    },
+                    "KClause": {
+                        "value": "8345 features",
+                        "date": "From April 01, 2018"
+                    }
+                }
             },
             "jaccard-similarity": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "model-count": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "0 models",
+                        "date": " Date not Found"
+                    },
+                    "KClause": {
+                        "value": "648 models",
+                        "date": "From July 13, 2008"
+                    }
+                }
             },
             "model-count-time": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "0 s",
+                        "date": " Date not Found"
+                    },
+                    "KClause": {
+                        "value": "826 s",
+                        "date": "From July 13, 2008"
+                    }
+                }
             },
             "prediction-accuracy-configurations": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "prediction-accuracy-configurations-by-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "prediction-accuracy-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "share-of-feature-variables": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "source_lines_of_code": {
-                "currentValue": "12882579 loc",
-                "cmpLastWeek": null,
-                "cmpLastMonth": null,
+                "currentValue": {
+                    "value": "17320111 loc",
+                    "date": "From April 01, 2018"
+                },
                 "cmpLastRevision": "+32.0%"
             }
         },
         "linux/nds32": {
             "configuration-evolution-arch": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "configuration-evolution-total": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "configuration-similarity": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "feature-evolution-arch": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "feature-evolution-total": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "features": {
-                "currentValue": "10166 features",
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "10348 features",
+                        "date": "From March 20, 2022"
+                    },
+                    "KClause": {
+                        "value": "10166 features",
+                        "date": "From March 20, 2022"
+                    }
+                }
             },
             "jaccard-similarity": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "model-count": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "0 models",
+                        "date": " Date not Found"
+                    },
+                    "KClause": {
+                        "value": "0 models",
+                        "date": " Date not Found"
+                    }
+                }
             },
             "model-count-time": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "0 s",
+                        "date": " Date not Found"
+                    },
+                    "KClause": {
+                        "value": "0 s",
+                        "date": " Date not Found"
+                    }
+                }
             },
             "prediction-accuracy-configurations": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "prediction-accuracy-configurations-by-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "prediction-accuracy-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "share-of-feature-variables": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "source_lines_of_code": {
-                "currentValue": 17848657,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null,
+                "currentValue": {
+                    "value": "22747629 loc",
+                    "date": "From March 20, 2022"
+                },
                 "cmpLastRevision": "+100% (No Prior Revision)"
             }
         },
         "linux/nios2": {
             "configuration-evolution-arch": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "configuration-evolution-total": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "configuration-similarity": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "feature-evolution-arch": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "feature-evolution-total": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "features": {
-                "currentValue": "11137 features",
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "11329 features",
+                        "date": "From September 15, 2024"
+                    },
+                    "KClause": {
+                        "value": "11137 features",
+                        "date": "From September 15, 2024"
+                    }
+                }
             },
             "jaccard-similarity": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "model-count": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "0 models",
+                        "date": " Date not Found"
+                    },
+                    "KClause": {
+                        "value": "0 models",
+                        "date": " Date not Found"
+                    }
+                }
             },
             "model-count-time": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "0 s",
+                        "date": " Date not Found"
+                    },
+                    "KClause": {
+                        "value": "0 s",
+                        "date": " Date not Found"
+                    }
+                }
             },
             "prediction-accuracy-configurations": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "prediction-accuracy-configurations-by-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "prediction-accuracy-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "share-of-feature-variables": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "source_lines_of_code": {
-                "currentValue": "24874347 loc",
-                "cmpLastWeek": null,
-                "cmpLastMonth": null,
+                "currentValue": {
+                    "value": "27889126 loc",
+                    "date": "From September 15, 2024"
+                },
                 "cmpLastRevision": "+39.4%"
             }
         },
         "linux/openrisc": {
             "configuration-evolution-arch": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "configuration-evolution-total": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "configuration-similarity": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "feature-evolution-arch": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "feature-evolution-total": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "features": {
-                "currentValue": "12596 features",
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "12596 features",
+                        "date": "From September 15, 2024"
+                    },
+                    "KClause": {
+                        "value": "12412 features",
+                        "date": "From September 15, 2024"
+                    }
+                }
             },
             "jaccard-similarity": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "model-count": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "0 models",
+                        "date": " Date not Found"
+                    },
+                    "KClause": {
+                        "value": "0 models",
+                        "date": " Date not Found"
+                    }
+                }
             },
             "model-count-time": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "0 s",
+                        "date": " Date not Found"
+                    },
+                    "KClause": {
+                        "value": "0 s",
+                        "date": " Date not Found"
+                    }
+                }
             },
             "prediction-accuracy-configurations": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "prediction-accuracy-configurations-by-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "prediction-accuracy-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "share-of-feature-variables": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "source_lines_of_code": {
-                "currentValue": "24874347 loc",
-                "cmpLastWeek": null,
-                "cmpLastMonth": null,
+                "currentValue": {
+                    "value": "27889126 loc",
+                    "date": "From September 15, 2024"
+                },
                 "cmpLastRevision": "+39.4%"
             }
         },
         "linux/parisc": {
             "configuration-evolution-arch": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "configuration-evolution-total": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "configuration-similarity": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "feature-evolution-arch": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "feature-evolution-total": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "features": {
-                "currentValue": "13146 features",
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "13292 features",
+                        "date": "From September 15, 2024"
+                    },
+                    "KClause": {
+                        "value": "13146 features",
+                        "date": "From September 15, 2024"
+                    }
+                }
             },
             "jaccard-similarity": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "model-count": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "10^775 models",
+                        "date": "From June 17, 2005"
+                    },
+                    "KClause": {
+                        "value": "10^642 models",
+                        "date": "From October 09, 2007"
+                    }
+                }
             },
             "model-count-time": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "10^1719 s",
+                        "date": "From June 17, 2005"
+                    },
+                    "KClause": {
+                        "value": "10^260 s",
+                        "date": "From October 09, 2007"
+                    }
+                }
             },
             "prediction-accuracy-configurations": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "prediction-accuracy-configurations-by-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "prediction-accuracy-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "share-of-feature-variables": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "source_lines_of_code": {
-                "currentValue": "24874347 loc",
-                "cmpLastWeek": null,
-                "cmpLastMonth": null,
+                "currentValue": {
+                    "value": "27889126 loc",
+                    "date": "From September 15, 2024"
+                },
                 "cmpLastRevision": "+39.4%"
             }
         },
         "linux/powerpc": {
             "configuration-evolution-arch": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "configuration-evolution-total": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "configuration-similarity": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "feature-evolution-arch": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "feature-evolution-total": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "features": {
-                "currentValue": "14571 features",
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "14571 features",
+                        "date": "From September 15, 2024"
+                    },
+                    "KClause": {
+                        "value": "14455 features",
+                        "date": "From September 15, 2024"
+                    }
+                }
             },
             "jaccard-similarity": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "model-count": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "0 models",
+                        "date": " Date not Found"
+                    },
+                    "KClause": {
+                        "value": "691 models",
+                        "date": "From October 09, 2007"
+                    }
+                }
             },
             "model-count-time": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "0 s",
+                        "date": " Date not Found"
+                    },
+                    "KClause": {
+                        "value": "3566 s",
+                        "date": "From October 09, 2007"
+                    }
+                }
             },
             "prediction-accuracy-configurations": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "prediction-accuracy-configurations-by-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "prediction-accuracy-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "share-of-feature-variables": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "source_lines_of_code": {
-                "currentValue": "24874347 loc",
-                "cmpLastWeek": null,
-                "cmpLastMonth": null,
+                "currentValue": {
+                    "value": "27889126 loc",
+                    "date": "From September 15, 2024"
+                },
                 "cmpLastRevision": "+39.4%"
             }
         },
         "linux/ppc": {
             "configuration-evolution-arch": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "configuration-evolution-total": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "configuration-similarity": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "feature-evolution-arch": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "feature-evolution-total": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "features": {
-                "currentValue": "3549 features",
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "3585 features",
+                        "date": "From July 13, 2008"
+                    },
+                    "KClause": {
+                        "value": "3549 features",
+                        "date": "From July 13, 2008"
+                    }
+                }
             },
             "jaccard-similarity": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "model-count": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "10^725 models",
+                        "date": "From August 14, 2004"
+                    },
+                    "KClause": {
+                        "value": "10^669 models",
+                        "date": "From October 09, 2007"
+                    }
+                }
             },
             "model-count-time": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "10^2686 s",
+                        "date": "From August 14, 2004"
+                    },
+                    "KClause": {
+                        "value": "10^2942 s",
+                        "date": "From October 09, 2007"
+                    }
+                }
             },
             "prediction-accuracy-configurations": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "prediction-accuracy-configurations-by-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "prediction-accuracy-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "share-of-feature-variables": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "source_lines_of_code": {
-                "currentValue": 6038869,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null,
+                "currentValue": {
+                    "value": "6038869 loc",
+                    "date": "From July 13, 2008"
+                },
                 "cmpLastRevision": "+100% (No Prior Revision)"
             }
         },
         "linux/ppc64": {
             "configuration-evolution-arch": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "configuration-evolution-total": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "configuration-similarity": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "feature-evolution-arch": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "feature-evolution-total": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "features": {
-                "currentValue": "2287 features",
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "2287 features",
+                        "date": "From October 28, 2005"
+                    },
+                    "KClause": {
+                        "value": "2252 features",
+                        "date": "From October 28, 2005"
+                    }
+                }
             },
             "jaccard-similarity": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "model-count": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "10^752 models",
+                        "date": "From October 28, 2005"
+                    },
+                    "KClause": {
+                        "value": "10^503 models",
+                        "date": "From October 28, 2005"
+                    }
+                }
             },
             "model-count-time": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "10^3269 s",
+                        "date": "From October 28, 2005"
+                    },
+                    "KClause": {
+                        "value": "10^128 s",
+                        "date": "From October 28, 2005"
+                    }
+                }
             },
             "prediction-accuracy-configurations": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "prediction-accuracy-configurations-by-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "prediction-accuracy-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "share-of-feature-variables": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "source_lines_of_code": {
-                "currentValue": 4624754,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null,
+                "currentValue": {
+                    "value": "4624754 loc",
+                    "date": "From October 28, 2005"
+                },
                 "cmpLastRevision": "+100% (No Prior Revision)"
             }
         },
         "linux/riscv": {
             "configuration-evolution-arch": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "configuration-evolution-total": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "configuration-similarity": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "feature-evolution-arch": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "feature-evolution-total": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "features": {
-                "currentValue": "14158 features",
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "14158 features",
+                        "date": "From September 15, 2024"
+                    },
+                    "KClause": {
+                        "value": "14031 features",
+                        "date": "From September 15, 2024"
+                    }
+                }
             },
             "jaccard-similarity": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "model-count": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "0 models",
+                        "date": " Date not Found"
+                    },
+                    "KClause": {
+                        "value": "0 models",
+                        "date": " Date not Found"
+                    }
+                }
             },
             "model-count-time": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "0 s",
+                        "date": " Date not Found"
+                    },
+                    "KClause": {
+                        "value": "0 s",
+                        "date": " Date not Found"
+                    }
+                }
             },
             "prediction-accuracy-configurations": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "prediction-accuracy-configurations-by-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "prediction-accuracy-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "share-of-feature-variables": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "source_lines_of_code": {
-                "currentValue": "24874347 loc",
-                "cmpLastWeek": null,
-                "cmpLastMonth": null,
+                "currentValue": {
+                    "value": "27889126 loc",
+                    "date": "From September 15, 2024"
+                },
                 "cmpLastRevision": "+39.4%"
             }
         },
         "linux/s390": {
             "configuration-evolution-arch": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "configuration-evolution-total": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "configuration-similarity": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "feature-evolution-arch": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "feature-evolution-total": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "features": {
-                "currentValue": "12384 features",
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "12551 features",
+                        "date": "From September 15, 2024"
+                    },
+                    "KClause": {
+                        "value": "12384 features",
+                        "date": "From September 15, 2024"
+                    }
+                }
             },
             "jaccard-similarity": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "model-count": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "10^427 models",
+                        "date": "From May 19, 2011"
+                    },
+                    "KClause": {
+                        "value": "10^350 models",
+                        "date": "From December 11, 2012"
+                    }
+                }
             },
             "model-count-time": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "10^763 s",
+                        "date": "From May 19, 2011"
+                    },
+                    "KClause": {
+                        "value": "10^429 s",
+                        "date": "From December 11, 2012"
+                    }
+                }
             },
             "prediction-accuracy-configurations": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "prediction-accuracy-configurations-by-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "prediction-accuracy-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "share-of-feature-variables": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "source_lines_of_code": {
-                "currentValue": "24874347 loc",
-                "cmpLastWeek": null,
-                "cmpLastMonth": null,
+                "currentValue": {
+                    "value": "27889126 loc",
+                    "date": "From September 15, 2024"
+                },
                 "cmpLastRevision": "+39.4%"
             }
         },
         "linux/s390x": {
             "configuration-evolution-arch": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "configuration-evolution-total": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "configuration-similarity": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "feature-evolution-arch": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "feature-evolution-total": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "features": {
-                "currentValue": "526 features",
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "544 features",
+                        "date": "From April 07, 2003"
+                    },
+                    "KClause": {
+                        "value": "526 features",
+                        "date": "From April 07, 2003"
+                    }
+                }
             },
             "jaccard-similarity": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "model-count": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "10^177 models",
+                        "date": "From April 07, 2003"
+                    },
+                    "KClause": {
+                        "value": "10^125 models",
+                        "date": "From April 07, 2003"
+                    }
+                }
             },
             "model-count-time": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "10^0 s",
+                        "date": "From April 07, 2003"
+                    },
+                    "KClause": {
+                        "value": "10^0 s",
+                        "date": "From April 07, 2003"
+                    }
+                }
             },
             "prediction-accuracy-configurations": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "prediction-accuracy-configurations-by-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "prediction-accuracy-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "share-of-feature-variables": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "source_lines_of_code": {
-                "currentValue": 3634003,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null,
+                "currentValue": {
+                    "value": "3634003 loc",
+                    "date": "From April 07, 2003"
+                },
                 "cmpLastRevision": "+100% (No Prior Revision)"
             }
         },
         "linux/score": {
             "configuration-evolution-arch": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "configuration-evolution-total": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "configuration-similarity": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "feature-evolution-arch": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "feature-evolution-total": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "features": {
-                "currentValue": "3775 features",
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "3878 features",
+                        "date": "From April 01, 2018"
+                    },
+                    "KClause": {
+                        "value": "3775 features",
+                        "date": "From April 01, 2018"
+                    }
+                }
             },
             "jaccard-similarity": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "model-count": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "0 models",
+                        "date": " Date not Found"
+                    },
+                    "KClause": {
+                        "value": "647 models",
+                        "date": "From March 18, 2012"
+                    }
+                }
             },
             "model-count-time": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "0 s",
+                        "date": " Date not Found"
+                    },
+                    "KClause": {
+                        "value": "1240 s",
+                        "date": "From March 18, 2012"
+                    }
+                }
             },
             "prediction-accuracy-configurations": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "prediction-accuracy-configurations-by-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "prediction-accuracy-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "share-of-feature-variables": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "source_lines_of_code": {
-                "currentValue": "12882579 loc",
-                "cmpLastWeek": null,
-                "cmpLastMonth": null,
+                "currentValue": {
+                    "value": "17320111 loc",
+                    "date": "From April 01, 2018"
+                },
                 "cmpLastRevision": "+32.0%"
             }
         },
         "linux/sh": {
             "configuration-evolution-arch": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "configuration-evolution-total": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "configuration-similarity": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "feature-evolution-arch": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "feature-evolution-total": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "features": {
-                "currentValue": "13254 features",
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "13400 features",
+                        "date": "From September 15, 2024"
+                    },
+                    "KClause": {
+                        "value": "13254 features",
+                        "date": "From September 15, 2024"
+                    }
+                }
             },
             "jaccard-similarity": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "model-count": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "10^859 models",
+                        "date": "From June 18, 2006"
+                    },
+                    "KClause": {
+                        "value": "10^614 models",
+                        "date": "From October 09, 2007"
+                    }
+                }
             },
             "model-count-time": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "10^437 s",
+                        "date": "From June 18, 2006"
+                    },
+                    "KClause": {
+                        "value": "10^192 s",
+                        "date": "From October 09, 2007"
+                    }
+                }
             },
             "prediction-accuracy-configurations": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "prediction-accuracy-configurations-by-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "prediction-accuracy-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "share-of-feature-variables": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "source_lines_of_code": {
-                "currentValue": "24874347 loc",
-                "cmpLastWeek": null,
-                "cmpLastMonth": null,
+                "currentValue": {
+                    "value": "27889126 loc",
+                    "date": "From September 15, 2024"
+                },
                 "cmpLastRevision": "+39.4%"
             }
         },
         "linux/sh64": {
             "configuration-evolution-arch": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "configuration-evolution-total": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "configuration-similarity": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "feature-evolution-arch": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "feature-evolution-total": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "features": {
-                "currentValue": "2855 features",
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "2907 features",
+                        "date": "From January 24, 2008"
+                    },
+                    "KClause": {
+                        "value": "2855 features",
+                        "date": "From January 24, 2008"
+                    }
+                }
             },
             "jaccard-similarity": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "model-count": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "10^782 models",
+                        "date": "From September 20, 2006"
+                    },
+                    "KClause": {
+                        "value": "10^604 models",
+                        "date": "From October 09, 2007"
+                    }
+                }
             },
             "model-count-time": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "10^1537 s",
+                        "date": "From September 20, 2006"
+                    },
+                    "KClause": {
+                        "value": "10^148 s",
+                        "date": "From October 09, 2007"
+                    }
+                }
             },
             "prediction-accuracy-configurations": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "prediction-accuracy-configurations-by-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "prediction-accuracy-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "share-of-feature-variables": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "source_lines_of_code": {
-                "currentValue": 5703916,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null,
+                "currentValue": {
+                    "value": "5703916 loc",
+                    "date": "From January 24, 2008"
+                },
                 "cmpLastRevision": "+100% (No Prior Revision)"
             }
         },
         "linux/sparc": {
             "configuration-evolution-arch": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "configuration-evolution-total": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "configuration-similarity": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "feature-evolution-arch": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "feature-evolution-total": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "features": {
-                "currentValue": "13337 features",
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "13488 features",
+                        "date": "From September 15, 2024"
+                    },
+                    "KClause": {
+                        "value": "13337 features",
+                        "date": "From September 15, 2024"
+                    }
+                }
             },
             "jaccard-similarity": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "model-count": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "10^706 models",
+                        "date": "From June 18, 2006"
+                    },
+                    "KClause": {
+                        "value": "10^649 models",
+                        "date": "From October 09, 2008"
+                    }
+                }
             },
             "model-count-time": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "10^156 s",
+                        "date": "From June 18, 2006"
+                    },
+                    "KClause": {
+                        "value": "10^1147 s",
+                        "date": "From October 09, 2008"
+                    }
+                }
             },
             "prediction-accuracy-configurations": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "prediction-accuracy-configurations-by-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "prediction-accuracy-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "share-of-feature-variables": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "source_lines_of_code": {
-                "currentValue": "24874347 loc",
-                "cmpLastWeek": null,
-                "cmpLastMonth": null,
+                "currentValue": {
+                    "value": "27889126 loc",
+                    "date": "From September 15, 2024"
+                },
                 "cmpLastRevision": "+39.4%"
             }
         },
         "linux/sparc64": {
             "configuration-evolution-arch": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "configuration-evolution-total": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "configuration-similarity": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "feature-evolution-arch": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "feature-evolution-total": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "features": {
-                "currentValue": "3366 features",
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "3366 features",
+                        "date": "From December 24, 2008"
+                    },
+                    "KClause": {
+                        "value": "3301 features",
+                        "date": "From December 24, 2008"
+                    }
+                }
             },
             "jaccard-similarity": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "model-count": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "10^727 models",
+                        "date": "From June 18, 2006"
+                    },
+                    "KClause": {
+                        "value": "10^674 models",
+                        "date": "From October 09, 2008"
+                    }
+                }
             },
             "model-count-time": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "10^146 s",
+                        "date": "From June 18, 2006"
+                    },
+                    "KClause": {
+                        "value": "10^795 s",
+                        "date": "From October 09, 2008"
+                    }
+                }
             },
             "prediction-accuracy-configurations": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "prediction-accuracy-configurations-by-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "prediction-accuracy-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "share-of-feature-variables": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "source_lines_of_code": {
-                "currentValue": 6468971,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null,
+                "currentValue": {
+                    "value": "6468971 loc",
+                    "date": "From December 24, 2008"
+                },
                 "cmpLastRevision": "+100% (No Prior Revision)"
             }
         },
         "linux/tile": {
             "configuration-evolution-arch": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "configuration-evolution-total": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "configuration-similarity": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "feature-evolution-arch": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "feature-evolution-total": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "features": {
-                "currentValue": "8473 features",
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "8473 features",
+                        "date": "From April 01, 2018"
+                    },
+                    "KClause": {
+                        "value": "8451 features",
+                        "date": "From April 01, 2018"
+                    }
+                }
             },
             "jaccard-similarity": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "model-count": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "0 models",
+                        "date": " Date not Found"
+                    },
+                    "KClause": {
+                        "value": "0 models",
+                        "date": " Date not Found"
+                    }
+                }
             },
             "model-count-time": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "0 s",
+                        "date": " Date not Found"
+                    },
+                    "KClause": {
+                        "value": "0 s",
+                        "date": " Date not Found"
+                    }
+                }
             },
             "prediction-accuracy-configurations": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "prediction-accuracy-configurations-by-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "prediction-accuracy-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "share-of-feature-variables": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "source_lines_of_code": {
-                "currentValue": "12882579 loc",
-                "cmpLastWeek": null,
-                "cmpLastMonth": null,
+                "currentValue": {
+                    "value": "17320111 loc",
+                    "date": "From April 01, 2018"
+                },
                 "cmpLastRevision": "+32.0%"
             }
         },
         "linux/unicore32": {
             "configuration-evolution-arch": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "configuration-evolution-total": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "configuration-similarity": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "feature-evolution-arch": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "feature-evolution-total": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "features": {
-                "currentValue": "10090 features",
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "10090 features",
+                        "date": "From August 02, 2020"
+                    },
+                    "KClause": {
+                        "value": "9924 features",
+                        "date": "From August 02, 2020"
+                    }
+                }
             },
             "jaccard-similarity": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "model-count": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "0 models",
+                        "date": " Date not Found"
+                    },
+                    "KClause": {
+                        "value": "0 models",
+                        "date": " Date not Found"
+                    }
+                }
             },
             "model-count-time": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "0 s",
+                        "date": " Date not Found"
+                    },
+                    "KClause": {
+                        "value": "0 s",
+                        "date": " Date not Found"
+                    }
+                }
             },
             "prediction-accuracy-configurations": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "prediction-accuracy-configurations-by-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "prediction-accuracy-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "share-of-feature-variables": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "source_lines_of_code": {
-                "currentValue": "17848657 loc",
-                "cmpLastWeek": null,
-                "cmpLastMonth": null,
+                "currentValue": {
+                    "value": "20128927 loc",
+                    "date": "From August 02, 2020"
+                },
                 "cmpLastRevision": "+38.5%"
             }
         },
         "linux/v850": {
             "configuration-evolution-arch": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "configuration-evolution-total": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "configuration-similarity": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "feature-evolution-arch": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "feature-evolution-total": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "features": {
-                "currentValue": "2434 features",
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "2446 features",
+                        "date": "From July 13, 2008"
+                    },
+                    "KClause": {
+                        "value": "2434 features",
+                        "date": "From July 13, 2008"
+                    }
+                }
             },
             "jaccard-similarity": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "model-count": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "10^705 models",
+                        "date": "From April 26, 2007"
+                    },
+                    "KClause": {
+                        "value": "10^531 models",
+                        "date": "From July 13, 2008"
+                    }
+                }
             },
             "model-count-time": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "10^487 s",
+                        "date": "From April 26, 2007"
+                    },
+                    "KClause": {
+                        "value": "10^157 s",
+                        "date": "From July 13, 2008"
+                    }
+                }
             },
             "prediction-accuracy-configurations": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "prediction-accuracy-configurations-by-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "prediction-accuracy-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "share-of-feature-variables": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "source_lines_of_code": {
-                "currentValue": 6038869,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null,
+                "currentValue": {
+                    "value": "6038869 loc",
+                    "date": "From July 13, 2008"
+                },
                 "cmpLastRevision": "+100% (No Prior Revision)"
             }
         },
         "linux/x86": {
             "configuration-evolution-arch": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "configuration-evolution-total": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "configuration-similarity": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "feature-evolution-arch": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "feature-evolution-total": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "features": {
-                "currentValue": "15323 features",
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "15323 features",
+                        "date": "From September 15, 2024"
+                    },
+                    "KClause": {
+                        "value": "15213 features",
+                        "date": "From September 15, 2024"
+                    }
+                }
             },
             "jaccard-similarity": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "model-count": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "0 models",
+                        "date": " Date not Found"
+                    },
+                    "KClause": {
+                        "value": "0 models",
+                        "date": " Date not Found"
+                    }
+                }
             },
             "model-count-time": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "0 s",
+                        "date": " Date not Found"
+                    },
+                    "KClause": {
+                        "value": "0 s",
+                        "date": " Date not Found"
+                    }
+                }
             },
             "prediction-accuracy-configurations": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "prediction-accuracy-configurations-by-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "prediction-accuracy-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "share-of-feature-variables": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "source_lines_of_code": {
-                "currentValue": "24874347 loc",
-                "cmpLastWeek": null,
-                "cmpLastMonth": null,
+                "currentValue": {
+                    "value": "27889126 loc",
+                    "date": "From September 15, 2024"
+                },
                 "cmpLastRevision": "+39.4%"
             }
         },
         "linux/x86_64": {
             "configuration-evolution-arch": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "configuration-evolution-total": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "configuration-similarity": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "feature-evolution-arch": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "feature-evolution-total": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "features": {
-                "currentValue": "3042 features",
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "3084 features",
+                        "date": "From October 09, 2007"
+                    },
+                    "KClause": {
+                        "value": "3042 features",
+                        "date": "From October 09, 2007"
+                    }
+                }
             },
             "jaccard-similarity": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "model-count": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "10^850 models",
+                        "date": "From September 20, 2006"
+                    },
+                    "KClause": {
+                        "value": "10^664 models",
+                        "date": "From October 09, 2007"
+                    }
+                }
             },
             "model-count-time": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "10^2106 s",
+                        "date": "From September 20, 2006"
+                    },
+                    "KClause": {
+                        "value": "10^245 s",
+                        "date": "From October 09, 2007"
+                    }
+                }
             },
             "prediction-accuracy-configurations": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "prediction-accuracy-configurations-by-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "prediction-accuracy-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "share-of-feature-variables": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "source_lines_of_code": {
-                "currentValue": 5518242,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null,
+                "currentValue": {
+                    "value": "5518242 loc",
+                    "date": "From October 09, 2007"
+                },
                 "cmpLastRevision": "+100% (No Prior Revision)"
             }
         },
         "linux/xtensa": {
             "configuration-evolution-arch": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "configuration-evolution-total": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "configuration-similarity": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "feature-evolution-arch": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "feature-evolution-total": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "features": {
-                "currentValue": "12896 features",
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "12896 features",
+                        "date": "From September 15, 2024"
+                    },
+                    "KClause": {
+                        "value": "12722 features",
+                        "date": "From September 15, 2024"
+                    }
+                }
             },
             "jaccard-similarity": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "model-count": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "10^768 models",
+                        "date": "From September 20, 2006"
+                    },
+                    "KClause": {
+                        "value": "10^678 models",
+                        "date": "From October 09, 2008"
+                    }
+                }
             },
             "model-count-time": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": {
+                    "KConfigReader": {
+                        "value": "10^483 s",
+                        "date": "From September 20, 2006"
+                    },
+                    "KClause": {
+                        "value": "10^3532 s",
+                        "date": "From October 09, 2008"
+                    }
+                }
             },
             "prediction-accuracy-configurations": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "prediction-accuracy-configurations-by-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "prediction-accuracy-features": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "share-of-feature-variables": {
-                "currentValue": null,
-                "cmpLastWeek": null,
-                "cmpLastMonth": null
+                "currentValue": null
             },
             "source_lines_of_code": {
-                "currentValue": "24874347 loc",
-                "cmpLastWeek": null,
-                "cmpLastMonth": null,
+                "currentValue": {
+                    "value": "27889126 loc",
+                    "date": "From September 15, 2024"
+                },
                 "cmpLastRevision": "+39.4%"
             }
         }
