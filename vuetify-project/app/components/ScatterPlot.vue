@@ -1,49 +1,119 @@
 <template>
     <v-container>
         <v-row>
-            <v-col>
-
-                <info-card :title="plotData?.displayName" :value="plotData?.description" :textAlign="'text-left'">
-                </info-card>
-            </v-col>
-        </v-row>
-        <v-row>
             <v-col v-if="currentValue != null">
-                <info-card v-if="typeof currentValue[Object.keys(currentValue)[0]] === 'string'" title="Current Value" :value="currentValue.value" :date="currentValue.date">
+                <info-card v-if="typeof currentValue[Object.keys(currentValue)[0]] === 'string'" title="Current Value"
+                    :value="currentValue.value" :date="currentValue.date">
                 </info-card>
-                <info-card v-else-if="currentValue != null"
-                    v-for="item in Object.entries(currentValue)" :key="item" :title="`Current Value&#13;(${item[0]})`"
-                    :value="item[1].value" :date="item[1].date">
-                </info-card>
+                <div class="my-2" v-else-if="currentValue != null" v-for="item in Object.entries(currentValue)"
+                    :key="item">
+                    <info-card :title="`Current Value&#13;(${item[0]})`" :value="item[1].currentValue.value"
+                        :date="item[1].currentValue.date">
+                    </info-card>
+                    <v-card class="overflow-y-auto my-2" max-height="50vh" v-scroll.self="onScroll">
+                        <template v-slot:title>
+                            <span class="font-weight-black text-wrap">History: {{ item[0] }}</span>
+                        </template>
 
-            </v-col>
+                        <v-card-text class="bg-surface-light pt-4 text-center text-body-2">
+                            <v-table>
+                                <tbody>
+                                    <tr v-for="history in Object.entries(item[1].history)" :key="item">
+                                        <td>{{ getHistoryTitle(history[0]) }}</td>
+                                        <td>{{ history[1].value }}</td>
 
-            <v-col>
-                <v-sheet rounded="lg">
-                    <v-card :v-else-if="plotPath != null">
-                        <h2 id="iframeHeader"></h2>
-                        <div id="iframe-container">
-                            <iframe align="center" title="Plot" id="plot" :src="plotPath"
-                                style="height:60vh;width:60vw;border:none;display:block"></iframe>
-                        </div>
+                                    </tr>
+                                </tbody>
+                            </v-table>
+                        </v-card-text>
                     </v-card>
+                </div>
+                <v-card v-if="historyData != null" class="overflow-y-auto my-2" max-height="50vh"
+                    v-scroll.self="onScroll">
+                    <template v-slot:title>
+                        <span class="font-weight-black text-wrap">History</span>
+                    </template>
+
+                    <v-card-text class="bg-surface-light pt-4 text-center text-body-2">
+                        <v-table>
+                            <tbody>
+                                <tr v-for="item in Object.entries(historyData)" :key="item">
+                                    <td>{{ getHistoryTitle(item[0]) }}</td>
+                                    <td>{{ item[1].value }}</td>
+                                </tr>
+                            </tbody>
+                        </v-table>
+                    </v-card-text>
+                </v-card>
+            </v-col>
+            <v-col>
+                <info-card class="my-2" :title="plotData?.displayName" :value="plotData?.description"
+                    :textAlign="'text-left'">
+                </info-card>
+                <v-sheet :height="height" :width="width" class="my-2">
+                    <iframe  v-if="plotPath != null" align="center" title="Plot" id="plot" :src="plotPath"
+                     style="height:100%; width: 100%;border:none;display:block"></iframe>
                 </v-sheet>
             </v-col>
         </v-row>
     </v-container>
 </template>
 <script setup lang="ts">
-import type { PlotData, ScatterData, ByExtractor } from './interfaces';
-
+import type { PlotData, ScatterData, ByExtractor, HistoryData } from './interfaces';
+import { useDisplay } from 'vuetify'
 const props = defineProps<{
     plotPath?: string | null,
     plotData?: PlotData | null,
-    currentValue?: ByExtractor | Scatterdata | null
+    currentValue?: ByExtractor | ScatterData | null,
+    historyData?: HistoryData
 }>()
-
 const scrollInvoked = ref(0)
+console.log("CV: ", props.currentValue)
+console.log("HD: ", props.historyData)
+
 function onScroll() {
     scrollInvoked.value++
 }
+function getHistoryTitle(name: string) {
+    const years = name.split("-")[0]
+    if (years == "1") {
+        return years + " year ago"
+    }
+    return years + " years ago"
+}
+const { name, mobile } = useDisplay()
+const width = computed(() => {
+    // name is reactive and
+    // must use .value
+    if (mobile.value == true){
+        return '90vw'
+    }
+    switch (name.value) {
+        case 'xs': return '60vw'
+        case 'sm': return '60vw'
+        case 'md': return '60vw'
+        case 'lg': return '60vw'
+        case 'xl': return '60vw'
+        case 'xxl': return '60vw'
+    }
 
+    return undefined
+})
+const height = computed(() => {
+    // name is reactive and
+    // must use .value
+    if (mobile.value == true){
+        return '90vh'
+    }
+    switch (name.value) {
+        case 'xs': return '60vh'
+        case 'sm': return '60vh'
+        case 'md': return '60vh'
+        case 'lg': return '60vh'
+        case 'xl': return '60vh'
+        case 'xxl': return '60vh'
+    }
+
+    return undefined
+})
 </script>

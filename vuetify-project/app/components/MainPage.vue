@@ -13,7 +13,7 @@
   </v-app-bar>
 
   <v-container>
-    <v-responsive class="">
+    <v-responsive>
       <v-row>
           <v-autocomplete variant="solo-filled" class=" ma-2" v-model="selectedProject" v-on:update:model-value="getPlot"
           label="Select Project" :items="projects">
@@ -27,15 +27,14 @@
       <box-plot v-if="showBoxPlot()" :plot-path="plotPath" :plot-data="currentPlotData">
       </box-plot>
       <scatter-plot v-else-if="showScatterPlot()" :plot-path="plotPath" :plot-data="currentPlotData"
-        :current-value="getCurrentScatterData()"></scatter-plot>
+        :current-value="getCurrentScatterData()" :history-data="getHistory()"></scatter-plot>
     </v-responsive>
   </v-container>
 </template>
 <script lang="ts" setup>
 import { ref, type Ref } from 'vue';
 import data from "public/init.json"
-import { leafSelectStrategy } from 'vuetify/lib/composables/nested/selectStrategies.mjs';
-import type { ScatterData, PlotData, ByExtractor } from './interfaces';
+import type { ScatterData, PlotData, ByExtractor, HistoryData } from './interfaces';
 const selectedPlot: Ref<string | null> = ref(null);
 const currentPlotData: Ref<PlotData | null> = ref(null)
 const currentScatterData: Ref<ScatterData | null> = ref(null)
@@ -50,6 +49,11 @@ function showBoxPlot() {
 }
 function showScatterPlot() {
   return selectedPlot.value != null && data.plotData[selectedPlot.value].plotType == 'scatter'
+}
+
+function getHistory() {
+  console.log("history:", currentScatterData.value)
+  return currentScatterData.value?.history
 }
 function getCurrentScatterData() {
   console.log("currentscatter: ", currentScatterData.value?.currentValue);
@@ -85,7 +89,9 @@ function getPlot() {
   }
   if (selectedPlot.value != null && selectedProject.value != null) {
     currentScatterData.value = {
-      currentValue: data.projectData[selectedProject.value][selectedPlot.value].currentValue
+      currentValue: data.projectData[selectedProject.value][selectedPlot.value].currentValue,
+      history: data.projectData[selectedProject.value][selectedPlot.value].history,
+      
     }
     console.log(currentScatterData)
     console.log(currentScatterData.value)

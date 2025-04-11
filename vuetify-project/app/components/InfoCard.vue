@@ -1,5 +1,5 @@
 <template>
-    <v-card class="overflow-y-auto ma-2" max-height="50vh" v-scroll.self="onScroll">
+    <v-card class="overflow-y-auto" max-height="50vh" v-scroll.self="onScroll">
         <template v-slot:title>
             <span class="font-weight-black text-wrap">{{ title }}</span>
         </template>
