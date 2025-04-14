@@ -1,7 +1,7 @@
 <template>
     <v-container>
         <v-row>
-            <v-col v-if="currentValue != null" lg="12" md="4" sm="12" xs="12" >
+            <v-col v-if="currentValue != null" cols="12" xl="3" lg="3" md="4" sm="12" xs="12">
                 <info-card v-if="typeof currentValue[Object.keys(currentValue)[0]] === 'string'" title="Current Value"
                     :value="currentValue.value" :date="currentValue.date">
                 </info-card>
@@ -46,7 +46,7 @@
                     </v-card-text>
                 </v-card>
             </v-col>
-            <v-col lg="12" md="8" sm="12" xs="12">
+            <v-col cols="12" xl="9" lg="9" md="8" sm="12" xs="12">
                 <info-card class="my-2" :title="plotData?.displayName" :value="plotData?.description"
                     :textAlign="'text-left'">
                 </info-card>
@@ -87,10 +87,10 @@ const width = computed(() => {
     // must use .value
     console.log(name.value)
     if (mobile.value == true) {
-        return '90vw'
+        return 'fill-width'
     }
     switch (name.value) {
-        case 'xs': return '60vw'
+        case 'xs': return 'fill-width'
         case 'sm': return '60vw'
         case 'md': return 'fill-width'
         case 'lg': return 'fill-width'
@@ -104,10 +104,10 @@ const height = computed(() => {
     // name is reactive and
     // must use .value
     if (mobile.value == true) {
-        return '90vh'
+        return 'fill-height'
     }
     switch (name.value) {
-        case 'xs': return '60vh'
+        case 'xs': return 'fill-height'
         case 'sm': return '60vh'
         case 'md': return "40vh"
         case 'lg': return 'fill-height'

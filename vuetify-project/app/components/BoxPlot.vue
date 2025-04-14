@@ -1,14 +1,14 @@
 <template>
     <v-container>
         <v-row>
-            <v-col>
+            <v-col cols="12" xl="3" lg="3" md="4" sm="12" xs="12">
                 <info-card :title="plotData?.displayName" :value="plotData?.description" :textAlign="'text-left'">
                 </info-card>
             </v-col>
-            <v-col>
-                <v-sheet :height="height" :width="width">
-                    <iframe :v-if="plotPath != null" align="center" title="Plot" id="plot" :src="plotPath!"
-                        style="height:100%;width:100%;border:none;display:block"></iframe>
+            <v-col cols="12" xl="9" lg="9" md="8" sm="12" xs="12">
+                <v-sheet :height="height" class="my-2">
+                    <iframe v-if="plotPath != null" align="center" title="Plot" id="plot" :src="plotPath"
+                        style="height:100%; width:100%;border:none;"></iframe>
                 </v-sheet>
             </v-col>
         </v-row>
