@@ -1,21 +1,14 @@
-
-import glob
-import re
-import plotly.express as px
 import plotly.graph_objects as go
 import plotly.io as pio
 import pandas as pd
 import numpy as np
-import os.path
-import pickle
-import scipy
-from statistics import mean, stdev
-from math import sqrt, log10
-from packaging.version import Version
+from plot_helpers import sloc, total_features, model_count, model_count_time
+import json
+from math import log10
 
 project = "busybox"
 output_directory = f'output-{project}'
-figures_directory = f'src/public/figures'
+figures_directory = 'vuetify-project/public/figures'
 default_height = 270
 
 pio.templates['colorblind'] = go.layout.Template(layout_colorway=['#648FFF', '#FE6100', '#785EF0', '#DC267F', '#FFB000'])
@@ -29,10 +22,11 @@ def group_by_arch(df):
 def read_dataframe(stage, dtype={}, usecols=None, file=None, arch=None):
     if not file:
         file = 'output'
-    df = pd.read_csv(f'{output_directory}/{stage}/{file}.csv', dtype=dtype, usecols=usecols)
+    # df = pd.read_csv(f'{output_directory}/{stage}/{file}.csv', dtype=dtype, usecols=usecols)
+    df = pd.read_csv('output.csv', dtype=dtype, usecols=usecols)
     if 'committer_date_unix' in df:
         df['committer_date'] = df['committer_date_unix'].apply(lambda d: pd.to_datetime(d, unit='s'))
-    if arch != None:
+    if arch is not None:
         return group_by_arch(df)[arch]
     return df
 
@@ -54,21 +48,17 @@ def peek_dataframe(df, column, message, type='str', filter=['revision', 'extract
     print(f'{message}: {len(success)} successes, {len(failure)} failures')
 
 def filter_system(df, ignore):
-    return df[df["system"] not in ignore]
+    return df[~df["system"].isin(ignore)]
 
-from plot_helpers import sloc, total_features, model_count, model_count_time
-import json
 def read_json(path):
     with open(path) as json_data:
         return json.load(json_data)
 
 projects = read_json("gen_initJsonConfig.json")
 for project, config in projects.items():
-    df_kconfig = read_dataframe('kconfig' ignore=config["ignore_systems"])
-    df_kconfig['year'] = df_kconfig['committer_date'].apply(lambda d: int(d.year))
-    replace_values(df_kconfig)
-    df = filter_system(df, config["ignore_systems"])
-    sloc()
-    total_features()
-    model_count()
-    model_count_time()
+    df = filter_system(read_dataframe('kconfig'),ignore=config["ignore_systems"])
+    df['year'] = df['committer_date'].apply(lambda d: int(d.year))
+    sloc(df, project, output_dir=figures_directory)
+    total_features(df, project, output_dir=figures_directory)
+    model_count(df, project, output_dir=figures_directory)
+    model_count_time(df, project, output_dir=figures_directory)
