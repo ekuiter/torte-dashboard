@@ -15,14 +15,19 @@
   <v-container>
     <v-responsive>
       <v-row>
-          <v-autocomplete variant="solo-filled" class=" ma-2" v-model="selectedProject" v-on:update:model-value="getPlot"
-          label="Select Project" :items="projects">
+        <v-col md="6">
+
+          <v-autocomplete variant="solo-filled" class=" ma-2" v-model="selectedProject"
+            v-on:update:model-value="getPlot" label="Select Project" :items="projects">
 
           </v-autocomplete>
+        </v-col>
+        <v-col md="6">
           <v-autocomplete variant="solo-filled" class=" ma-2" v-model="selectedPlot" v-on:update:model-value="getPlot"
-          label="Select Plot" :items="plotsForProject" item-title="displayName" item-value="idName">
+            label="Select Plot" :items="plotsForProject" item-title="displayName" item-value="idName">
 
           </v-autocomplete>
+        </v-col>
       </v-row>
       <box-plot v-if="showBoxPlot()" :plot-path="plotPath" :plot-data="currentPlotData">
       </box-plot>
@@ -91,7 +96,7 @@ function getPlot() {
     currentScatterData.value = {
       currentValue: data.projectData[selectedProject.value][selectedPlot.value].currentValue,
       history: data.projectData[selectedProject.value][selectedPlot.value].history,
-      
+
     }
     console.log(currentScatterData)
     console.log(currentScatterData.value)

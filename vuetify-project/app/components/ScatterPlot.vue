@@ -1,7 +1,7 @@
 <template>
     <v-container>
         <v-row>
-            <v-col v-if="currentValue != null">
+            <v-col v-if="currentValue != null" lg="12" md="4" sm="12" xs="12" >
                 <info-card v-if="typeof currentValue[Object.keys(currentValue)[0]] === 'string'" title="Current Value"
                     :value="currentValue.value" :date="currentValue.date">
                 </info-card>
@@ -46,13 +46,13 @@
                     </v-card-text>
                 </v-card>
             </v-col>
-            <v-col>
+            <v-col lg="12" md="8" sm="12" xs="12">
                 <info-card class="my-2" :title="plotData?.displayName" :value="plotData?.description"
                     :textAlign="'text-left'">
                 </info-card>
-                <v-sheet :height="height" :width="width" class="my-2">
-                    <iframe  v-if="plotPath != null" align="center" title="Plot" id="plot" :src="plotPath"
-                     style="height:100%; width: 100%;border:none;display:block"></iframe>
+                <v-sheet :height="height" class="my-2">
+                    <iframe v-if="plotPath != null" align="center" title="Plot" id="plot" :src="plotPath"
+                        style="height:100%; width:100%;border:none;"></iframe>
                 </v-sheet>
             </v-col>
         </v-row>
@@ -85,14 +85,15 @@ const { name, mobile } = useDisplay()
 const width = computed(() => {
     // name is reactive and
     // must use .value
-    if (mobile.value == true){
+    console.log(name.value)
+    if (mobile.value == true) {
         return '90vw'
     }
     switch (name.value) {
         case 'xs': return '60vw'
         case 'sm': return '60vw'
-        case 'md': return '60vw'
-        case 'lg': return '60vw'
+        case 'md': return 'fill-width'
+        case 'lg': return 'fill-width'
         case 'xl': return '60vw'
         case 'xxl': return '60vw'
     }
@@ -102,18 +103,19 @@ const width = computed(() => {
 const height = computed(() => {
     // name is reactive and
     // must use .value
-    if (mobile.value == true){
+    if (mobile.value == true) {
         return '90vh'
     }
     switch (name.value) {
         case 'xs': return '60vh'
         case 'sm': return '60vh'
-        case 'md': return '60vh'
-        case 'lg': return '60vh'
+        case 'md': return "40vh"
+        case 'lg': return 'fill-height'
         case 'xl': return '60vh'
         case 'xxl': return '60vh'
     }
 
     return undefined
 })
+console.log(name.value)
 </script>
