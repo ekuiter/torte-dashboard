@@ -92,6 +92,192 @@
         }
     },
     "projectData": {
+        "axtls": {
+            "model-count": {
+                "currentValue": {
+                    "value": "640 models",
+                    "date": "From August 17, 2016"
+                },
+                "history": {
+                    "1-years-before": {
+                        "value": "640 models (+0.0%)",
+                        "date": "August 18, 2015"
+                    },
+                    "2-years-before": {
+                        "value": "640 models (+0.0%)",
+                        "date": "August 18, 2014"
+                    },
+                    "5-years-before": {
+                        "value": "625 models (-2.4%)",
+                        "date": "August 19, 2011"
+                    },
+                    "10-years-before": {
+                        "value": "504 models (-27.0%)",
+                        "date": "July 21, 2006"
+                    }
+                }
+            },
+            "model-count-time": {
+                "currentValue": {
+                    "value": "0.781 s",
+                    "date": "From August 17, 2016"
+                },
+                "history": {
+                    "1-years-before": {
+                        "value": "1.054 s (+25.9%)",
+                        "date": "August 18, 2015"
+                    },
+                    "2-years-before": {
+                        "value": "0.81 s (+100.0%)",
+                        "date": "August 18, 2014"
+                    },
+                    "5-years-before": {
+                        "value": "0.879 s (+100.0%)",
+                        "date": "August 19, 2011"
+                    },
+                    "10-years-before": {
+                        "value": "0.731 s (+100.0%)",
+                        "date": "July 21, 2006"
+                    }
+                }
+            },
+            "total-features": {
+                "currentValue": {
+                    "value": "121 features",
+                    "date": "From August 17, 2016"
+                },
+                "history": {
+                    "1-years-before": {
+                        "value": "122 features (+0.8%)",
+                        "date": "August 18, 2015"
+                    },
+                    "2-years-before": {
+                        "value": "122 features (+0.8%)",
+                        "date": "August 18, 2014"
+                    },
+                    "5-years-before": {
+                        "value": "119 features (-1.7%)",
+                        "date": "August 19, 2011"
+                    },
+                    "10-years-before": {
+                        "value": "99 features (-22.2%)",
+                        "date": "July 21, 2006"
+                    }
+                }
+            }
+        },
+        "embtoolkit": {
+            "model-count": {
+                "currentValue": {
+                    "value": "26947 models",
+                    "date": "From November 15, 2014"
+                },
+                "history": {
+                    "1-years-before": {
+                        "value": "25454 models (-5.9%)",
+                        "date": "November 15, 2013"
+                    },
+                    "2-years-before": {
+                        "value": "26016 models (-3.6%)",
+                        "date": "November 15, 2012"
+                    }
+                }
+            },
+            "model-count-time": {
+                "currentValue": {
+                    "value": "14.022 s",
+                    "date": "From November 15, 2014"
+                },
+                "history": {
+                    "1-years-before": {
+                        "value": "13.044 s (-7.5%)",
+                        "date": "November 15, 2013"
+                    },
+                    "2-years-before": {
+                        "value": "12.828 s (+100.0%)",
+                        "date": "November 15, 2012"
+                    }
+                }
+            },
+            "total-features": {
+                "currentValue": {
+                    "value": "3091 features",
+                    "date": "From November 15, 2014"
+                },
+                "history": {
+                    "1-years-before": {
+                        "value": "2864 features (-7.9%)",
+                        "date": "November 15, 2013"
+                    },
+                    "2-years-before": {
+                        "value": "2787 features (-10.9%)",
+                        "date": "November 15, 2012"
+                    }
+                }
+            }
+        },
+        "uclibc-ng": {
+            "model-count": {
+                "currentValue": {
+                    "value": "4248 models",
+                    "date": "From March 27, 2024"
+                },
+                "history": {
+                    "1-years-before": {
+                        "value": "4212 models (-0.9%)",
+                        "date": "March 28, 2023"
+                    },
+                    "2-years-before": {
+                        "value": "3925 models (-8.2%)",
+                        "date": "March 28, 2022"
+                    },
+                    "5-years-before": {
+                        "value": "3709 models (-14.5%)",
+                        "date": "March 29, 2019"
+                    }
+                }
+            },
+            "model-count-time": {
+                "currentValue": {
+                    "value": "2.704 s",
+                    "date": "From March 27, 2024"
+                },
+                "history": {
+                    "1-years-before": {
+                        "value": "2.984 s (+9.4%)",
+                        "date": "March 28, 2023"
+                    },
+                    "2-years-before": {
+                        "value": "2.803 s (+100.0%)",
+                        "date": "March 28, 2022"
+                    },
+                    "5-years-before": {
+                        "value": "2.612 s (+100.0%)",
+                        "date": "March 29, 2019"
+                    }
+                }
+            },
+            "total-features": {
+                "currentValue": {
+                    "value": "358 features",
+                    "date": "From March 27, 2024"
+                },
+                "history": {
+                    "1-years-before": {
+                        "value": "357 features (-0.3%)",
+                        "date": "March 28, 2023"
+                    },
+                    "2-years-before": {
+                        "value": "343 features (-4.4%)",
+                        "date": "March 28, 2022"
+                    },
+                    "5-years-before": {
+                        "value": "328 features (-9.1%)",
+                        "date": "March 29, 2019"
+                    }
+                }
+            }
+        },
         "busybox": {
             "model-count": {
                 "currentValue": {

@@ -1,0 +1,29 @@
+{
+    "busybox": {
+        "output_directory": "output-busybox",
+        "ignore_systems": [
+            "busybox-models"
+        ]
+    },
+    "axtls": {
+        "output_directory": "output",
+        "ignore_systems": [
+            "uclibc-ng",
+            "embtoolkit"
+        ]
+    },
+    "embtoolkit": {
+        "output_directory": "output",
+        "ignore_systems": [
+            "uclibc-ng",
+            "axtls"
+        ]
+    },
+    "uclibc-ng": {
+        "output_directory": "output",
+        "ignore_systems": [
+            "axtls",
+            "embtoolkit"
+        ]
+    }
+}
