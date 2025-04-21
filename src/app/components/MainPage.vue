@@ -4,15 +4,14 @@
 
     </v-spacer>
 
-    <v-icon  size="x-large" @click.native.stop="toggleTheme" v-if="theme.global.current.value.dark == false" icon="mdi-cake">
-      
-    </v-icon>
-    <img v-else src="public/dimcake.svg" @click.native.stop="toggleTheme"></img>
+    <v-icon class="cursor-pointer" size="x-large" @click.native.stop="toggleTheme"
+      v-if="theme.global.current.value.dark == false" icon="mdi-cake"></v-icon>
+    <img class="cursor-pointer" v-else src="public/dimcake.svg" @click.native.stop="toggleTheme"></img>
     <v-btn @click="reset" rounded size="x-large">
       <h1>
         Torte Dashboard
       </h1>
-      </v-btn>
+    </v-btn>
     <v-spacer>
     </v-spacer>
   </v-app-bar>
@@ -38,13 +37,19 @@
       </box-plot>
       <scatter-plot v-else-if="showScatterPlot()" :plot-path="plotPath" :plot-data="currentPlotData"
         :current-value="getCurrentScatterData()" :history-data="getHistory()"></scatter-plot>
+      <!-- <v-card v-html="mainPageDescription"></v-card> -->
+      <!-- <v-sheet :elevation="13" border rounded> -->
+        <ContentRenderer v-if="mainPageDescription && !(selectedPlot && selectedProject)" :value="mainPageDescription" />
+      <!-- </v-sheet> -->
     </v-responsive>
   </v-container>
 </template>
 <script lang="ts" setup>
 import { ref, type Ref } from 'vue';
 import data from "public/init.json"
+// import mainPageDescription from "public/mainPageDescription.md"
 import type { ScatterData, PlotData } from './interfaces';
+const mainPageDescription = await queryCollection('blog').path('/description').first()
 const selectedPlot: Ref<string | null> = ref(null);
 const currentPlotData: Ref<PlotData | null> = ref(null)
 const currentScatterData: Ref<ScatterData | null> = ref(null)
@@ -89,10 +94,13 @@ function getPlotsForProj() {
     plotsForProject.value = [...plotsForProject.value, data.plotData[plot]]
   }
 }
-function init() {
+async function init() {
+  reset()
   projects.value = Object.keys(data.projectData)
   plots.value = Object.keys(data.plotData)
   console.log("in init: ", projects.value)
+  mainPageDescription.value = data.mainPageDescription
+  console.log(mainPageDescription.value)
 }
 
 function containsString(): boolean {
@@ -153,13 +161,14 @@ function getPlot() {
 }
 if (!import.meta.env.SSR) {
   window.addEventListener('load', () => { init });
-  console.log(window.location.hash)
-  console.log(window.location.hash.replace("#/", "").split("~")[0])
+  init()
   if (window.location.hash === "") {
     console.log("no hash")
   }
   else {
-
+    if (window.location.hash.replace("#/", "").split("~").length ==0 ){
+      reset()
+    } 
     selectedProject.value = window.location.hash.replace("#/", "").split("~")[0] ?? null
     if (selectedProject.value === "") {
       selectedPlot.value = null

@@ -14,10 +14,14 @@
     "lint:fix": "eslint . --fix"
   },
   "dependencies": {
+    "@nuxt/content": "^3.4.0",
     "@nuxt/eslint": "^1.3.0",
+    "@nuxtjs/markdownit": "^2.0.0",
+    "@nuxtjs/mdc": "^0.16.1",
     "eslint": "^9.23.0",
     "http-server": "^14.1.1",
     "nuxt": "^3.16.2",
+    "raw-loader": "^4.0.2",
     "vue": "latest",
     "vue-router": "^4.5.0",
     "vuetify": "^3.7.3"

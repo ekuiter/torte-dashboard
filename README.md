@@ -3,6 +3,10 @@ Semi-Static web interface for visualization of pre-executed [torte](https://gith
 
 ## 1. Usage
 
+### Writing the Homepage Description
+
+The home page description can be modified in `src/content/description.md`.
+
 ### Generate Data
 
 Open `gen_initJson.ipybn`. At the top, you will find a cell labeled `CONFIG VARIABLES`. These specify various paths in the program. 

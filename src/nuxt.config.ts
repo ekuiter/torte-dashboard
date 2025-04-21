@@ -1,3 +1,4 @@
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   app: {
@@ -28,17 +29,18 @@ export default defineNuxtConfig({
   },
 
   build: {
-    transpile: ['vuetify'],
+    transpile: ['vuetify']
   },
 
   vite: {
     ssr: {
       noExternal: ['vuetify'],
     },
+    assetsInclude: ['**/*.md']
   },
 
   css: [],
-  modules: ['@nuxt/fonts', 'vuetify-nuxt-module', '@nuxt/eslint'],
+  modules: ['@nuxt/fonts', 'vuetify-nuxt-module', '@nuxt/eslint', '@nuxt/content'],
 
   vuetify: {
     moduleOptions: {
@@ -60,4 +62,19 @@ export default defineNuxtConfig({
       },
     },
   },
+  content: {
+    renderer: {
+      anchorLinks: { h2: false, h3: false, h4: false }
+    },
+    preview: {
+      dev: true
+    },
+    build: {
+      markdown: {
+        highlight: {
+          langs: ["json", "python", "shell", "bash"]
+        }
+      }
+    }
+  }
 })
