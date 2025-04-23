@@ -8,21 +8,10 @@ export default defineNuxtConfig({
   future: {
     compatibilityVersion: 4
   },
-  // router: {
-  //   options: {
-  //     hashMode: true
-  //   }
-  // },
   devtools: {
     enabled: false,
   },
   ssr: false,
-  // hooks: {
-  //   'prerender:routes'({ routes }) {
-  //     routes.clear() // Do not generate any routes (except the defaults)
-  //   }
-  // },
-  // when enabling ssr option you need to disable inlineStyles and maybe devLogs
   features: {
     inlineStyles: false,
     devLogs: false,
