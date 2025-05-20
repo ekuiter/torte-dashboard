@@ -10,23 +10,21 @@
                     <info-card :title="`Current Value&#13;(${item[0]})`" :value="item[1].currentValue.value"
                         :date="item[1].currentValue.date">
                     </info-card>
-                    <v-card class="overflow-y-auto my-2" max-height="50vh" v-scroll.self="onScroll">
-                        <template v-slot:title>
-                            <span class="font-weight-black text-wrap">History: {{ item[0] }}</span>
-                        </template>
-
+                    <v-card v-if="Object.keys(item[1]).length > 1" class="overflow-y-auto my-2" max-height="50vh" v-scroll.self="onScroll">
+                        <v-card-title class="font-weight-black text-wrap">
+                            History: {{ item[0] }}
+                        </v-card-title>
                         <v-card-text class="bg-surface-light pt-4 text-center text-body-2">
                             <v-table>
                                 <tbody>
                                     <tr v-for="history in Object.entries(item[1].history)" :key="item">
                                         <td>{{ getHistoryTitle(history[0]) }}</td>
                                         <td>{{ history[1].value }}</td>
-
                                     </tr>
                                 </tbody>
                             </v-table>
                         </v-card-text>
-                    </v-card>
+                    </v-card> 
                 </div>
                 <v-card v-if="historyData != null" class="overflow-y-auto my-2" max-height="50vh"
                     v-scroll.self="onScroll">
@@ -46,7 +44,7 @@
                     </v-card-text>
                 </v-card>
             </v-col>
-            <v-col cols="12" xl="9" lg="9" md="8" sm="12" xs="12" :order="plotColOrder">
+            <v-col cols="12" :xl="currentValue ? 9 : 12" :lg="currentValue ? 9 : 12" :md="currentValue ? 8 : 12" sm="12" xs="12" :order="plotColOrder">
                 <description-card :title="plotData?.displayName" :value="plotData?.description" >
                 </description-card>
                 <v-sheet :height="height" class="my-2" elevation="4">
@@ -67,7 +65,6 @@ const props = defineProps<{
     historyData?: HistoryData
 }>()
 const scrollInvoked = ref(0)
-
 function onScroll() {
     scrollInvoked.value++
 }

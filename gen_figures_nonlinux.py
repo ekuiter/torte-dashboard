@@ -2,63 +2,62 @@ import plotly.graph_objects as go
 import plotly.io as pio
 import pandas as pd
 import numpy as np
-from plot_helpers import sloc, total_features, model_count, model_count_time
+from plot_helpers_nonlinux import sloc, total_features, model_count, model_count_time
 import json
 from math import log10
+import argparse as ap
+import os
 
-project = "busybox"
-output_directory = f'output-{project}'
-figures_directory = 'vuetify-project/public/figures'
-default_height = 270
-
+### NONCONFIGURABLE VARIABLES
+init_json_path = "src/public/init.json"  # exact path needed for frontend
 pio.templates['colorblind'] = go.layout.Template(layout_colorway=['#648FFF', '#FE6100', '#785EF0', '#DC267F', '#FFB000'])
 pio.templates.default = 'plotly_white+colorblind'
-
-def group_by_arch(df):
-    grouped = df.groupby('architecture')
-    dfs = {arch: group for arch, group in grouped}
-    return dfs
-
-def read_dataframe(stage, dtype={}, usecols=None, file=None, arch=None):
-    if not file:
-        file = 'output'
-    # df = pd.read_csv(f'{output_directory}/{stage}/{file}.csv', dtype=dtype, usecols=usecols)
-    df = pd.read_csv('output.csv', dtype=dtype, usecols=usecols)
-    if 'committer_date_unix' in df:
-        df['committer_date'] = df['committer_date_unix'].apply(lambda d: pd.to_datetime(d, unit='s'))
-    if arch is not None:
-        return group_by_arch(df)[arch]
-    return df
-
-def replace_values(df):
-    df.replace('kconfigreader', 'KConfigReader', inplace=True)
-    df.replace('kmax', 'KClause', inplace=True)
-
-def big_log10(str):
-    return log10(int(str)) if not pd.isna(str) and str != '' else pd.NA
-
-def process_model_count(df_solve):
-    df_solve['model-count'] = df_solve['model-count'].replace('1', '')
-    df_solve['model-count-log10'] = df_solve['model-count'].fillna('').apply(big_log10).replace(0, np.nan)
-    df_solve['year'] = df_solve['committer_date'].apply(lambda d: int(d.year))
-
-def peek_dataframe(df, column, message, type='str', filter=['revision', 'extractor']):
-    success = df[~df[column].str.contains('NA') if type == 'str' else ~df[column].isna()][filter]
-    failure = df[df[column].str.contains('NA') if type == 'str' else df[column].isna()][filter]
-    print(f'{message}: {len(success)} successes, {len(failure)} failures')
-
-def filter_system(df, ignore):
-    return df[~df["system"].isin(ignore)]
 
 def read_json(path):
     with open(path) as json_data:
         return json.load(json_data)
+class NonLinuxFigures:
+    def __init__(self, config):
+        self.config = config
+        self.figures_directory = 'src/public/figures'
 
-projects = read_json("gen_initJsonConfig.json")
-for project, config in projects.items():
-    df = filter_system(read_dataframe('kconfig'),ignore=config["ignore_systems"])
-    df['year'] = df['committer_date'].apply(lambda d: int(d.year))
-    sloc(df, project, output_dir=figures_directory)
-    total_features(df, project, output_dir=figures_directory)
-    model_count(df, project, output_dir=figures_directory)
-    model_count_time(df, project, output_dir=figures_directory)
+    def group_by_arch(self, df):
+        grouped = df.groupby('architecture')
+        dfs = {arch: group for arch, group in grouped}
+        return dfs
+
+    def read_dataframe(self, output_directory, stage, dtype={}, usecols=None, file=None, arch=None):
+        if not file:
+            file = 'output'
+        df = pd.read_csv(f'{output_directory}/{stage}/{file}.csv', dtype=dtype, usecols=usecols)
+        if 'committer_date_unix' in df:
+            df['committer_date'] = df['committer_date_unix'].apply(lambda d: pd.to_datetime(d, unit='s'))
+        if arch is not None:
+            return self.group_by_arch(df)[arch]
+        return df
+
+    def filter_system(self, df, ignore):
+        return df[~df["system"].isin(ignore)]
+
+    def generate_figures(self):
+        for project, config in self.config.items():
+            df = self.filter_system(self.read_dataframe(config["output_directory"], 'kconfig'),ignore=config["ignore_systems"])
+            df['year'] = df['committer_date'].apply(lambda d: int(d.year))
+            sloc(df, project, output_dir=self.figures_directory)
+            total_features(df, project, output_dir=self.figures_directory)
+            model_count(df, project, output_dir=self.figures_directory)
+            model_count_time(df, project, output_dir=self.figures_directory)
+
+
+def nonlinux_main(nonlinux_config: str | None):
+    if nonlinux_config:
+        nl = NonLinuxFigures(nonlinux_config)
+        nl.generate_figures()
+
+if __name__ == '__main__':
+    ### CONFIGURABLE VARIABLES
+    parser = ap.ArgumentParser("Torte Dashboard Preprocessing")
+    parser.add_argument("--nonlinux-config", "-N", type=str)
+    args = parser.parse_args()
+    nonlinux = args.nonlinux_config if os.path.exists(args.nonlinux_config) else None
+    nonlinux_main(nonlinux)

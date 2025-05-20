@@ -4,91 +4,91 @@
             "idName": "configuration-evolution-arch",
             "displayName": "Configuration Evolution Arch",
             "plotType": "box",
-            "description": "<h1>Configuration Evolution Arch: Descriptive test</h1><br><h4>You can edit this in  the init.json under <tt>plotData.*.description</tt></h4>"
+            "description": "<h1>Configuration Evolution Arch: Descriptive test</h1><br><h4>You can edit this in  the init.json under <tt>plotData.configuration-evolution-arch.description</tt></h4>"
         },
         "configuration-evolution-total": {
             "idName": "configuration-evolution-total",
             "displayName": "Configuration Evolution Total",
             "plotType": "box",
-            "description": "<h1>Configuration Evolution Total: Descriptive test</h1><br><h4>You can edit this in  the init.json under <tt>plotData.*.description</tt></h4>"
+            "description": "<h1>Configuration Evolution Total: Descriptive test</h1><br><h4>You can edit this in  the init.json under <tt>plotData.configuration-evolution-total.description</tt></h4>"
         },
         "configuration-similarity": {
             "idName": "configuration-similarity",
             "displayName": "Configuration Similarity",
             "plotType": "box",
-            "description": "<h1>Configuration Similarity: Descriptive test</h1><br><h4>You can edit this in  the init.json under <tt>plotData.*.description</tt></h4>"
+            "description": "<h1>Configuration Similarity: Descriptive test</h1><br><h4>You can edit this in  the init.json under <tt>plotData.configuration-similarity.description</tt></h4>"
         },
         "feature-evolution-arch": {
             "idName": "feature-evolution-arch",
             "displayName": "Feature Evolution Arch",
             "plotType": "box",
-            "description": "<h1>Feature Evolution Arch: Descriptive test</h1><br><h4>You can edit this in  the init.json under <tt>plotData.*.description</tt></h4>"
+            "description": "<h1>Feature Evolution Arch: Descriptive test</h1><br><h4>You can edit this in  the init.json under <tt>plotData.feature-evolution-arch.description</tt></h4>"
         },
         "feature-evolution-total": {
             "idName": "feature-evolution-total",
             "displayName": "Feature Evolution Total",
             "plotType": "box",
-            "description": "<h1>Feature Evolution Total: Descriptive test</h1><br><h4>You can edit this in  the init.json under <tt>plotData.*.description</tt></h4>"
+            "description": "<h1>Feature Evolution Total: Descriptive test</h1><br><h4>You can edit this in  the init.json under <tt>plotData.feature-evolution-total.description</tt></h4>"
         },
         "features": {
             "idName": "features",
             "displayName": "Number of Features",
             "plotType": "scatter",
-            "description": "<h1>Number of Features: Descriptive test</h1><br><h4>You can edit this in  the init.json under <tt>plotData.*.description</tt></h4>"
+            "description": "<h1>Number of Features: Descriptive test</h1><br><h4>You can edit this in  the init.json under <tt>plotData.features.description</tt></h4>"
         },
         "jaccard-similarity": {
             "idName": "jaccard-similarity",
             "displayName": "Jaccard Similarity of Features",
             "plotType": "box",
-            "description": "<h1>Jaccard Similarity of Features: Descriptive test</h1><br><h4>You can edit this in  the init.json under <tt>plotData.*.description</tt></h4>"
+            "description": "<h1>Jaccard Similarity of Features: Descriptive test</h1><br><h4>You can edit this in  the init.json under <tt>plotData.jaccard-similarity.description</tt></h4>"
         },
         "model-count": {
             "idName": "model-count",
-            "displayName": "Formula length",
+            "displayName": "Number of Configurations",
             "plotType": "scatter",
-            "description": "<h1>Formula length: Descriptive test</h1><br><h4>You can edit this in  the init.json under <tt>plotData.*.description</tt></h4>"
+            "description": "<h1>Number of Configurations: Descriptive test</h1><br><h4>You can edit this in  the init.json under <tt>plotData.model-count.description</tt></h4>"
         },
         "model-count-time": {
             "idName": "model-count-time",
             "displayName": "Time for Counting",
             "plotType": "scatter",
-            "description": "<h1>Time for Counting: Descriptive test</h1><br><h4>You can edit this in  the init.json under <tt>plotData.*.description</tt></h4>"
+            "description": "<h1>Time for Counting: Descriptive test</h1><br><h4>You can edit this in  the init.json under <tt>plotData.model-count-time.description</tt></h4>"
         },
         "prediction-accuracy-configurations": {
             "idName": "prediction-accuracy-configurations",
             "displayName": "Prediction Accuracy Configurations",
             "plotType": "box",
-            "description": "<h1>Prediction Accuracy Configurations: Descriptive test</h1><br><h4>You can edit this in  the init.json under <tt>plotData.*.description</tt></h4>"
+            "description": "<h1>Prediction Accuracy Configurations: Descriptive test</h1><br><h4>You can edit this in  the init.json under <tt>plotData.prediction-accuracy-configurations.description</tt></h4>"
         },
         "prediction-accuracy-configurations-by-features": {
             "idName": "prediction-accuracy-configurations-by-features",
             "displayName": "Prediction Accuracy Configurations By Features",
             "plotType": "box",
-            "description": "<h1>Prediction Accuracy Configurations By Features: Descriptive test</h1><br><h4>You can edit this in  the init.json under <tt>plotData.*.description</tt></h4>"
+            "description": "<h1>Prediction Accuracy Configurations By Features: Descriptive test</h1><br><h4>You can edit this in  the init.json under <tt>plotData.prediction-accuracy-configurations-by-features.description</tt></h4>"
         },
         "prediction-accuracy-features": {
             "idName": "prediction-accuracy-features",
             "displayName": "Prediction Accuracy Features",
             "plotType": "box",
-            "description": "<h1>Prediction Accuracy Features: Descriptive test</h1><br><h4>You can edit this in  the init.json under <tt>plotData.*.description</tt></h4>"
+            "description": "<h1>Prediction Accuracy Features: Descriptive test</h1><br><h4>You can edit this in  the init.json under <tt>plotData.prediction-accuracy-features.description</tt></h4>"
         },
         "share-of-feature-variables": {
             "idName": "share-of-feature-variables",
             "displayName": "Share of Feature Variables",
             "plotType": "box",
-            "description": "<h1>Share of Feature Variables: Descriptive test</h1><br><h4>You can edit this in  the init.json under <tt>plotData.*.description</tt></h4>"
+            "description": "<h1>Share of Feature Variables: Descriptive test</h1><br><h4>You can edit this in  the init.json under <tt>plotData.share-of-feature-variables.description</tt></h4>"
         },
         "source_lines_of_code": {
             "idName": "source_lines_of_code",
             "displayName": "Number of Source Lines of Code",
             "plotType": "scatter",
-            "description": "<h1>Number of Source Lines of Code: Descriptive test</h1><br><h4>You can edit this in  the init.json under <tt>plotData.*.description</tt></h4>"
+            "description": "<h1>Number of Source Lines of Code: Descriptive test</h1><br><h4>You can edit this in  the init.json under <tt>plotData.source_lines_of_code.description</tt></h4>"
         },
         "total-features": {
             "idName": "total-features",
             "displayName": "Total Number of Features",
             "plotType": "scatter",
-            "description": "<h1>Total Number of Features: Descriptive test</h1><br><h4>You can edit this in  the init.json under <tt>plotData.*.description</tt></h4>"
+            "description": "<h1>Total Number of Features: Descriptive test</h1><br><h4>You can edit this in  the init.json under <tt>plotData.total-features.description</tt></h4>"
         }
     },
     "projectData": {
@@ -377,10 +377,8 @@
             }
         },
         "linux/all": {
-            "configuration-evolution-arch": {},
             "configuration-evolution-total": {},
             "configuration-similarity": {},
-            "feature-evolution-arch": {},
             "feature-evolution-total": {},
             "jaccard-similarity": {},
             "model-count": {
@@ -432,16 +430,7 @@
                 }
             },
             "model-count-time": {
-                "currentValue": {
-                    "KConfigReader": {
-                        "value": "10^428 s",
-                        "date": "From May 19, 2011"
-                    },
-                    "KClause": {
-                        "value": "10^434 s",
-                        "date": "From June 30, 2013"
-                    }
-                }
+                "currentValue": null
             },
             "prediction-accuracy-configurations": {},
             "prediction-accuracy-configurations-by-features": {},
@@ -524,16 +513,10 @@
             "configuration-evolution-arch": {
                 "currentValue": null
             },
-            "configuration-evolution-total": {
-                "currentValue": null
-            },
             "configuration-similarity": {
                 "currentValue": null
             },
             "feature-evolution-arch": {
-                "currentValue": null
-            },
-            "feature-evolution-total": {
                 "currentValue": null
             },
             "features": {
@@ -700,16 +683,10 @@
             "configuration-evolution-arch": {
                 "currentValue": null
             },
-            "configuration-evolution-total": {
-                "currentValue": null
-            },
             "configuration-similarity": {
                 "currentValue": null
             },
             "feature-evolution-arch": {
-                "currentValue": null
-            },
-            "feature-evolution-total": {
                 "currentValue": null
             },
             "features": {
@@ -840,16 +817,10 @@
             "configuration-evolution-arch": {
                 "currentValue": null
             },
-            "configuration-evolution-total": {
-                "currentValue": null
-            },
             "configuration-similarity": {
                 "currentValue": null
             },
             "feature-evolution-arch": {
-                "currentValue": null
-            },
-            "feature-evolution-total": {
                 "currentValue": null
             },
             "features": {
@@ -1007,16 +978,10 @@
             "configuration-evolution-arch": {
                 "currentValue": null
             },
-            "configuration-evolution-total": {
-                "currentValue": null
-            },
             "configuration-similarity": {
                 "currentValue": null
             },
             "feature-evolution-arch": {
-                "currentValue": null
-            },
-            "feature-evolution-total": {
                 "currentValue": null
             },
             "features": {
@@ -1163,16 +1128,10 @@
             "configuration-evolution-arch": {
                 "currentValue": null
             },
-            "configuration-evolution-total": {
-                "currentValue": null
-            },
             "configuration-similarity": {
                 "currentValue": null
             },
             "feature-evolution-arch": {
-                "currentValue": null
-            },
-            "feature-evolution-total": {
                 "currentValue": null
             },
             "features": {
@@ -1303,16 +1262,10 @@
             "configuration-evolution-arch": {
                 "currentValue": null
             },
-            "configuration-evolution-total": {
-                "currentValue": null
-            },
             "configuration-similarity": {
                 "currentValue": null
             },
             "feature-evolution-arch": {
-                "currentValue": null
-            },
-            "feature-evolution-total": {
                 "currentValue": null
             },
             "features": {
@@ -1479,16 +1432,10 @@
             "configuration-evolution-arch": {
                 "currentValue": null
             },
-            "configuration-evolution-total": {
-                "currentValue": null
-            },
             "configuration-similarity": {
                 "currentValue": null
             },
             "feature-evolution-arch": {
-                "currentValue": null
-            },
-            "feature-evolution-total": {
                 "currentValue": null
             },
             "features": {
@@ -1637,16 +1584,10 @@
             "configuration-evolution-arch": {
                 "currentValue": null
             },
-            "configuration-evolution-total": {
-                "currentValue": null
-            },
             "configuration-similarity": {
                 "currentValue": null
             },
             "feature-evolution-arch": {
-                "currentValue": null
-            },
-            "feature-evolution-total": {
                 "currentValue": null
             },
             "features": {
@@ -1765,16 +1706,10 @@
             "configuration-evolution-arch": {
                 "currentValue": null
             },
-            "configuration-evolution-total": {
-                "currentValue": null
-            },
             "configuration-similarity": {
                 "currentValue": null
             },
             "feature-evolution-arch": {
-                "currentValue": null
-            },
-            "feature-evolution-total": {
                 "currentValue": null
             },
             "features": {
@@ -1953,16 +1888,10 @@
             "configuration-evolution-arch": {
                 "currentValue": null
             },
-            "configuration-evolution-total": {
-                "currentValue": null
-            },
             "configuration-similarity": {
                 "currentValue": null
             },
             "feature-evolution-arch": {
-                "currentValue": null
-            },
-            "feature-evolution-total": {
                 "currentValue": null
             },
             "features": {
@@ -2051,16 +1980,10 @@
             "configuration-evolution-arch": {
                 "currentValue": null
             },
-            "configuration-evolution-total": {
-                "currentValue": null
-            },
             "configuration-similarity": {
                 "currentValue": null
             },
             "feature-evolution-arch": {
-                "currentValue": null
-            },
-            "feature-evolution-total": {
                 "currentValue": null
             },
             "features": {
@@ -2210,16 +2133,10 @@
             "configuration-evolution-arch": {
                 "currentValue": null
             },
-            "configuration-evolution-total": {
-                "currentValue": null
-            },
             "configuration-similarity": {
                 "currentValue": null
             },
             "feature-evolution-arch": {
-                "currentValue": null
-            },
-            "feature-evolution-total": {
                 "currentValue": null
             },
             "features": {
@@ -2406,16 +2323,10 @@
             "configuration-evolution-arch": {
                 "currentValue": null
             },
-            "configuration-evolution-total": {
-                "currentValue": null
-            },
             "configuration-similarity": {
                 "currentValue": null
             },
             "feature-evolution-arch": {
-                "currentValue": null
-            },
-            "feature-evolution-total": {
                 "currentValue": null
             },
             "features": {
@@ -2538,16 +2449,10 @@
             "configuration-evolution-arch": {
                 "currentValue": null
             },
-            "configuration-evolution-total": {
-                "currentValue": null
-            },
             "configuration-similarity": {
                 "currentValue": null
             },
             "feature-evolution-arch": {
-                "currentValue": null
-            },
-            "feature-evolution-total": {
                 "currentValue": null
             },
             "features": {
@@ -2714,16 +2619,10 @@
             "configuration-evolution-arch": {
                 "currentValue": null
             },
-            "configuration-evolution-total": {
-                "currentValue": null
-            },
             "configuration-similarity": {
                 "currentValue": null
             },
             "feature-evolution-arch": {
-                "currentValue": null
-            },
-            "feature-evolution-total": {
                 "currentValue": null
             },
             "features": {
@@ -2898,16 +2797,10 @@
             "configuration-evolution-arch": {
                 "currentValue": null
             },
-            "configuration-evolution-total": {
-                "currentValue": null
-            },
             "configuration-similarity": {
                 "currentValue": null
             },
             "feature-evolution-arch": {
-                "currentValue": null
-            },
-            "feature-evolution-total": {
                 "currentValue": null
             },
             "features": {
@@ -2984,16 +2877,10 @@
             "configuration-evolution-arch": {
                 "currentValue": null
             },
-            "configuration-evolution-total": {
-                "currentValue": null
-            },
             "configuration-similarity": {
                 "currentValue": null
             },
             "feature-evolution-arch": {
-                "currentValue": null
-            },
-            "feature-evolution-total": {
                 "currentValue": null
             },
             "features": {
@@ -3160,16 +3047,10 @@
             "configuration-evolution-arch": {
                 "currentValue": null
             },
-            "configuration-evolution-total": {
-                "currentValue": null
-            },
             "configuration-similarity": {
                 "currentValue": null
             },
             "feature-evolution-arch": {
-                "currentValue": null
-            },
-            "feature-evolution-total": {
                 "currentValue": null
             },
             "features": {
@@ -3344,16 +3225,10 @@
             "configuration-evolution-arch": {
                 "currentValue": null
             },
-            "configuration-evolution-total": {
-                "currentValue": null
-            },
             "configuration-similarity": {
                 "currentValue": null
             },
             "feature-evolution-arch": {
-                "currentValue": null
-            },
-            "feature-evolution-total": {
                 "currentValue": null
             },
             "features": {
@@ -3504,16 +3379,10 @@
             "configuration-evolution-arch": {
                 "currentValue": null
             },
-            "configuration-evolution-total": {
-                "currentValue": null
-            },
             "configuration-similarity": {
                 "currentValue": null
             },
             "feature-evolution-arch": {
-                "currentValue": null
-            },
-            "feature-evolution-total": {
                 "currentValue": null
             },
             "features": {
@@ -3632,16 +3501,10 @@
             "configuration-evolution-arch": {
                 "currentValue": null
             },
-            "configuration-evolution-total": {
-                "currentValue": null
-            },
             "configuration-similarity": {
                 "currentValue": null
             },
             "feature-evolution-arch": {
-                "currentValue": null
-            },
-            "feature-evolution-total": {
                 "currentValue": null
             },
             "features": {
@@ -3777,16 +3640,10 @@
             "configuration-evolution-arch": {
                 "currentValue": null
             },
-            "configuration-evolution-total": {
-                "currentValue": null
-            },
             "configuration-similarity": {
                 "currentValue": null
             },
             "feature-evolution-arch": {
-                "currentValue": null
-            },
-            "feature-evolution-total": {
                 "currentValue": null
             },
             "features": {
@@ -3953,16 +3810,10 @@
             "configuration-evolution-arch": {
                 "currentValue": null
             },
-            "configuration-evolution-total": {
-                "currentValue": null
-            },
             "configuration-similarity": {
                 "currentValue": null
             },
             "feature-evolution-arch": {
-                "currentValue": null
-            },
-            "feature-evolution-total": {
                 "currentValue": null
             },
             "features": {
@@ -4071,16 +3922,10 @@
             "configuration-evolution-arch": {
                 "currentValue": null
             },
-            "configuration-evolution-total": {
-                "currentValue": null
-            },
             "configuration-similarity": {
                 "currentValue": null
             },
             "feature-evolution-arch": {
-                "currentValue": null
-            },
-            "feature-evolution-total": {
                 "currentValue": null
             },
             "features": {
@@ -4207,16 +4052,10 @@
             "configuration-evolution-arch": {
                 "currentValue": null
             },
-            "configuration-evolution-total": {
-                "currentValue": null
-            },
             "configuration-similarity": {
                 "currentValue": null
             },
             "feature-evolution-arch": {
-                "currentValue": null
-            },
-            "feature-evolution-total": {
                 "currentValue": null
             },
             "features": {
@@ -4297,16 +4136,10 @@
             "configuration-evolution-arch": {
                 "currentValue": null
             },
-            "configuration-evolution-total": {
-                "currentValue": null
-            },
             "configuration-similarity": {
                 "currentValue": null
             },
             "feature-evolution-arch": {
-                "currentValue": null
-            },
-            "feature-evolution-total": {
                 "currentValue": null
             },
             "features": {
@@ -4395,16 +4228,10 @@
             "configuration-evolution-arch": {
                 "currentValue": null
             },
-            "configuration-evolution-total": {
-                "currentValue": null
-            },
             "configuration-similarity": {
                 "currentValue": null
             },
             "feature-evolution-arch": {
-                "currentValue": null
-            },
-            "feature-evolution-total": {
                 "currentValue": null
             },
             "features": {
@@ -4531,16 +4358,10 @@
             "configuration-evolution-arch": {
                 "currentValue": null
             },
-            "configuration-evolution-total": {
-                "currentValue": null
-            },
             "configuration-similarity": {
                 "currentValue": null
             },
             "feature-evolution-arch": {
-                "currentValue": null
-            },
-            "feature-evolution-total": {
                 "currentValue": null
             },
             "features": {
@@ -4711,16 +4532,10 @@
             "configuration-evolution-arch": {
                 "currentValue": null
             },
-            "configuration-evolution-total": {
-                "currentValue": null
-            },
             "configuration-similarity": {
                 "currentValue": null
             },
             "feature-evolution-arch": {
-                "currentValue": null
-            },
-            "feature-evolution-total": {
                 "currentValue": null
             },
             "features": {
@@ -4856,16 +4671,10 @@
             "configuration-evolution-arch": {
                 "currentValue": null
             },
-            "configuration-evolution-total": {
-                "currentValue": null
-            },
             "configuration-similarity": {
                 "currentValue": null
             },
             "feature-evolution-arch": {
-                "currentValue": null
-            },
-            "feature-evolution-total": {
                 "currentValue": null
             },
             "features": {
@@ -5028,16 +4837,10 @@
             "configuration-evolution-arch": {
                 "currentValue": null
             },
-            "configuration-evolution-total": {
-                "currentValue": null
-            },
             "configuration-similarity": {
                 "currentValue": null
             },
             "feature-evolution-arch": {
-                "currentValue": null
-            },
-            "feature-evolution-total": {
                 "currentValue": null
             },
             "features": {
@@ -5180,16 +4983,10 @@
             "configuration-evolution-arch": {
                 "currentValue": null
             },
-            "configuration-evolution-total": {
-                "currentValue": null
-            },
             "configuration-similarity": {
                 "currentValue": null
             },
             "feature-evolution-arch": {
-                "currentValue": null
-            },
-            "feature-evolution-total": {
                 "currentValue": null
             },
             "features": {
@@ -5278,16 +5075,10 @@
             "configuration-evolution-arch": {
                 "currentValue": null
             },
-            "configuration-evolution-total": {
-                "currentValue": null
-            },
             "configuration-similarity": {
                 "currentValue": null
             },
             "feature-evolution-arch": {
-                "currentValue": null
-            },
-            "feature-evolution-total": {
                 "currentValue": null
             },
             "features": {
@@ -5462,16 +5253,10 @@
             "configuration-evolution-arch": {
                 "currentValue": null
             },
-            "configuration-evolution-total": {
-                "currentValue": null
-            },
             "configuration-similarity": {
                 "currentValue": null
             },
             "feature-evolution-arch": {
-                "currentValue": null
-            },
-            "feature-evolution-total": {
                 "currentValue": null
             },
             "features": {
@@ -5575,16 +5360,10 @@
             "configuration-evolution-arch": {
                 "currentValue": null
             },
-            "configuration-evolution-total": {
-                "currentValue": null
-            },
             "configuration-similarity": {
                 "currentValue": null
             },
             "feature-evolution-arch": {
-                "currentValue": null
-            },
-            "feature-evolution-total": {
                 "currentValue": null
             },
             "features": {
@@ -5713,16 +5492,10 @@
             "configuration-evolution-arch": {
                 "currentValue": null
             },
-            "configuration-evolution-total": {
-                "currentValue": null
-            },
             "configuration-similarity": {
                 "currentValue": null
             },
             "feature-evolution-arch": {
-                "currentValue": null
-            },
-            "feature-evolution-total": {
                 "currentValue": null
             },
             "features": {
@@ -5876,16 +5649,10 @@
             "configuration-evolution-arch": {
                 "currentValue": null
             },
-            "configuration-evolution-total": {
-                "currentValue": null
-            },
             "configuration-similarity": {
                 "currentValue": null
             },
             "feature-evolution-arch": {
-                "currentValue": null
-            },
-            "feature-evolution-total": {
                 "currentValue": null
             },
             "features": {
@@ -6028,16 +5795,10 @@
             "configuration-evolution-arch": {
                 "currentValue": null
             },
-            "configuration-evolution-total": {
-                "currentValue": null
-            },
             "configuration-similarity": {
                 "currentValue": null
             },
             "feature-evolution-arch": {
-                "currentValue": null
-            },
-            "feature-evolution-total": {
                 "currentValue": null
             },
             "features": {
@@ -6208,16 +5969,10 @@
             "configuration-evolution-arch": {
                 "currentValue": null
             },
-            "configuration-evolution-total": {
-                "currentValue": null
-            },
             "configuration-similarity": {
                 "currentValue": null
             },
             "feature-evolution-arch": {
-                "currentValue": null
-            },
-            "feature-evolution-total": {
                 "currentValue": null
             },
             "features": {
@@ -6376,16 +6131,10 @@
             "configuration-evolution-arch": {
                 "currentValue": null
             },
-            "configuration-evolution-total": {
-                "currentValue": null
-            },
             "configuration-similarity": {
                 "currentValue": null
             },
             "feature-evolution-arch": {
-                "currentValue": null
-            },
-            "feature-evolution-total": {
                 "currentValue": null
             },
             "features": {
@@ -6504,16 +6253,10 @@
             "configuration-evolution-arch": {
                 "currentValue": null
             },
-            "configuration-evolution-total": {
-                "currentValue": null
-            },
             "configuration-similarity": {
                 "currentValue": null
             },
             "feature-evolution-arch": {
-                "currentValue": null
-            },
-            "feature-evolution-total": {
                 "currentValue": null
             },
             "features": {
@@ -6636,16 +6379,10 @@
             "configuration-evolution-arch": {
                 "currentValue": null
             },
-            "configuration-evolution-total": {
-                "currentValue": null
-            },
             "configuration-similarity": {
                 "currentValue": null
             },
             "feature-evolution-arch": {
-                "currentValue": null
-            },
-            "feature-evolution-total": {
                 "currentValue": null
             },
             "features": {
@@ -6816,16 +6553,10 @@
             "configuration-evolution-arch": {
                 "currentValue": null
             },
-            "configuration-evolution-total": {
-                "currentValue": null
-            },
             "configuration-similarity": {
                 "currentValue": null
             },
             "feature-evolution-arch": {
-                "currentValue": null
-            },
-            "feature-evolution-total": {
                 "currentValue": null
             },
             "features": {
@@ -6956,16 +6687,10 @@
             "configuration-evolution-arch": {
                 "currentValue": null
             },
-            "configuration-evolution-total": {
-                "currentValue": null
-            },
             "configuration-similarity": {
                 "currentValue": null
             },
             "feature-evolution-arch": {
-                "currentValue": null
-            },
-            "feature-evolution-total": {
                 "currentValue": null
             },
             "features": {
@@ -7128,16 +6853,10 @@
             "configuration-evolution-arch": {
                 "currentValue": null
             },
-            "configuration-evolution-total": {
-                "currentValue": null
-            },
             "configuration-similarity": {
                 "currentValue": null
             },
             "feature-evolution-arch": {
-                "currentValue": null
-            },
-            "feature-evolution-total": {
                 "currentValue": null
             },
             "features": {

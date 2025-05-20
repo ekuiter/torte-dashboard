@@ -23,13 +23,11 @@
 
           <v-autocomplete variant="solo-filled" class=" ma-2" v-model="selectedProject"
             v-on:update:model-value="getPlot" label="Select Project" :items="projects">
-
           </v-autocomplete>
         </v-col>
         <v-col md="6">
           <v-autocomplete variant="solo-filled" class=" ma-2" v-model="selectedPlot" v-on:update:model-value="getPlot"
-            label="Select Plot" :items="plotsForProject" item-title="displayName" item-value="idName">
-
+          label="Select Plot" :items="plotsForProject" item-title="displayName" item-value="idName">
           </v-autocomplete>
         </v-col>
       </v-row>
@@ -39,7 +37,7 @@
         :current-value="getCurrentScatterData()" :history-data="getHistory()"></scatter-plot>
       <!-- <v-card v-html="mainPageDescription"></v-card> -->
       <!-- <v-sheet :elevation="13" border rounded> -->
-        <ContentRenderer v-if="mainPageDescription && !(selectedPlot && selectedProject)" :value="mainPageDescription" />
+      <ContentRenderer v-if="mainPageDescription && !(selectedPlot && selectedProject)" :value="mainPageDescription" />
       <!-- </v-sheet> -->
     </v-responsive>
   </v-container>
@@ -95,7 +93,6 @@ function getPlotsForProj() {
   }
 }
 async function init() {
-  reset()
   projects.value = Object.keys(data.projectData)
   plots.value = Object.keys(data.plotData)
   console.log("in init: ", projects.value)
@@ -120,16 +117,13 @@ function reset() {
 }
 function isValidConfig(): boolean {
   if (selectedPlot.value != null && selectedProject.value != null) {
-    console.log("here")
     if (selectedPlot.value! in data.projectData) {
       selectedProject.value = Object.keys(data.projectData)[0]
     }
-    console.log("here2", selectedProject.value)
     if (selectedPlot.value in data.projectData[selectedProject.value]) {
       return true
     }
     selectedPlot.value = Object.keys(data.projectData[selectedProject.value])[0]
-    console.log("here3", selectedPlot.value)
     return false
   }
   else {
@@ -166,9 +160,9 @@ if (!import.meta.env.SSR) {
     console.log("no hash")
   }
   else {
-    if (window.location.hash.replace("#/", "").split("~").length ==0 ){
+    if (window.location.hash.replace("#/", "").split("~").length == 0) {
       reset()
-    } 
+    }
     selectedProject.value = window.location.hash.replace("#/", "").split("~")[0] ?? null
     if (selectedProject.value === "") {
       selectedPlot.value = null
