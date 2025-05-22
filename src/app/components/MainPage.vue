@@ -27,18 +27,16 @@
         </v-col>
         <v-col md="6">
           <v-autocomplete variant="solo-filled" class=" ma-2" v-model="selectedPlot" v-on:update:model-value="getPlot"
-          label="Select Plot" :items="plotsForProject" item-title="displayName" item-value="idName">
+            label="Select Plot" :items="plotsForProject" item-title="displayName" item-value="idName">
           </v-autocomplete>
         </v-col>
       </v-row>
       <box-plot v-if="showBoxPlot()" :plot-path="plotPath" :plot-data="currentPlotData">
       </box-plot>
-      <scatter-plot v-else-if="showScatterPlot()" :plot-path="plotPath" :plot-data="currentPlotData"
+      <scatter-plot v-else-if="showScatterPlot() && Object.keys(currentScatterData?.currentValue).length != 0" :plot-path="plotPath" :plot-data="currentPlotData"
         :current-value="getCurrentScatterData()" :history-data="getHistory()"></scatter-plot>
-      <!-- <v-card v-html="mainPageDescription"></v-card> -->
-      <!-- <v-sheet :elevation="13" border rounded> -->
+      <not-found-info-box v-else-if="selectedProject != null && selectedPlot != null" :plot-data="currentPlotData" :project="selectedProject"></not-found-info-box>
       <ContentRenderer v-if="mainPageDescription && !(selectedPlot && selectedProject)" :value="mainPageDescription" />
-      <!-- </v-sheet> -->
     </v-responsive>
   </v-container>
 </template>
