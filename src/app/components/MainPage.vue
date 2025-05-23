@@ -22,7 +22,7 @@
         <v-col md="6">
 
           <v-autocomplete variant="solo-filled" class=" ma-2" v-model="selectedProject"
-            v-on:update:model-value="getPlot" label="Select Project" :items="projects">
+            v-on:update:model-value="getPlot" label="Select Project" :items="sortProjects()">
           </v-autocomplete>
         </v-col>
         <v-col md="6">
@@ -64,7 +64,9 @@ function toggleTheme() {
   theme.global.name.value = theme.global.current.value.dark ? 'light' : 'dark'
 }
 
-
+function sortProjects(){
+  return Array.from(projects.value).toSorted()
+}
 function showBoxPlot() {
   console.log(selectedPlot.value)
   return selectedPlot.value != null && data.plotData[selectedPlot.value].plotType == 'box'

@@ -4,7 +4,7 @@ import os
 import json
 import pickle
 from math import log10
-
+from plot_helpers_linux import *
 ### UTILITY FUNCTIONS
 
 def read_dataframe(
@@ -70,13 +70,15 @@ def merge_metrics(new, old_path):
     write_object_to_file(old, old_path)
 
 class Linux:
-    def __init__(self, linux_output_directory):
-        self.output_directory = linux_output_directory
+    def __init__(self, output_directory, figure_directory="src/public/figures"):
+        self.output_directory = output_directory
+        self.figures_directory = figure_directory
         self.df_kconfig = self.read_dataframe("kconfig")
         self.df_kconfig["year"] = self.df_kconfig["committer_date"].apply(
             lambda d: int(d.year)
         )
         self.df_architectures = self.read_dataframe("read-linux-architectures")
+        self.architectures = self.df_architectures["architecture"].unique()
         self.df_architectures = self.df_architectures.sort_values(by="committer_date")
         self.df_architectures["year"] = self.df_architectures["committer_date"].apply(
             lambda d: int(d.year)
@@ -149,8 +151,8 @@ class Linux:
             self.df_kconfig[["committer_date", "revision"]].drop_duplicates(),
             self.df_total_features,
         )
-        df_solve_unconstrained = self.df_solve.merge(self.df_features)
-        df_solve_unconstrained["model-count-unconstrained"] = df_solve_unconstrained.apply(
+        self.df_solve_unconstrained = self.df_solve.merge(self.df_features)
+        self.df_solve_unconstrained["model-count-unconstrained"] = self.df_solve_unconstrained.apply(
             lambda row: str(
                 int(row["model-count"])
                 * (2 ** int(row["unconstrained_bools"]))
@@ -160,13 +162,13 @@ class Linux:
             else pd.NA,
             axis=1,
         )
-        df_solve_unconstrained["model-count-unconstrained-log10"] = (
-            df_solve_unconstrained["model-count-unconstrained"]
+        self.df_solve_unconstrained["model-count-unconstrained-log10"] = (
+            self.df_solve_unconstrained["model-count-unconstrained"]
             .fillna("")
             .map(big_log10)
             .replace(0, np.nan)
         )
-        df_solve_unconstrained["similarity"] = df_solve_unconstrained.apply(
+        self.df_solve_unconstrained["similarity"] = self.df_solve_unconstrained.apply(
             lambda row: int(row["model-count"]) / int(row["model-count-unconstrained"])
             if not pd.isna(row["model-count"]) and row["model-count"] != ""
             else pd.NA,
@@ -182,7 +184,7 @@ class Linux:
             if big_sum > 0:
                 return len(str(big_sum))
             
-        self.df_solve_slice = df_solve_unconstrained[df_solve_unconstrained['year'] <= 2013]
+        self.df_solve_slice = self.df_solve_unconstrained[self.df_solve_unconstrained['year'] <= 2013]
         self.df_solve_failures = self.df_solve_slice.groupby(['extractor', 'revision', 'architecture'], dropna=False).agg({'model-count-unconstrained-log10': lambda x: (True in list(pd.notna(x)) or pd.NA)}).reset_index()
         self.df_solve_group = self.df_solve_failures.groupby(['extractor', 'revision'], dropna=False)
         self.df_solve_failures = (self.df_solve_group['model-count-unconstrained-log10'].size() - self.df_solve_group['model-count-unconstrained-log10'].count()).reset_index()
@@ -391,4 +393,12 @@ class Linux:
         return history_vals
     
     def generate_figures(self):
-        pass
+        for arch in self.architectures:
+            # sloc(self.df_kconfig, arch, output_dir=self.figures_directory)
+            # model_count(self.df_solve_unconstrained, self.df_solve_slice, arch, output_dir=self.figures_directory)
+            features(self.df_features, arch, output_dir=self.figures_directory)
+            # model_count_time(self.df_solve, arch, output_dir=self.figures_directory)
+            
+if __name__ == "__main__":
+    linux = Linux("output-linux", figure_directory="testfigures")
+    linux.generate_figures()
