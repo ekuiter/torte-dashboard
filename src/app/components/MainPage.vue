@@ -27,7 +27,7 @@
         </v-col>
         <v-col md="6">
           <v-autocomplete variant="solo-filled" class=" ma-2" v-model="selectedPlot" v-on:update:model-value="getPlot"
-            label="Select Plot" :items="plotsForProject" item-title="displayName" item-value="idName">
+            label="Select Plot" :items="sortPlots()" item-title="displayName" item-value="idName">
           </v-autocomplete>
         </v-col>
       </v-row>
@@ -64,6 +64,10 @@ function toggleTheme() {
   theme.global.name.value = theme.global.current.value.dark ? 'light' : 'dark'
 }
 
+function sortPlots(){
+  return Array.from(plotsForProject.value).toSorted()
+}
+
 function sortProjects(){
   return Array.from(projects.value).toSorted()
 }
@@ -91,6 +95,7 @@ function getPlotsForProj() {
   for (let plot of Object.keys(data.projectData[selectedProject.value])) {
     plotsForProject.value = [...plotsForProject.value, data.plotData[plot]]
   }
+
 }
 async function init() {
   projects.value = Object.keys(data.projectData)
