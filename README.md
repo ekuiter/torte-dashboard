@@ -1,5 +1,5 @@
 # torte-dashboard
-Semi-Static web interface for visualization of pre-executed [torte](https://github.com/ekuiter/torte) simulations.
+Semi-Static web interface for visualization of pre-executed [`TORTE`](https://github.com/ekuiter/torte) simulations.
 
 ## 1. Usage
 
@@ -7,45 +7,45 @@ Semi-Static web interface for visualization of pre-executed [torte](https://gith
 
 The home page description can be modified in `src/content/description.md`.
 Furthermore, the descriptions of the individual metrics can currently be modified inside the `init.json`, specifically under `plotData.*.description`.  
-### Generate Data
+### Generate Figures and Metrics
 
-Open `gen_initJson.ipybn`. At the top, you will find a cell labeled `CONFIG VARIABLES`. These specify various paths in the program. 
+To generate figures and metrics from TORTE experiment data, tow things are needed:
 
-1. `linux_output_directory`: The directory in which the torte experiment results are located.
-2. `nonlinux_configpath`: The path to the configuration file from which the non-linux data will be generated and merged into `init.json`. 
+1. A configuration, found in `generation_config.json`, and
+2. the generation script, found in `generation.py` 
 
-The latter points to a json file that follows this structure: 
-
+The configuration is structured as follows:
 ```
 {
-    "PROJECT": {
-        "output_directory": "path/to/experiment_dir",
-        "ignore_systems": [
-            "SUBSYSTEM-1",
-            "SUBSYSTEM-N",
-            "this list can also be empty"
-        ],
+    "nonLinux": {
+        "NONLINUX_PROJECT": {
+            "output_directory": "output",
+            "ignore_systems": [
+                "SUBSYSTEM-1",
+                "SUBSYSTEM-N"
+            ],
+            "figures_directory": "src/public/figures"  // the default inside the script, can also be modified or omitted here
+        },
+        // for instance
+        "busybox": {
+            "output_directory": "output-busybox",
+            "ignore_systems": [
+                "busybox-models"
+            ],
+        }
     },
-    // for instance
-    "axtls": {
-        "output_directory": "output",
-        "ignore_systems": [
-            "uclibc-ng",
-            "embtoolkit"
-        ]
-    },
+    "linux": {
+        "output_directory": "output-linux",  // Set to null to ignore
+        "figures_directory": "src/public/figures"
+    }
 }
 ```
 Populate this file according to your available experiment results.
 The config file also includes a list to filter out/ignore certain systems inside a given project. For `axtls`, we are ignoring `uclibc-ng` and `embtoolkit`. Modify this filter according to your needs. Be aware, that no filtering in a mixed dataset may result in skewed data calculation.
 
-Next, inside the `vuetify-project/public/init.json`, under the `projectData` key, you can add more projects. 
-For a successful extraction of data from your experiment results, there are three things to consider:
-
-1. It is important that the keys match with the respective one inside `plotData`.
-2. We do not recommend modifying the `idName` and `plotType` values as this will break the frontend. Values under `displayName` and `description` are not processed in a way that a modification would break anything. 
-
-Lastly, the bottom two cells of `gen_initJson.ipynb` need to be executed to process the experiment data, and extend the `init.json` file. Naturally, you may want to comment out, or simply not execute, the linux cell if you dont have the linux experiment data.
+The generated metrics will be saved under the `projectData` key in `src/public/init.json`. 
+Under the `plotData` key are meta informations for the metrics, i.e. the plot type or information.
+We do not recommend modifying the `idName` and `plotType` values as this will break the frontend. Values under `displayName` and `description` are not processed in a way that a modification would break anything and we encourage you to write descriptions that to your liking.
 
 > In the next section, we report back the iterative process of finding a suitable tech stack. If you are only interested in the current, and final, one - feel free to [skip ahead](#final-teck-stack).
 
@@ -102,5 +102,5 @@ downsides, upsides etc
 Motivated by a lack of frontend design skills, we came across a concept called *Static Site Generation* (SSG).
 
 We use `vuetify` (a vueJS extension framework) to effortlessly develop a beautiful frontend and `nuxt` to subsequently generate static html files.
-Specifically, we open a development server by calling `npm run dev` from within `vuetify-project` and `npx nuxt build --preset github_pages` for SSG (in this case, specifically for github pages).
+Specifically, we open a development server by calling `npm run dev` from within `src` and `npx nuxt build --preset github_pages` for SSG (in this case, specifically for github pages).
 After the project has been built, we can open a local server using `npx serve .output/public` or even move the `public` folder into a `<userName>.github.io` repository. 
