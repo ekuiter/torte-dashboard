@@ -1,0 +1,39 @@
+{
+    "nonLinux": {
+        "axtls": {
+            "output_directory": "output",
+            "ignore_systems": [
+                "uclibc-ng",
+                "embtoolkit"
+            ],
+            "figures_directory": "testfigures"
+        },
+        "embtoolkit": {
+            "output_directory": "output",
+            "ignore_systems": [
+                "uclibc-ng",
+                "axtls"
+            ],
+            "figures_directory": "testfigures"
+        },
+        "uclibc-ng": {
+            "output_directory": "output",
+            "ignore_systems": [
+                "axtls",
+                "embtoolkit"
+            ],
+            "figures_directory": "testfigures"
+        },
+        "busybox": {
+            "output_directory": "output-busybox",
+            "ignore_systems": [
+                "busybox-models"
+            ],
+            "figures_directory": "testfigures"
+        }
+    },
+    "linux": {
+        "output_directory": "output-linux",
+        "figures_directory": "testfigures"
+    }
+}

@@ -294,6 +294,8 @@ def show(fig, figures_directory, name, plot_category, margin=None):
         fig.update_layout(margin=margin)
     else:
         fig.update_layout(margin=dict(l=0, r=0, t=0, b=0))
+    if not os.path.exists(figures_directory):
+        os.mkdir(figures_directory)
     if not os.path.exists(f"{figures_directory}/{plot_category}"):
         os.mkdir(f"{figures_directory}/{plot_category}")
     fig.write_html(
@@ -301,12 +303,12 @@ def show(fig, figures_directory, name, plot_category, margin=None):
     )
 
 
-def jaccard_similarity(df, architecture, output_dir):
+def jaccard_similarity(df_features, architecture, output_dir):
     # # Jaccard similarity to features (RQ2)
     if architecture != "all":
-        df = df[df["architecture"] == architecture]
+        df_features = df_features[df_features["architecture"] == architecture]
     df_features_long = pd.melt(
-        df,
+        df_features,
         id_vars=['extractor'],
         value_vars=['extracted_features_jaccard', 'all_variables_jaccard', 'variables_jaccard',
                     'feature_variables_jaccard', 'undead_feature_variables_jaccard', 'all_feature_variables_jaccard',
@@ -326,7 +328,10 @@ def jaccard_similarity(df, architecture, output_dir):
         {'variable': 'all_feature_variables_jaccard'}, 'F<sub>all</sub>', inplace=True)
     df_features_long.replace(
         {'variable': 'features_jaccard'}, 'F', inplace=True)
-
+    if df_features_long["value"].empty:
+        print(
+            f"'Jaccard Similarity' plot for project/architecture 'Linux/{architecture}' could not be created because 'df_features_long[\"value\"]' is empty.")
+        return
     fig = px.box(
         df_features_long,
         x='variable',
@@ -346,15 +351,19 @@ def jaccard_similarity(df, architecture, output_dir):
          output_dir,
          f'jaccard-similariy-linux-{architecture}',
          margin=dict(l=0, r=0, t=20, b=0),
-         plot_category="total-features",
+         plot_category="jaccard-similarity",
          )
 
 
-def sim_by_arch(df, architecture, output_dir):
+def configuration_similarity(df_solve_unconstrained, architecture, output_dir):
     if architecture != "all":
-        df = df[df["architecture"] == architecture]
+        df_solve_unconstrained = df_solve_unconstrained[df_solve_unconstrained["architecture"] == architecture]
+    if df_solve_unconstrained["similarity"].empty:
+        print(
+            f"'Configuration Similarity' plot for project/architecture 'Linux/{architecture}' could not be created because 'df_solve_unconstrained[\"similarity\"]' is empty.")
+        return
     fig = px.box(
-        df,
+        df_solve_unconstrained,
         y='similarity',
         color='extractor',
         facet_col='extractor',
@@ -373,9 +382,11 @@ def sim_by_arch(df, architecture, output_dir):
         fig, output_dir, f'configuration-similarity-linux-{architecture}', margin=dict(l=0, r=0, t=20, b=0), plot_category="configuration-similarity")
 
 # share of all feature variables
-def share_by_arch(df_features, arch, output_dir):
-    if arch != "all":
-        df_features = df_features[df_features["architecture"] == arch]
+
+
+def share_of_feature_variables(df_features, architecture, output_dir):
+    if architecture != "all":
+        df_features = df_features[df_features["architecture"] == architecture]
     df_features_long = pd.melt(
         df_features[~df_features['#features'].isna()].assign(**{
             '#dead_feature_variables': df_features['#dead_feature_variables'] / df_features['#ALL_feature_variables'],
@@ -384,52 +395,72 @@ def share_by_arch(df_features, arch, output_dir):
             '#unconstrained_feature_variables': df_features['#unconstrained_feature_variables'] / df_features['#ALL_feature_variables'],
         }),
         id_vars=['extractor'],
-        value_vars=['#dead_feature_variables', '#core_feature_variables', '#constrained_feature_variables', '#unconstrained_feature_variables'],
+        value_vars=['#dead_feature_variables', '#core_feature_variables',
+                    '#constrained_feature_variables', '#unconstrained_feature_variables'],
     )
-    df_features_long.replace({'variable': '#dead_feature_variables'}, 'FV<sub>dead</sub>', inplace=True)
-    df_features_long.replace({'variable': '#core_feature_variables'}, 'FV<sub>core</sub>', inplace=True)
-    df_features_long.replace({'variable': '#constrained_feature_variables'}, 'FV<sub>constrained</sub>', inplace=True)
-    df_features_long.replace({'variable': '#unconstrained_feature_variables'}, 'F<sub>unconstrained</sub>', inplace=True)
+    df_features_long.replace(
+        {'variable': '#dead_feature_variables'}, 'FV<sub>dead</sub>', inplace=True)
+    df_features_long.replace(
+        {'variable': '#core_feature_variables'}, 'FV<sub>core</sub>', inplace=True)
+    df_features_long.replace(
+        {'variable': '#constrained_feature_variables'}, 'FV<sub>constrained</sub>', inplace=True)
+    df_features_long.replace(
+        {'variable': '#unconstrained_feature_variables'}, 'F<sub>unconstrained</sub>', inplace=True)
 
+    if df_features_long["value"].empty:
+        print(
+            f"'Share of Feature Variables' plot for project/architecture 'Linux/{architecture}' could not be created because 'df_features_long[\"value\"]' is empty.")
+        return
     fig = px.box(
         df_features_long,
         x='variable',
         y='value',
         range_y=[0, 1],
         color='extractor',
-        labels={'value': f'Share of All Feature Variables (FV<sub>all</sub>) ({arch})', 'variable': 'Level of Feature Configurability', 'extractor': 'Extractor'},
+        labels={'value': f'Share of All Feature Variables (FV<sub>all</sub>) ({architecture})',
+                'variable': 'Level of Feature Configurability', 'extractor': 'Extractor'},
         category_orders={'variable': ['FV<sub>core</sub>', 'FV<sub>dead</sub>', 'F<sub>unconstrained</sub>', 'FV<sub>constrained</sub>'],
-                        'extractor': ['KConfigReader', 'KClause']}
+                         'extractor': ['KConfigReader', 'KClause']}
     )
     percentage_y_axis(fig)
     style_box(fig, legend_position='topleft')
-    show(fig, output_dir, f'share-of-feature-variables-linux-{arch}', plot_category="share-of-feature-variables")
+    show(fig, output_dir,
+         f'share-of-feature-variables-linux-{architecture}', plot_category="share-of-feature-variables")
 
 
 def total_features(df_features, output_dir):
+    if df_features["#features"].empty:
+        print(
+            f"'#Features' plot for project/architecture 'Linux/all' could not be created because 'df_features[\"#total_features\"]' is empty.")
+        return
     fig = px.scatter(
         df_features.sort_values(by='committer_date'),
         x='committer_date',
         y='#total_features',
         facet_col='extractor',
-        labels={'#total_features': '#Features (Total)', 'extractor': 'Extractor', 'committer_date': 'Year'},
+        labels={
+            '#total_features': '#Features (Total)', 'extractor': 'Extractor', 'committer_date': 'Year'},
         category_orders={'extractor': ['KConfigReader', 'KClause']}
     )
     style_scatter(fig)
-    fn = lambda prefix, y: format(round(y), ',')
-    annotate_value(fig, 'committer_date', 0, 1, 'v2.5.45', 0, -15, 'center', df_features[df_features['revision'] == 'v2.5.45'])
-    annotate_value(fig, 'committer_date', 0, 1, 'v6.11', -10, -15, 'center', df_features[df_features['revision'] == 'v6.11'])
+    def fn(prefix, y): return format(round(y), ',')
+    annotate_value(fig, 'committer_date', 0, 1, 'v2.5.45', 0, -15,
+                   'center', df_features[df_features['revision'] == 'v2.5.45'])
+    annotate_value(fig, 'committer_date', 0, 1, 'v6.11', -10, -15,
+                   'center', df_features[df_features['revision'] == 'v6.11'])
     annotate_value(fig, 'committer_date', '#total_features', 1, 'KConfigReader', 40, 0, 'left',
-                df_features[(df_features['extractor'] == 'KConfigReader')&(df_features['revision'] == 'v2.5.45')], fn)
+                   df_features[(df_features['extractor'] == 'KConfigReader') & (df_features['revision'] == 'v2.5.45')], fn)
     annotate_value(fig, 'committer_date', '#total_features', 1, 'KConfigReader', -10, 30, 'right',
-                df_features[(df_features['extractor'] == 'KConfigReader')&(df_features['revision'] == 'v6.11')], fn)
-    annotate_value(fig, 'committer_date', 0, 2, 'v2.5.45', 0, -15, 'center', df_features[df_features['revision'] == 'v2.5.45'])
-    annotate_value(fig, 'committer_date', 0, 2, 'v6.11', -10, -15, 'center', df_features[df_features['revision'] == 'v6.11'])
+                   df_features[(df_features['extractor'] == 'KConfigReader') & (df_features['revision'] == 'v6.11')], fn)
+    annotate_value(fig, 'committer_date', 0, 2, 'v2.5.45', 0, -15,
+                   'center', df_features[df_features['revision'] == 'v2.5.45'])
+    annotate_value(fig, 'committer_date', 0, 2, 'v6.11', -10, -15,
+                   'center', df_features[df_features['revision'] == 'v6.11'])
     annotate_value(fig, 'committer_date', '#total_features', 2, 'KClause', 40, 0, 'left',
-                df_features[(df_features['extractor'] == 'KClause')&(df_features['revision'] == 'v2.5.45')], fn)
+                   df_features[(df_features['extractor'] == 'KClause') & (df_features['revision'] == 'v2.5.45')], fn)
     annotate_value(fig, 'committer_date', '#total_features', 2, 'KClause', -10, 30, 'right',
-                df_features[(df_features['extractor'] == 'KClause')&(df_features['revision'] == 'v6.11')], fn)
-    fig.update_yaxes(tickprefix = "   ")
+                   df_features[(df_features['extractor'] == 'KClause') & (df_features['revision'] == 'v6.11')], fn)
+    fig.update_yaxes(tickprefix="   ")
     fig.update_xaxes(range=["2002-01-01", "2024-12-01"])
     fig.update_yaxes(range=[0, 20500])
     show(
@@ -440,40 +471,60 @@ def total_features(df_features, output_dir):
         margin=dict(l=0, r=0, t=20, b=0),
     )
 
-def total_features(df_features, arch, output_dir):
-    df_features = df_features[df_features["architecture"] == arch]
+
+def features(df_features, architecture, output_dir):
+    df_features = df_features[df_features["architecture"] == architecture]
+    if df_features["#features"].empty:
+        print(
+            f"'#Features' plot for project/architecture 'Linux/{architecture}' could not be created because 'df_features[\"#features\"]' is empty.")
+        return
     fig = px.scatter(
         df_features,
         x='committer_date',
         y=f'#features',
         color='architecture',
-        labels={f'#features': f'#Features (Arch.) ({arch})', 'extractor': 'Extractor', 'committer_date': 'Year'},
+        labels={f'#features': f'#Features (Arch.) ({architecture})',
+                'extractor': 'Extractor', 'committer_date': 'Year'},
         hover_data=['revision', 'architecture'],
         facet_col='extractor',
         category_orders={'extractor': ['KConfigReader', 'KClause']}
     )
     style_scatter(fig, legend_position=None, marker_size=2.5)
-    annotate_value(fig, 'committer_date', 0, 1, 'v4.16', 0, -15, 'center', df_features[df_features['revision'] == 'v4.16'])
-    annotate_value(fig, 'committer_date', 0, 1, 'v6.11', -10, -15, 'center', df_features[df_features['revision'] == 'v6.11'])
-    annotate_value(fig, 'committer_date', '#features', 1, 'arm', -10, -20, 'right', df_features[(df_features['extractor'] == 'KConfigReader')&(df_features['architecture'] == 'arm')&(df_features['revision'] == 'v6.11')],)
-    annotate_value(fig, 'committer_date', '#features', 1, 'x86', -100, -20, 'right',df_features[(df_features['extractor'] == 'KConfigReader')&(df_features['architecture'] == 'x86')&(df_features['revision'] == 'v6.11')])
-    annotate_value(fig, 'committer_date', '#features', 1, 'arm64', -120, 0, 'right',df_features[(df_features['extractor'] == 'KConfigReader')&(df_features['architecture'] == 'arm64')&(df_features['revision'] == 'v6.11')])
-    annotate_value(fig, 'committer_date', '#features', 1, 'nios2', -5, 40, 'right', df_features[(df_features['extractor'] == 'KConfigReader')&(df_features['architecture'] == 'nios2')&(df_features['revision'] == 'v6.11')])
-    annotate_value(fig, 'committer_date', '#features', 1, 'score', 20, 0, 'left',   df_features[(df_features['extractor'] == 'KConfigReader')&(df_features['architecture'] == 'score')&(df_features['revision'] == 'v4.16')])
-    annotate_value(fig, 'committer_date', 0, 2, 'v4.16', 0, -15, 'center', df_features[df_features['revision'] == 'v4.16'])
-    annotate_value(fig, 'committer_date', 0, 2, 'v6.11', -10, -15, 'center', df_features[df_features['revision'] == 'v6.11'])
-    annotate_value(fig, 'committer_date', '#features', 2, 'arm', -10, -20, 'right', df_features[(df_features['extractor'] == 'KClause')&(df_features['architecture'] == 'arm')&(df_features['revision'] == 'v6.11')])
-    annotate_value(fig, 'committer_date', '#features', 2, 'x86', -100, -20, 'right',df_features[(df_features['extractor'] == 'KClause')&(df_features['architecture'] == 'x86')&(df_features['revision'] == 'v6.11')])
-    annotate_value(fig, 'committer_date', '#features', 2, 'arm64', -120, 0, 'right',df_features[(df_features['extractor'] == 'KClause')&(df_features['architecture'] == 'arm64')&(df_features['revision'] == 'v6.11')])
-    annotate_value(fig, 'committer_date', '#features', 2, 'nios2', -5, 40, 'right', df_features[(df_features['extractor'] == 'KClause')&(df_features['architecture'] == 'nios2')&(df_features['revision'] == 'v6.11')])
-    annotate_value(fig, 'committer_date', '#features', 2, 'score', 20, 0, 'left',   df_features[(df_features['extractor'] == 'KClause')&(df_features['architecture'] == 'score')&(df_features['revision'] == 'v4.16')])
-    fig.update_yaxes(tickprefix = "    ")
+    annotate_value(fig, 'committer_date', 0, 1, 'v4.16', 0, -15,
+                   'center', df_features[df_features['revision'] == 'v4.16'])
+    annotate_value(fig, 'committer_date', 0, 1, 'v6.11', -10, -15,
+                   'center', df_features[df_features['revision'] == 'v6.11'])
+    annotate_value(fig, 'committer_date', '#features', 1, 'arm', -10, -20, 'right', df_features[(
+        df_features['extractor'] == 'KConfigReader') & (df_features['architecture'] == 'arm') & (df_features['revision'] == 'v6.11')],)
+    annotate_value(fig, 'committer_date', '#features', 1, 'x86', -100, -20, 'right', df_features[(
+        df_features['extractor'] == 'KConfigReader') & (df_features['architecture'] == 'x86') & (df_features['revision'] == 'v6.11')])
+    annotate_value(fig, 'committer_date', '#features', 1, 'arm64', -120, 0, 'right', df_features[(
+        df_features['extractor'] == 'KConfigReader') & (df_features['architecture'] == 'arm64') & (df_features['revision'] == 'v6.11')])
+    annotate_value(fig, 'committer_date', '#features', 1, 'nios2', -5, 40, 'right', df_features[(
+        df_features['extractor'] == 'KConfigReader') & (df_features['architecture'] == 'nios2') & (df_features['revision'] == 'v6.11')])
+    annotate_value(fig, 'committer_date', '#features', 1, 'score', 20, 0, 'left',   df_features[(
+        df_features['extractor'] == 'KConfigReader') & (df_features['architecture'] == 'score') & (df_features['revision'] == 'v4.16')])
+    annotate_value(fig, 'committer_date', 0, 2, 'v4.16', 0, -15,
+                   'center', df_features[df_features['revision'] == 'v4.16'])
+    annotate_value(fig, 'committer_date', 0, 2, 'v6.11', -10, -15,
+                   'center', df_features[df_features['revision'] == 'v6.11'])
+    annotate_value(fig, 'committer_date', '#features', 2, 'arm', -10, -20, 'right', df_features[(
+        df_features['extractor'] == 'KClause') & (df_features['architecture'] == 'arm') & (df_features['revision'] == 'v6.11')])
+    annotate_value(fig, 'committer_date', '#features', 2, 'x86', -100, -20, 'right', df_features[(
+        df_features['extractor'] == 'KClause') & (df_features['architecture'] == 'x86') & (df_features['revision'] == 'v6.11')])
+    annotate_value(fig, 'committer_date', '#features', 2, 'arm64', -120, 0, 'right', df_features[(
+        df_features['extractor'] == 'KClause') & (df_features['architecture'] == 'arm64') & (df_features['revision'] == 'v6.11')])
+    annotate_value(fig, 'committer_date', '#features', 2, 'nios2', -5, 40, 'right', df_features[(
+        df_features['extractor'] == 'KClause') & (df_features['architecture'] == 'nios2') & (df_features['revision'] == 'v6.11')])
+    annotate_value(fig, 'committer_date', '#features', 2, 'score', 20, 0, 'left',   df_features[(
+        df_features['extractor'] == 'KClause') & (df_features['architecture'] == 'score') & (df_features['revision'] == 'v4.16')])
+    fig.update_yaxes(tickprefix="    ")
     fig.update_xaxes(range=["2002-01-01", "2024-12-01"])
     fig.update_yaxes(range=[0, 21000])
     show(
         fig,
         output_dir,
-        f"features-linux-{arch}",
+        f"features-linux-{architecture}",
         plot_category="features",
         margin=dict(l=0, r=0, t=20, b=0),
     )
@@ -484,61 +535,84 @@ def model_count_time(df_solve, architecture, output_dir):
         df_solve = df_solve[df_solve["architecture"] == architecture]
     df_solve_slice = df_solve[~df_solve['model-count-log10'].isna()]
     if df_solve_slice.empty:
+        print(
+            f"'Time for Counting' plot for project/architecture 'Linux/{architecture}' could not be created because 'df_solve_slice[\"model-count-log10\"]' is empty.")
         return False
     fig = px.scatter(
         df_solve_slice,
         x=df_solve_slice['committer_date'],
         y=df_solve_slice['backbone.dimacs-analyzer-time'] / 1000000000,
         color='architecture',
-        labels={'extractor': 'Extractor', 'y': f'Time for Counting (log<sub>10</sub> s) ({architecture})', 'committer_date': 'Year'},
+        labels={'extractor': 'Extractor',
+                'y': f'Time for Counting (log<sub>10</sub> s) ({architecture})', 'committer_date': 'Year'},
         facet_col='extractor',
         facet_row='backbone.dimacs-analyzer',
         log_y=True
     )
     style_scatter(fig, legend_position=None, marker_size=2.5)
-    show(fig, output_dir, f'model-count-time-linux-{architecture}', margin=dict(l=0, r=0, t=20, b=0), plot_category="model-count-time")
+    show(fig, output_dir, f'model-count-time-linux-{architecture}', margin=dict(
+        l=0, r=0, t=20, b=0), plot_category="model-count-time")
+
 
 def big_sum(series):
-    big_sum = sum([int(value) for value in series if not pd.isna(value) and value])
+    big_sum = sum([int(value)
+                  for value in series if not pd.isna(value) and value])
     if big_sum > 0:
         return len(str(big_sum))
-    
-def model_count(df_solve_total, df_solve_slice, architecture, output_dir ):
+
+
+def model_count(df_solve_total, df_solve_slice, architecture, output_dir):
     if architecture == "all":
         _mct(df_solve_total, df_solve_slice, output_dir)
-        return 
+        return
+    df_solve_slice = df_solve_slice[df_solve_slice["architecture"]
+                                    == architecture]
+    if df_solve_slice["model-count-unconstrained-log10"].empty:
+        print(
+            f"#Configuration plot for project/architecture 'Linux/{architecture}' could not be created because 'df_solve_slice[\"model-count-unconstrained-log10\"]' is empty.")
+        return
     fig = px.scatter(
         df_solve_slice,
         x='committer_date',
         y='model-count-unconstrained-log10',
         color='architecture',
-        labels={'model-count-unconstrained-log10': '#Configurations (Arch., log<sub>10</sub>)', 'committer_date': 'Year', 'extractor': 'Extractor'},
+        labels={'model-count-unconstrained-log10':
+                '#Configurations (Arch., log<sub>10</sub>)', 'committer_date': 'Year', 'extractor': 'Extractor'},
         hover_data=['revision', 'architecture'],
         facet_col='extractor',
         category_orders={'extractor': ['KConfigReader', 'KClause']}
     )
     log10_y_axis(fig)
     style_scatter(fig, legend_position=None, marker_size=2.5)
-    fn1 = lambda prefix, y: prefix
-    fn2 = lambda prefix, y: f'{prefix}: 10<sup>{round(y)}</sup>'
-    annotate_value(fig, 'committer_date', 0, 1, 'v2.6.13', 0, -15, 'center', df_solve_slice[df_solve_slice['revision'] == 'v2.6.13'], fn1)
-    annotate_value(fig, 'committer_date', 0, 1, 'v2.6.39', 0, -15, 'center', df_solve_slice[df_solve_slice['revision'] == 'v2.6.39'], fn1)
+    def fn1(prefix, y): return prefix
+    def fn2(prefix, y): return f'{prefix}: 10<sup>{round(y)}</sup>'
+    annotate_value(fig, 'committer_date', 0, 1, 'v2.6.13', 0, -15, 'center',
+                   df_solve_slice[df_solve_slice['revision'] == 'v2.6.13'], fn1)
+    annotate_value(fig, 'committer_date', 0, 1, 'v2.6.39', 0, -15, 'center',
+                   df_solve_slice[df_solve_slice['revision'] == 'v2.6.39'], fn1)
     annotate_value(fig, 'committer_date', 'model-count-unconstrained-log10', 1, 'i386', 0, -20, 'center',
-                df_solve_slice[(df_solve_slice['extractor'] == 'KConfigReader')&(df_solve_slice['architecture'] == 'i386')&(df_solve_slice['revision'] == 'v2.6.13')].dropna(), fn2)
+                   df_solve_slice[(df_solve_slice['extractor'] == 'KConfigReader') & (df_solve_slice['architecture'] == 'i386') & (df_solve_slice['revision'] == 'v2.6.13')].dropna(), fn2)
     annotate_value(fig, 'committer_date', 'model-count-unconstrained-log10', 1, 'h8300', 10, 10, 'left',
-                df_solve_slice[(df_solve_slice['extractor'] == 'KConfigReader')&(df_solve_slice['architecture'] == 's390')&(df_solve_slice['revision'] == 'v2.6.39')].dropna(), fn2)
-    annotate_value(fig, 'committer_date', 0, 2, 'v2.6.23', 0, -15, 'center', df_solve_slice[df_solve_slice['revision'] == 'v2.6.23'], fn1)
-    annotate_value(fig, 'committer_date', 0, 2, 'v3.10', 0, -15, 'center', df_solve_slice[df_solve_slice['revision'] == 'v3.10'], fn1)
+                   df_solve_slice[(df_solve_slice['extractor'] == 'KConfigReader') & (df_solve_slice['architecture'] == 's390') & (df_solve_slice['revision'] == 'v2.6.39')].dropna(), fn2)
+    annotate_value(fig, 'committer_date', 0, 2, 'v2.6.23', 0, -15, 'center',
+                   df_solve_slice[df_solve_slice['revision'] == 'v2.6.23'], fn1)
+    annotate_value(fig, 'committer_date', 0, 2, 'v3.10', 0, -15, 'center',
+                   df_solve_slice[df_solve_slice['revision'] == 'v3.10'], fn1)
     annotate_value(fig, 'committer_date', 'model-count-unconstrained-log10', 2, 'i386', 0, -20, 'center',
-                df_solve_slice[(df_solve_slice['extractor'] == 'KClause')&(df_solve_slice['architecture'] == 'i386')&(df_solve_slice['revision'] == 'v2.6.23')&(df_solve_slice['backbone.dimacs-analyzer'] == 'model-counting-competition-2022/SharpSAT-td+Arjun/SharpSAT-td+Arjun.sh')].dropna(), fn2)
+                   df_solve_slice[(df_solve_slice['extractor'] == 'KClause') & (df_solve_slice['architecture'] == 'i386') & (df_solve_slice['revision'] == 'v2.6.23') & (df_solve_slice['backbone.dimacs-analyzer'] == 'model-counting-competition-2022/SharpSAT-td+Arjun/SharpSAT-td+Arjun.sh')].dropna(), fn2)
     annotate_value(fig, 'committer_date', 'model-count-unconstrained-log10', 2, 'h8300', 10, 10, 'left',
-                df_solve_slice[(df_solve_slice['extractor'] == 'KClause')&(df_solve_slice['architecture'] == 'h8300')&(df_solve_slice['revision'] == 'v3.10')].dropna(), fn2)
+                   df_solve_slice[(df_solve_slice['extractor'] == 'KClause') & (df_solve_slice['architecture'] == 'h8300') & (df_solve_slice['revision'] == 'v3.10')].dropna(), fn2)
     fig.update_xaxes(range=["2002-01-01", "2024-12-01"])
     fig.update_yaxes(range=[0, 1050], dtick=200)
-    show(fig,output_dir, f'model-count-linux-{architecture}', height=220, width=750, margin=dict(l=0, r=0, t=2, b=0), plot_category="model-count")
+    show(fig, output_dir, f'model-count-linux-{architecture}', margin=dict(
+        l=0, r=0, t=2, b=0), plot_category="model-count")
+
 
 def _mct(df_solve_total, df_solve_slice, output_dir):
-    
+    if df_solve_total["model-count-unconstrained"].empty:
+        print(
+            f"#Configuration plot for project/architecture 'Linux/{all}' could not be created because 'df_solve_total[\"model-count-unconstrained\"]' is empty.")
+        return
     fig = px.scatter(
         df_solve_total.replace(True, 'Exact').replace(False, 'Lower Bound'),
         x='committer_date',
@@ -546,45 +620,59 @@ def _mct(df_solve_total, df_solve_slice, output_dir):
         symbol='is-upper-bound',
         symbol_sequence=['circle', 'triangle-up-open'],
         facet_col='extractor',
-        labels=revision_labels({'model-count-unconstrained': '#Configurations (Total, log<sub>10</sub>)', 'extractor': 'Extractor', 'is-upper-bound': 'Kind of Bound', 'committer_date': 'Year'}),
+        labels=revision_labels({'model-count-unconstrained': '#Configurations (Total, log<sub>10</sub>)',
+                               'extractor': 'Extractor', 'is-upper-bound': 'Kind of Bound', 'committer_date': 'Year'}),
         category_orders={'extractor': ['KConfigReader', 'KClause']}
     )
     log10_y_axis(fig)
     style_scatter(fig, legend_position='topright', xshift=0.01, yshift=0.03)
     fig.update_traces(marker_line_color='rgba(0,0,0,0)')
-    fn1 = lambda prefix, y: prefix
-    fn2 = lambda prefix, y: '10<sup>' + format(round(y), ',') + '</sup>'
-    annotate_value(fig, 'committer_date', 0, 1, 'v2.5.45', 0, -15, 'center', df_solve_slice[df_solve_slice['revision'] == 'v2.5.45'], fn1)
-    annotate_value(fig, 'committer_date', 0, 1, 'v2.6.7', 0, -30, 'center', df_solve_slice[df_solve_slice['revision'] == 'v2.6.7'], fn1)
-    annotate_value(fig, 'committer_date', 0, 1, 'v2.6.13', 5, -15, 'center', df_solve_slice[df_solve_slice['revision'] == 'v2.6.13'], fn1)
+    def fn1(prefix, y): return prefix
+    def fn2(prefix, y): return '10<sup>' + format(round(y), ',') + '</sup>'
+    annotate_value(fig, 'committer_date', 0, 1, 'v2.5.45', 0, -15, 'center',
+                   df_solve_slice[df_solve_slice['revision'] == 'v2.5.45'], fn1)
+    annotate_value(fig, 'committer_date', 0, 1, 'v2.6.7', 0, -30, 'center',
+                   df_solve_slice[df_solve_slice['revision'] == 'v2.6.7'], fn1)
+    annotate_value(fig, 'committer_date', 0, 1, 'v2.6.13', 5, -15, 'center',
+                   df_solve_slice[df_solve_slice['revision'] == 'v2.6.13'], fn1)
     annotate_value(fig, 'committer_date', 'model-count-unconstrained', 1, 'KCR', 15, 0, 'left',
-                df_solve_slice[(df_solve_slice['extractor'] == 'KConfigReader')&(df_solve_slice['revision'] == 'v2.5.45')]
-                        .groupby(['extractor', 'committer_date']).agg({'model-count-unconstrained': big_sum}).reset_index(), fn2)
+                   df_solve_slice[(df_solve_slice['extractor'] == 'KConfigReader') & (
+                       df_solve_slice['revision'] == 'v2.5.45')]
+                   .groupby(['extractor', 'committer_date']).agg({'model-count-unconstrained': big_sum}).reset_index(), fn2)
     annotate_value(fig, 'committer_date', 'model-count-unconstrained', 1, 'KCR', 10, 10, 'left',
-                df_solve_slice[(df_solve_slice['extractor'] == 'KConfigReader')&(df_solve_slice['revision'] == 'v2.6.7')]
-                        .groupby(['extractor', 'committer_date']).agg({'model-count-unconstrained': big_sum}).reset_index(), fn2)
+                   df_solve_slice[(df_solve_slice['extractor'] == 'KConfigReader') & (
+                       df_solve_slice['revision'] == 'v2.6.7')]
+                   .groupby(['extractor', 'committer_date']).agg({'model-count-unconstrained': big_sum}).reset_index(), fn2)
     annotate_value(fig, 'committer_date', 'model-count-unconstrained', 1, 'KCR', 15, -10, 'left',
-                df_solve_slice[(df_solve_slice['extractor'] == 'KConfigReader')&(df_solve_slice['revision'] == 'v2.6.13')]
-                        .groupby(['extractor', 'committer_date']).agg({'model-count-unconstrained': big_sum}).reset_index(), fn2)
-    annotate_value(fig, 'committer_date', 0, 2, 'v2.5.45', 0, -15, 'center', df_solve_slice[df_solve_slice['revision'] == 'v2.5.45'], fn1)
-    annotate_value(fig, 'committer_date', 0, 2, 'v2.6.23', 0, -15, 'center', df_solve_slice[df_solve_slice['revision'] == 'v2.6.23'], fn1)
+                   df_solve_slice[(df_solve_slice['extractor'] == 'KConfigReader') & (
+                       df_solve_slice['revision'] == 'v2.6.13')]
+                   .groupby(['extractor', 'committer_date']).agg({'model-count-unconstrained': big_sum}).reset_index(), fn2)
+    annotate_value(fig, 'committer_date', 0, 2, 'v2.5.45', 0, -15, 'center',
+                   df_solve_slice[df_solve_slice['revision'] == 'v2.5.45'], fn1)
+    annotate_value(fig, 'committer_date', 0, 2, 'v2.6.23', 0, -15, 'center',
+                   df_solve_slice[df_solve_slice['revision'] == 'v2.6.23'], fn1)
     annotate_value(fig, 'committer_date', 'model-count-unconstrained', 2, 'KCl', 25, 5, 'left',
-                df_solve_slice[(df_solve_slice['extractor'] == 'KClause')&(df_solve_slice['revision'] == 'v2.5.45')]
-                        .groupby(['extractor', 'committer_date']).agg({'model-count-unconstrained': big_sum}).reset_index(), fn2)
+                   df_solve_slice[(df_solve_slice['extractor'] == 'KClause') & (
+                       df_solve_slice['revision'] == 'v2.5.45')]
+                   .groupby(['extractor', 'committer_date']).agg({'model-count-unconstrained': big_sum}).reset_index(), fn2)
     annotate_value(fig, 'committer_date', 'model-count-unconstrained', 2, 'KCl', 15, -15, 'left',
-                df_solve_slice[(df_solve_slice['extractor'] == 'KClause')&(df_solve_slice['revision'] == 'v2.6.23')]
-                        .groupby(['extractor', 'committer_date']).agg({'model-count-unconstrained': big_sum}).reset_index(), fn2)
+                   df_solve_slice[(df_solve_slice['extractor'] == 'KClause') & (
+                       df_solve_slice['revision'] == 'v2.6.23')]
+                   .groupby(['extractor', 'committer_date']).agg({'model-count-unconstrained': big_sum}).reset_index(), fn2)
     fig.update_xaxes(range=["2002-01-01", "2024-12-01"])
     fig.update_yaxes(range=[0, 1050], dtick=200)
-    show(fig,output_dir, 'model-count-linux-all', height=220, width=750, plot_category="model-count")
+    show(fig, output_dir, 'model-count-linux-all', plot_category="model-count")
 
-def sloc(df, architecture, output_dir):
-    if df.dropna(subset=["source_lines_of_code"]).empty:
-        print("Skipping sloc, no data after dropna().")
+
+def sloc(df_kconfig, architecture, output_dir):
+    if df_kconfig.dropna(subset=["source_lines_of_code"]).empty:
+        print(
+            f"#SLOC plot for project/architecture 'Linux/{architecture}' could not be created because 'df_kconfig[\"source_lines_of_code\"]' is empty.")
+        return
     if architecture != "all":
-        df = df[df["architecture"] == architecture]
+        df_kconfig = df_kconfig[df_kconfig["architecture"] == architecture]
     fig = px.scatter(
-        df,
+        df_kconfig,
         x="committer_date",
         y="source_lines_of_code",
         labels={
@@ -594,9 +682,11 @@ def sloc(df, architecture, output_dir):
         hover_data=["revision"],
     )
     style_scatter(fig)
-    show(fig, output_dir, f"source_lines_of_code-linux-{architecture}", plot_category="source_lines_of_code")
+    show(fig, output_dir,
+         f"source_lines_of_code-linux-{architecture}", plot_category="source_lines_of_code")
 
-def feature_evol(df_features, architecture, output_dir):
+
+def feature_evolution(df_features, architecture, output_dir):
     f = "arch"
     if architecture != "all":
         df_features = df_features[df_features["architecture"] == architecture]
@@ -608,10 +698,15 @@ def feature_evol(df_features, architecture, output_dir):
                 id_vars=['extractor'],
                 value_vars=[added, removed]
             )
-            df_features_long.replace({'variable': added}, 'Added', inplace=True)
-            df_features_long.replace({'variable': removed}, 'Removed', inplace=True)
+            df_features_long.replace(
+                {'variable': added}, 'Added', inplace=True)
+            df_features_long.replace(
+                {'variable': removed}, 'Removed', inplace=True)
             df_features_long.replace({'value': 0}, 1, inplace=True)
-
+            if df_features_long["value"].empty:
+                print(
+                    f"Feature evolution plot for project/architecture Linux/'{architecture}' could not be created because 'df_features_long[\"value\"]' is empty.")
+                continue
             fig = px.box(
                 df_features_long,
                 x='variable',
@@ -619,23 +714,28 @@ def feature_evol(df_features, architecture, output_dir):
                 color='extractor',
                 facet_col='extractor',
                 facet_col_spacing=0.1,
-                labels={'value': label, 'variable': '', 'extractor': 'Extractor'},
+                labels={'value': label, 'variable': '',
+                        'extractor': 'Extractor'},
                 log_y=True,
                 category_orders={'extractor': ['KConfigReader', 'KClause']}
             )
-            fig.for_each_annotation(lambda a: a.update(text='Extractor=KCR' if a.text.split("=")[1] == 'KConfigReader' else 'Extractor=KCl'))
+            fig.for_each_annotation(lambda a: a.update(text='Extractor=KCR' if a.text.split(
+                "=")[1] == 'KConfigReader' else 'Extractor=KCl'))
             fig.update_traces(width=0.5)
-            fig.update_yaxes(tickvals=[1, 2, 10, 100, 1000], ticktext=['0', '10<sup>0</sup>', '10<sup>1</sup>', '10<sup>2</sup>', '10<sup>3</sup>'], range=[0, 3.7], tickfont=dict(color=y_color))
+            fig.update_yaxes(tickvals=[1, 2, 10, 100, 1000], ticktext=['0', '10<sup>0</sup>', '10<sup>1</sup>',
+                             '10<sup>2</sup>', '10<sup>3</sup>'], range=[0, 3.7], tickfont=dict(color=y_color))
             style_box(fig, legend_position=None)
-            show(fig, output_dir, f'feature-evolution-{f}-linux-{architecture}', height=260, width=2*120, margin=dict(l=0, r=0, t=21, b=0), plot_category=f"feature-evolution-{f}")
+            show(fig, output_dir, f'feature-evolution-{f}-linux-{architecture}', margin=dict(
+                l=0, r=0, t=21, b=0), plot_category=f"feature-evolution-{f}")
 
-def plot_configuration_evolution(df,architecture, y, output_dir):
+
+def plot_configuration_evolution(df, architecture, y, output_dir):
     color = "white"
     f = "arch"
-    if architecture =="all":
+    if architecture == "all":
         color = "black"
         df = df[df["architecture"] == architecture]
-        f ="total"
+        f = "total"
     df['x'] = ' '
     fig = px.box(
         df,
@@ -643,31 +743,78 @@ def plot_configuration_evolution(df,architecture, y, output_dir):
         y=y,
         color='extractor',
         facet_col='extractor',
-        labels={'model-count-unconstrained-log10': ' ', 'model-count-unconstrained': f' Scale of #Configurations (log<sub>10</sub>) ({architecture})', 'extractor': 'Extractor', 'x': ''},
+        labels={'model-count-unconstrained-log10': ' ', 'model-count-unconstrained':
+                f' Scale of #Configurations (log<sub>10</sub>) ({architecture})', 'extractor': 'Extractor', 'x': ''},
         category_orders={'extractor': ['KConfigReader', 'KClause']}
     )
-    fig.for_each_annotation(lambda a: a.update(text='KCR' if a.text.split("=")[1] == 'KConfigReader' else 'KCl'))
+    fig.for_each_annotation(lambda a: a.update(
+        text='KCR' if a.text.split("=")[1] == 'KConfigReader' else 'KCl'))
     fig.update_traces(width=0.5)
     fig.update_yaxes(range=[-277, 180], tickfont=dict(color=color))
     log10_y_axis(fig)
     style_box(fig, legend_position=None)
-    show(fig, output_dir,  f'configuration-evolution-{f}-linux-{architecture}', height=260, width=120, margin=dict(l=0, r=0, t=21, b=0), plot_category=f"configuration-evoluation-{f}")
+    show(fig, output_dir,  f'configuration-evolution-{f}-linux-{architecture}', height=260, width=120, margin=dict(
+        l=0, r=0, t=21, b=0), plot_category=f"configuration-evoluation-{f}")
 
-def prediction_accuracies(df, arch, output_dir):
-    if arch == "all":
-        df = df[df["architecture"] == arch]
+
+def prediction_accuracies(deviations, architecture, output_dir):
+    if architecture != "all":
+        deviations = deviations[deviations["architecture"] == architecture]
     for metric in ['features', 'configurations', 'configurations-by-features']:
+        df_tmp = deviations[deviations['metric'] == metric]
+        if df_tmp.empty:
+            print(
+                f"Prediction Accuracy plot for project/architecture Linux/'{architecture}' could not be created because 'deviations[\"{metric}\"]' is empty.")
+            continue
         fig = px.box(
-            df[df['metric']==metric],
+            deviations[deviations['metric'] == metric],
             x='is-total',
             y='deviation',
             color='extractor',
             facet_col='extractor',
             facet_col_spacing=0.1,
-            labels={'deviation': f'Relative Deviation ({arch})' if metric == 'features' else '', 'extractor': 'Extractor'},
+            labels={'deviation': f'Relative Deviation ({architecture})' if metric ==
+                    'features' else '', 'extractor': 'Extractor'},
         )
         fig.update_traces(width=0.5)
         fig.update_yaxes(range=[-1.1, 1.1])
         percentage_y_axis(fig)
         style_box(fig, legend_position=None)
-        show(fig, output_dir, f'prediction-accuracy-{metric}-linux-{arch}', height=260, width=2*120, margin=dict(l=0, r=0, t=21, b=0), plot_category=f"prediction-accuracy-{metric}")
+        show(fig, output_dir, f'prediction-accuracy-{metric}-linux-{architecture}', margin=dict(
+            l=0, r=0, t=21, b=0), plot_category=f"prediction-accuracy-{metric}")
+
+def plot_configuration_evolution(file, df, y, architecture, output_dir, y_color='black'):
+    df['x'] = ' '
+    if df[y].empty:
+        print(
+            f"'Configuration Evolution' plot for project/architecture Linux/'{architecture}' could not be created because 'df[\"{y}\"]' is empty.")
+        return
+    fig = px.box(
+        df,
+        x='x',
+        y=y,
+        color='extractor',
+        facet_col='extractor',
+        labels={'model-count-unconstrained-log10': ' ', 'model-count-unconstrained': ' Scale of #Configurations (log<sub>10</sub>)', 'extractor': 'Extractor', 'x': ''},
+        category_orders={'extractor': ['KConfigReader', 'KClause']}
+    )
+    fig.for_each_annotation(lambda a: a.update(text='KCR' if a.text.split("=")[1] == 'KConfigReader' else 'KCl'))
+    fig.update_traces(width=0.5)
+    fig.update_yaxes(range=[-277, 180], tickfont=dict(color=y_color))
+    log10_y_axis(fig)
+    style_box(fig, legend_position=None)
+    show(fig, output_dir, f'configuration-evolution-{file}-linux-{architecture}', plot_category=f"configuration-evolution-{file}")
+
+
+def configuration_evolution(df_solve_total, df_solve_unconstrained_diff, arch, output_dir):
+    if arch == "all":
+        df_solve_total_diff = df_solve_total.copy().sort_values(by='committer_date')
+        df_solve_total_diff = df_solve_total_diff[df_solve_total_diff['is-upper-bound']]
+        for extractor in set(df_solve_total_diff['extractor']):
+                df_solve_total_diff.loc[(df_solve_total_diff['extractor'] == extractor), ['model-count-unconstrained']] = df_solve_total_diff[(df_solve_total_diff['extractor'] == extractor)]['model-count-unconstrained'].diff()
+        plot_configuration_evolution('total', df_solve_total_diff, 'model-count-unconstrained', arch, output_dir)
+    else:
+        for extractor in set(df_solve_unconstrained_diff['extractor']):
+            for architecture in set(df_solve_unconstrained_diff['architecture']):
+                df_solve_unconstrained_diff.loc[(df_solve_unconstrained_diff['architecture'] == architecture) & (df_solve_unconstrained_diff['extractor'] == extractor), ['model-count-unconstrained-log10']] = df_solve_unconstrained_diff[(df_solve_unconstrained_diff['architecture'] == architecture) & (df_solve_unconstrained_diff['extractor'] == extractor)]['model-count-unconstrained-log10'].diff()
+        plot_configuration_evolution('arch', df_solve_unconstrained_diff, 'model-count-unconstrained-log10', arch, output_dir, 'white')

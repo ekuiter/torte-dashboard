@@ -296,7 +296,9 @@ def show(fig, figures_directory, name, plot_category, margin=None):
 
 def total_features(df, project, output_dir):
     if df.dropna(subset=["model-features"]).empty:
-        print("Skipping total features, no data after dropna().")
+        print(
+            f"'Total Features' plot for project '{project}' could not be created because 'df[\"model-features\"]' is empty.")
+        return
     fig = px.scatter(
         df.sort_values(by="committer_date"),
         x="committer_date",
@@ -317,7 +319,9 @@ def total_features(df, project, output_dir):
 
 def model_count_time(df, project, output_dir):
     if df.dropna(subset=["model-time"]).empty:
-        print("Skipping model-count-time, no data after dropna().")
+        print(
+            f"'Time for Counting' plot for project '{project}' could not be created because 'df[\"model-time\"]' is empty.")
+        return
     fig = px.scatter(
         df,
         x="committer_date",
@@ -342,7 +346,9 @@ def model_count_time(df, project, output_dir):
 
 def model_count(df, project, output_dir):
     if df.dropna(subset=["model-literals"]).empty:
-        print("Skipping model count, no data after dropna().")
+        print(
+            f"'#Configurations' plot for project '{project}' could not be created because 'df[\"model-literals\"]' is empty.")
+        return
     fig = px.scatter(
         df,
         x="committer_date",
@@ -367,7 +373,9 @@ def model_count(df, project, output_dir):
 
 def sloc(df, project, output_dir):
     if df.dropna(subset=["source_lines_of_code"]).empty:
-        print("Skipping sloc, no data after dropna().")
+        print(
+            f"'SLOC' plot for project '{project}' could not be created because 'df[\"source_lines_of_code\"]' is empty.")
+        return
     fig = px.scatter(
         df[df["system"] == project],
         x="committer_date",
