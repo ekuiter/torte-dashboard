@@ -6,7 +6,7 @@
                 "uclibc-ng",
                 "embtoolkit"
             ],
-            "figures_directory": "testfigures"
+            "figures_directory": "src/public/figures"
         },
         "embtoolkit": {
             "output_directory": "output",
@@ -14,7 +14,7 @@
                 "uclibc-ng",
                 "axtls"
             ],
-            "figures_directory": "testfigures"
+            "figures_directory": "src/public/figures"
         },
         "uclibc-ng": {
             "output_directory": "output",
@@ -22,18 +22,18 @@
                 "axtls",
                 "embtoolkit"
             ],
-            "figures_directory": "testfigures"
+            "figures_directory": "src/public/figures"
         },
         "busybox": {
             "output_directory": "output-busybox",
             "ignore_systems": [
                 "busybox-models"
             ],
-            "figures_directory": "testfigures"
+            "figures_directory": "src/public/figures"
         }
     },
     "linux": {
         "output_directory": "output-linux",
-        "figures_directory": "testfigures"
+        "figures_directory": "src/public/figures"
     }
 }

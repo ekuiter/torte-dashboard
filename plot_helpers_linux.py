@@ -349,7 +349,7 @@ def jaccard_similarity(df_features, architecture, output_dir):
     style_box(fig, legend_position=None)
     show(fig,
          output_dir,
-         f'jaccard-similariy-linux-{architecture}',
+         f'jaccard-similarity-linux-{architecture}',
          margin=dict(l=0, r=0, t=20, b=0),
          plot_category="jaccard-similarity",
          )
@@ -687,10 +687,10 @@ def sloc(df_kconfig, architecture, output_dir):
 
 
 def feature_evolution(df_features, architecture, output_dir):
-    f = "arch"
+    f = "total"
     if architecture != "all":
         df_features = df_features[df_features["architecture"] == architecture]
-        f = "total"
+        f = "arch"
     for df in [df_features[df_features['year'] >= 2005]]:
         for (added, removed, df, label, file, y_color) in [('#total_added_features', '#total_removed_features', df[['extractor', '#total_added_features', '#total_removed_features']].drop_duplicates(), 'Change in #Features (log<sub>10</sub>)', 'total', 'black'), ('#added_features', '#removed_features', df, ' ', 'arch', 'white')]:
             df_features_long = pd.melt(

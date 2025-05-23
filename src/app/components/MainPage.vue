@@ -43,7 +43,6 @@
 <script lang="ts" setup>
 import { ref, type Ref } from 'vue';
 import data from "public/init.json"
-// import mainPageDescription from "public/mainPageDescription.md"
 import type { ScatterData, PlotData } from './interfaces';
 const mainPageDescription = await queryCollection('blog').path('/description').first()
 const selectedPlot: Ref<string | null> = ref(null);
@@ -54,8 +53,6 @@ const projects: Ref<string[]> = ref(Object.keys(data.projectData));
 const selectedProject: Ref<string | null> = ref(null);
 const plotsForProject: Ref<string[]> = ref(getPlotsForProj());
 const plots: Ref<string[]> = ref(Object.keys(data.plotData));
-
-
 import { useTheme } from 'vuetify'
 
 const theme = useTheme()
@@ -80,11 +77,9 @@ function showScatterPlot() {
 }
 
 function getHistory() {
-  console.log("history:", currentScatterData.value)
   return currentScatterData.value?.history
 }
 function getCurrentScatterData() {
-  console.log("currentscatter: ", currentScatterData.value?.currentValue);
   return currentScatterData.value?.currentValue
 }
 function getPlotsForProj() {
@@ -100,9 +95,7 @@ function getPlotsForProj() {
 async function init() {
   projects.value = Object.keys(data.projectData)
   plots.value = Object.keys(data.plotData)
-  console.log("in init: ", projects.value)
   mainPageDescription.value = data.mainPageDescription
-  console.log(mainPageDescription.value)
 }
 
 function containsString(): boolean {
@@ -139,7 +132,6 @@ function getPlot() {
   console.log(selectedPlot.value)
   isValidConfig()
   getPlotsForProj()
-  console.log(selectedPlot.value, selectedProject.value, plotsForProject.value)
   if (!containsString) {
     return
   }
@@ -150,21 +142,15 @@ function getPlot() {
       history: data.projectData[selectedProject.value][selectedPlot.value].history,
 
     }
-    console.log(currentScatterData)
-    console.log(currentScatterData.value)
     currentPlotData.value = data.plotData[selectedPlot.value]
     const path = `figures/${selectedPlot.value}/${selectedPlot.value}-${selectedProject.value.replace("/", "-")}.html`
-    console.log(path)
     plotPath.value = path
   }
 }
 if (!import.meta.env.SSR) {
   window.addEventListener('load', () => { init });
   init()
-  if (window.location.hash === "") {
-    console.log("no hash")
-  }
-  else {
+  if (window.location.hash !== "") {
     if (window.location.hash.replace("#/", "").split("~").length == 0) {
       reset()
     }
@@ -173,7 +159,6 @@ if (!import.meta.env.SSR) {
       selectedPlot.value = null
     }
     selectedPlot.value = window.location.hash.replace("#/", "").split("~")[1] ?? null
-    console.log("start: ", selectedProject.value, selectedPlot.value)
     if (!isValidConfig()) {
       alert("given configuration was invalid. Reverted to default.")
     }

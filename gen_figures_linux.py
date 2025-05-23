@@ -5,6 +5,7 @@ import json
 import pickle
 from math import log10
 from plot_helpers_linux import *
+from metrics_helpers import *
 from tqdm import tqdm
 from argparse import ArgumentParser
 # UTILITY FUNCTIONS
@@ -61,21 +62,6 @@ def write_object_to_file(obj, name):
 def read_json(path):
     with open(path) as json_data:
         return json.load(json_data)
-
-
-def merge_metrics(new, old_path):
-    old = read_json(old_path)
-
-    for proj, metrics in new.items():
-        for metric, values in metrics.items():
-            for name, value in values.items():
-                if proj not in old["projectData"]:
-                    print(f"{proj} not in init.json")
-                    continue
-                if metric not in old["projectData"][proj]:
-                    old["projectData"][proj][metric] = dict()
-                old["projectData"][proj][metric][name] = value
-    write_object_to_file(old, old_path)
 
 
 class Linux:
@@ -315,6 +301,7 @@ class Linux:
                         for arch in self.df_kconfig["architecture"].unique()}
         self.metrics["linux/all"] = dict()
         self.generate_figures()
+        self.generate_metrics()
 
     def read_dataframe(self, stage, dtype={}, usecols=None, file=None):
         if not file:
@@ -420,7 +407,8 @@ class Linux:
                 arch=arch, df=df_arch, sortBy=sortBy, key=key, prefix="10^", unit="models", apply_func=lambda v: int(v))
             self.metrics[f"linux/{arch}"]["model-count"] = extractor_values
 
-    def fill_metrics(self):
+    def generate_metrics(self):
+        print(f"Generating linux metrics & merging into src/public/init.json")
         self.total_features_latest()
         self.features_latest()
         self.sloc_latest()
@@ -521,7 +509,8 @@ class Linux:
             configuration_similarity(
                 self.df_solve_unconstrained, arch, self.figures_directory)
             feature_evolution(self.df_features, arch, self.figures_directory)
-            features(self.df_features, arch, self.figures_directory)
+            if arch != "all":
+                features(self.df_features, arch, self.figures_directory)
             jaccard_similarity(self.df_features, arch, self.figures_directory)
             model_count(self.df_solve_total, self.df_solve_slice,
                         arch, self.figures_directory)

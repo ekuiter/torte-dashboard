@@ -131,7 +131,7 @@ class NonLinux:
     def generate_metrics(self):
         for project, config in (pbar := tqdm(self.config.items())):
             pbar.set_description(f"Processing {project}")
-            print(f"Generating metrics for '{project}'")
+            print(f"Generating metrics for '{project}' and merging into src/public/init.json")
             self.current_project = project
             ignore_systems = config["ignore_systems"]
             output_directory = config["output_directory"]
