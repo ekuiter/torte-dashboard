@@ -11,7 +11,7 @@ Furthermore, the descriptions of the individual metrics can currently be modifie
 
 To generate figures and metrics from TORTE experiment data, tow things are needed:
 
-1. A configuration, found in `generation_config.json`, and
+1. A configuration, found in `gen_init.json`, and
 2. the generation script, found in `generation.py` 
 
 The configuration is structured as follows:
