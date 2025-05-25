@@ -6,7 +6,7 @@
 
     <v-icon class="cursor-pointer" size="x-large" @click.native.stop="toggleTheme"
       v-if="theme.global.current.value.dark == false" icon="mdi-cake"></v-icon>
-    <img class="cursor-pointer" v-else src="public/dimcake.svg" @click.native.stop="toggleTheme"></img>
+    <img style="width:32px;height: 32px" class="cursor-pointer" v-else src="public/dimcake.svg" @click.native.stop="toggleTheme"></img>
     <v-btn @click="reset" rounded size="x-large">
       <h1>
         Torte Dashboard
@@ -33,7 +33,7 @@
       </v-row>
       <box-plot v-if="showBoxPlot()" :plot-path="plotPath" :plot-data="currentPlotData">
       </box-plot>
-      <scatter-plot v-else-if="showScatterPlot() && Object.keys(currentScatterData?.currentValue).length != 0" :plot-path="plotPath" :plot-data="currentPlotData"
+      <scatter-plot v-else-if="selectedProject && showScatterPlot() && Object.keys(currentScatterData?.currentValue).length != 0" :plot-path="plotPath" :plot-data="currentPlotData"
         :current-value="getCurrentScatterData()" :history-data="getHistory()"></scatter-plot>
       <not-found-info-box v-else-if="selectedProject != null && selectedPlot != null" :plot-data="currentPlotData" :project="selectedProject"></not-found-info-box>
       <ContentRenderer v-if="mainPageDescription && !(selectedPlot && selectedProject)" :value="mainPageDescription" />
@@ -90,6 +90,8 @@ function getPlotsForProj() {
   for (let plot of Object.keys(data.projectData[selectedProject.value])) {
     plotsForProject.value = [...plotsForProject.value, data.plotData[plot]]
   }
+  console.log("plotsForProject.value")
+  console.log(plotsForProject.value)
 
 }
 async function init() {

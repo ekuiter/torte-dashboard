@@ -142,7 +142,7 @@ class NonLinux:
             self.get_latest_nonLinux(
                 key="model-features", unit="features", prefix="", apply_func=lambda v: int(v))
             self.get_latest_nonLinux(
-                key="model-time", unit="s", prefix="", apply_func=lambda v: round(v / 1000000000, 3))
+                key="model-time", unit="s*10⁹", prefix="", apply_func=lambda v: round(v / 1000000000, 3))
             self.get_latest_nonLinux(
                 key="model-literals", unit="models", prefix="", apply_func=lambda v: int(v))
         merge_metrics(self.metrics)

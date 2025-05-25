@@ -495,7 +495,7 @@ class Linux:
                 value = apply_func(value)
             if value != 0:
                 history_vals[f"{last}-years-before"] = {
-                    "value": f"{prefix}{value} {unit})",
+                    "value": f"{prefix}{value} {unit}",
                     "date": ym.strftime("%B %d, %Y")
                 }
         return history_vals

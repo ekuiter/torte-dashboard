@@ -328,6 +328,7 @@ def jaccard_similarity(df_features, architecture, output_dir):
         {'variable': 'all_feature_variables_jaccard'}, 'F<sub>all</sub>', inplace=True)
     df_features_long.replace(
         {'variable': 'features_jaccard'}, 'F', inplace=True)
+    df_features_long = df_features_long[~df_features_long['value'].isna()]
     if df_features_long["value"].empty:
         print(
             f"'Jaccard Similarity' plot for project/architecture 'Linux/{architecture}' could not be created because 'df_features_long[\"value\"]' is empty.")
@@ -358,6 +359,7 @@ def jaccard_similarity(df_features, architecture, output_dir):
 def configuration_similarity(df_solve_unconstrained, architecture, output_dir):
     if architecture != "all":
         df_solve_unconstrained = df_solve_unconstrained[df_solve_unconstrained["architecture"] == architecture]
+    df_solve_unconstrained = df_solve_unconstrained[~df_solve_unconstrained['similarity'].isna()]
     if df_solve_unconstrained["similarity"].empty:
         print(
             f"'Configuration Similarity' plot for project/architecture 'Linux/{architecture}' could not be created because 'df_solve_unconstrained[\"similarity\"]' is empty.")
@@ -406,7 +408,7 @@ def share_of_feature_variables(df_features, architecture, output_dir):
         {'variable': '#constrained_feature_variables'}, 'FV<sub>constrained</sub>', inplace=True)
     df_features_long.replace(
         {'variable': '#unconstrained_feature_variables'}, 'F<sub>unconstrained</sub>', inplace=True)
-
+    df_features_long = df_features_long[~df_features_long['value'].isna()]
     if df_features_long["value"].empty:
         print(
             f"'Share of Feature Variables' plot for project/architecture 'Linux/{architecture}' could not be created because 'df_features_long[\"value\"]' is empty.")
@@ -429,9 +431,10 @@ def share_of_feature_variables(df_features, architecture, output_dir):
 
 
 def total_features(df_features, output_dir):
-    if df_features["#features"].empty:
+    df_features = df_features[~df_features['#total_features'].isna()]
+    if df_features["#total_features"].empty:
         print(
-            f"'#Features' plot for project/architecture 'Linux/all' could not be created because 'df_features[\"#total_features\"]' is empty.")
+            f"'#Total Features' plot for project/architecture 'Linux/all' could not be created because 'df_features[\"#total_features\"]' is empty.")
         return
     fig = px.scatter(
         df_features.sort_values(by='committer_date'),
@@ -474,6 +477,7 @@ def total_features(df_features, output_dir):
 
 def features(df_features, architecture, output_dir):
     df_features = df_features[df_features["architecture"] == architecture]
+    df_features = df_features[~df_features['#features'].isna()]
     if df_features["#features"].empty:
         print(
             f"'#Features' plot for project/architecture 'Linux/{architecture}' could not be created because 'df_features[\"#features\"]' is empty.")
@@ -533,15 +537,15 @@ def features(df_features, architecture, output_dir):
 def model_count_time(df_solve, architecture, output_dir):
     if architecture != "all":
         df_solve = df_solve[df_solve["architecture"] == architecture]
-    df_solve_slice = df_solve[~df_solve['model-count-log10'].isna()]
-    if df_solve_slice.empty:
+    df_solve = df_solve[~df_solve['model-count-log10'].isna()]
+    if df_solve.empty:
         print(
             f"'Time for Counting' plot for project/architecture 'Linux/{architecture}' could not be created because 'df_solve_slice[\"model-count-log10\"]' is empty.")
         return False
     fig = px.scatter(
-        df_solve_slice,
-        x=df_solve_slice['committer_date'],
-        y=df_solve_slice['backbone.dimacs-analyzer-time'] / 1000000000,
+        df_solve,
+        x=df_solve['committer_date'],
+        y=df_solve['backbone.dimacs-analyzer-time'] / 1000000000,
         color='architecture',
         labels={'extractor': 'Extractor',
                 'y': f'Time for Counting (log<sub>10</sub> s) ({architecture})', 'committer_date': 'Year'},
@@ -567,6 +571,7 @@ def model_count(df_solve_total, df_solve_slice, architecture, output_dir):
         return
     df_solve_slice = df_solve_slice[df_solve_slice["architecture"]
                                     == architecture]
+    df_solve_slice = df_solve_slice[~df_solve_slice['model-count-unconstrained-log10'].isna()]
     if df_solve_slice["model-count-unconstrained-log10"].empty:
         print(
             f"#Configuration plot for project/architecture 'Linux/{architecture}' could not be created because 'df_solve_slice[\"model-count-unconstrained-log10\"]' is empty.")
@@ -609,6 +614,7 @@ def model_count(df_solve_total, df_solve_slice, architecture, output_dir):
 
 
 def _mct(df_solve_total, df_solve_slice, output_dir):
+    df_solve_total = df_solve_total[~df_solve_total['model-count-unconstrained'].isna()]
     if df_solve_total["model-count-unconstrained"].empty:
         print(
             f"#Configuration plot for project/architecture 'Linux/{all}' could not be created because 'df_solve_total[\"model-count-unconstrained\"]' is empty.")
@@ -665,6 +671,7 @@ def _mct(df_solve_total, df_solve_slice, output_dir):
 
 
 def sloc(df_kconfig, architecture, output_dir):
+    df_kconfig = df_kconfig[~df_kconfig['source_lines_of_code'].isna()]
     if df_kconfig.dropna(subset=["source_lines_of_code"]).empty:
         print(
             f"#SLOC plot for project/architecture 'Linux/{architecture}' could not be created because 'df_kconfig[\"source_lines_of_code\"]' is empty.")
@@ -703,6 +710,7 @@ def feature_evolution(df_features, architecture, output_dir):
             df_features_long.replace(
                 {'variable': removed}, 'Removed', inplace=True)
             df_features_long.replace({'value': 0}, 1, inplace=True)
+            df_features_long = df_features_long[~df_features_long['value'].isna()]
             if df_features_long["value"].empty:
                 print(
                     f"Feature evolution plot for project/architecture Linux/'{architecture}' could not be created because 'df_features_long[\"value\"]' is empty.")
@@ -728,40 +736,12 @@ def feature_evolution(df_features, architecture, output_dir):
             show(fig, output_dir, f'feature-evolution-{f}-linux-{architecture}', margin=dict(
                 l=0, r=0, t=21, b=0), plot_category=f"feature-evolution-{f}")
 
-
-def plot_configuration_evolution(df, architecture, y, output_dir):
-    color = "white"
-    f = "arch"
-    if architecture == "all":
-        color = "black"
-        df = df[df["architecture"] == architecture]
-        f = "total"
-    df['x'] = ' '
-    fig = px.box(
-        df,
-        x='x',
-        y=y,
-        color='extractor',
-        facet_col='extractor',
-        labels={'model-count-unconstrained-log10': ' ', 'model-count-unconstrained':
-                f' Scale of #Configurations (log<sub>10</sub>) ({architecture})', 'extractor': 'Extractor', 'x': ''},
-        category_orders={'extractor': ['KConfigReader', 'KClause']}
-    )
-    fig.for_each_annotation(lambda a: a.update(
-        text='KCR' if a.text.split("=")[1] == 'KConfigReader' else 'KCl'))
-    fig.update_traces(width=0.5)
-    fig.update_yaxes(range=[-277, 180], tickfont=dict(color=color))
-    log10_y_axis(fig)
-    style_box(fig, legend_position=None)
-    show(fig, output_dir,  f'configuration-evolution-{f}-linux-{architecture}', height=260, width=120, margin=dict(
-        l=0, r=0, t=21, b=0), plot_category=f"configuration-evoluation-{f}")
-
-
 def prediction_accuracies(deviations, architecture, output_dir):
     if architecture != "all":
         deviations = deviations[deviations["architecture"] == architecture]
     for metric in ['features', 'configurations', 'configurations-by-features']:
         df_tmp = deviations[deviations['metric'] == metric]
+        df_tmp = df_tmp[~df_tmp['deviation'].isna()]
         if df_tmp.empty:
             print(
                 f"Prediction Accuracy plot for project/architecture Linux/'{architecture}' could not be created because 'deviations[\"{metric}\"]' is empty.")
@@ -785,6 +765,7 @@ def prediction_accuracies(deviations, architecture, output_dir):
 
 def plot_configuration_evolution(file, df, y, architecture, output_dir, y_color='black'):
     df['x'] = ' '
+    df = df[~df[y].isna()]
     if df[y].empty:
         print(
             f"'Configuration Evolution' plot for project/architecture Linux/'{architecture}' could not be created because 'df[\"{y}\"]' is empty.")
