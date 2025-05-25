@@ -300,7 +300,7 @@ class Linux:
         self.metrics = {f"linux/{arch}": dict()
                         for arch in self.df_kconfig["architecture"].unique()}
         self.metrics["linux/all"] = dict()
-        self.generate_figures()
+        # self.generate_figures()
         self.generate_metrics()
 
     def read_dataframe(self, stage, dtype={}, usecols=None, file=None):
@@ -414,6 +414,7 @@ class Linux:
         self.sloc_latest()
         self.model_count_latest()
         self.model_count_time_latest()
+        print(self.metrics)
         merge_metrics(self.metrics)
 
     def total_features_latest(self):

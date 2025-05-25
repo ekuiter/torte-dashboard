@@ -118,10 +118,14 @@ def merge_metrics(new, init_json_path="src/public/init.json"):
     for proj, metrics in new.items():
         for metric, values in metrics.items():
             for name, value in values.items():
+                path = f"src/public/figures/{metric}/{metric}-{proj.replace("/", "-")}.html"
+                print(path)
+                if not os.path.exists(path):
+                    print(f"No plot found for {proj} and {metric}.")
+                    continue
                 if proj not in old["projectData"]:
                     if "linux" in proj:
-                        old["projectData"][proj] = {plot: dict() for plot, val in LINUX_PLOTCONFIG.items(
-                        ) if val["plotType"] == "box" and val["allOnly"] == (proj == "linux/all")}
+                        old["projectData"][proj] = {plot: dict() for plot, val in LINUX_PLOTCONFIG.items() if val["plotType"] == "box" and val["allOnly"] == (proj == "linux/all") and os.path.exists(f"src/public/figures/{plot}/{plot}-{proj.replace("/", "-")}.html")}
                     else:
                         old["projectData"][proj] = dict()
                 if metric not in old["projectData"][proj]:

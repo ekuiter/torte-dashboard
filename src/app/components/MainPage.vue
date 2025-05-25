@@ -6,7 +6,8 @@
 
     <v-icon class="cursor-pointer" size="x-large" @click.native.stop="toggleTheme"
       v-if="theme.global.current.value.dark == false" icon="mdi-cake"></v-icon>
-    <img style="width:32px;height: 32px" class="cursor-pointer" v-else src="public/dimcake.svg" @click.native.stop="toggleTheme"></img>
+    <img style="width:32px;height: 32px" class="cursor-pointer" v-else src="public/dimcake.svg"
+      @click.native.stop="toggleTheme"></img>
     <v-btn @click="reset" rounded size="x-large">
       <h1>
         Torte Dashboard
@@ -31,11 +32,14 @@
           </v-autocomplete>
         </v-col>
       </v-row>
-      <box-plot v-if="showBoxPlot()" :plot-path="plotPath" :plot-data="currentPlotData">
+      <box-plot v-if="!notFound && showBoxPlot()" :plot-path="plotPath" :plot-data="currentPlotData">
       </box-plot>
-      <scatter-plot v-else-if="selectedProject && showScatterPlot() && Object.keys(currentScatterData?.currentValue).length != 0" :plot-path="plotPath" :plot-data="currentPlotData"
-        :current-value="getCurrentScatterData()" :history-data="getHistory()"></scatter-plot>
-      <not-found-info-box v-else-if="selectedProject != null && selectedPlot != null" :plot-data="currentPlotData" :project="selectedProject"></not-found-info-box>
+      <scatter-plot
+        v-else-if="!notFound && selectedProject && showScatterPlot() && Object.keys(currentScatterData?.currentValue).length != 0"
+        :plot-path="plotPath" :plot-data="currentPlotData" :current-value="getCurrentScatterData()"
+        :history-data="getHistory()"></scatter-plot>
+      <not-found-info-box v-else-if="notFound || (selectedProject != null && selectedPlot != null)"
+        :plot-data="currentPlotData" :project="selectedProject"></not-found-info-box>
       <ContentRenderer v-if="mainPageDescription && !(selectedPlot && selectedProject)" :value="mainPageDescription" />
     </v-responsive>
   </v-container>
@@ -53,7 +57,10 @@ const projects: Ref<string[]> = ref(Object.keys(data.projectData));
 const selectedProject: Ref<string | null> = ref(null);
 const plotsForProject: Ref<string[]> = ref(getPlotsForProj());
 const plots: Ref<string[]> = ref(Object.keys(data.plotData));
+const notFound = ref(false);
+const notFoundPlot = ref("")
 import { useTheme } from 'vuetify'
+import type { RefSymbol } from '@vue/reactivity';
 
 const theme = useTheme()
 
@@ -61,15 +68,14 @@ function toggleTheme() {
   theme.global.name.value = theme.global.current.value.dark ? 'light' : 'dark'
 }
 
-function sortPlots(){
+function sortPlots() {
   return Array.from(plotsForProject.value).toSorted()
 }
 
-function sortProjects(){
+function sortProjects() {
   return Array.from(projects.value).toSorted()
 }
 function showBoxPlot() {
-  console.log(selectedPlot.value)
   return selectedPlot.value != null && data.plotData[selectedPlot.value].plotType == 'box'
 }
 function showScatterPlot() {
@@ -89,12 +95,14 @@ function getPlotsForProj() {
   plotsForProject.value = []
   for (let plot of Object.keys(data.projectData[selectedProject.value])) {
     plotsForProject.value = [...plotsForProject.value, data.plotData[plot]]
+
   }
   console.log("plotsForProject.value")
   console.log(plotsForProject.value)
 
 }
 async function init() {
+  notFound.value = false
   projects.value = Object.keys(data.projectData)
   plots.value = Object.keys(data.plotData)
   mainPageDescription.value = data.mainPageDescription
@@ -131,8 +139,16 @@ function isValidConfig(): boolean {
   }
 }
 function getPlot() {
+  notFound.value = false;
   console.log(selectedPlot.value)
+  if (selectedPlot.value  && data.plotData[selectedPlot.value]["plotType"] == "scatter" &&  Object.keys(data.projectData[selectedProject.value][selectedPlot.value]).length == 0) {
+    console.log("not found")
+    notFoundPlot.value = data.plotData[selectedPlot.value]["displayName"]
+    notFound.value = true;
+    return
+  }
   isValidConfig()
+
   getPlotsForProj()
   if (!containsString) {
     return
