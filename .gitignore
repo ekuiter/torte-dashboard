@@ -1,0 +1,77 @@
+.DS_Store
+frontend/node_modules
+frontend/public/bundle.*
+.vscode
+__pycache__
+output-*/**
+output/**
+/dev/Playground.vue
+/dev/components.d.ts
+/cypress/screenshots
+
+# Built files
+/es5/
+/lib/
+/lib-temp/
+/types-temp/
+/dist/
+/dev/dist/
+
+# local env files
+.env.local
+.env.*.local
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+.vercel
+node_modules/**
+
+
+
+vuetify-project/.DS_Store
+vuetify-project/frontend/node_modules
+vuetify-project/frontend/public/bundle.*
+vuetify-project/.vscode
+vuetify-project/__pycache__
+vuetify-project/output-*/**
+vuetify-project/dev/Playground.vue
+vuetify-project/dev/components.d.ts
+vuetify-project/cypress/screenshots
+vuetify-project/# Built files
+vuetify-project/es5/
+vuetify-project/lib/
+vuetify-project/lib-temp/
+vuetify-project/types-temp/
+vuetify-project/dist/
+vuetify-project/dev/dist/
+vuetify-project/# local env files
+vuetify-project/.env.local
+vuetify-project/.env.*.local
+vuetify-project/# Log files
+vuetify-project/npm-debug.log*
+vuetify-project/yarn-debug.log*
+vuetify-project/yarn-error.log*
+vuetify-project/# Editor directories and files
+vuetify-project/.idea
+vuetify-project/.vscode
+vuetify-project/*.suo
+vuetify-project/*.ntvs*
+vuetify-project/*.njsproj
+vuetify-project/*.sln
+vuetify-project/*.sw?
+vuetify-project/.vercel
+vuetify-project/node_modules/**
+
+.ipynb_checkpoints/
