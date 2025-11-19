@@ -1,20 +1,21 @@
 <template>
-  <v-app-bar class="px-3" flat>
-    <v-spacer>
-
-    </v-spacer>
-
-    <v-icon class="cursor-pointer" size="x-large" @click.native.stop="toggleTheme"
-      v-if="theme.global.current.value.dark == false" icon="mdi-cake"></v-icon>
-    <img style="width:32px;height: 32px" class="cursor-pointer" v-else src="public/dimcake.svg"
-      @click.native.stop="toggleTheme"></img>
-    <v-btn @click="reset" rounded size="x-large">
-      <h1>
-        Torte Dashboard
-      </h1>
-    </v-btn>
-    <v-spacer>
-    </v-spacer>
+  <v-app-bar flat>
+    <v-container>
+      <div class="d-flex align-center">
+        <img
+          style="width:48px;height:48px;margin-right:8px"
+          class="cursor-pointer"
+          src="public/torte.png"
+          @click.native.stop="reset"
+        />
+        <h1 @click="reset" class="cursor-pointer">torte <span style="font-weight: normal; letter-spacing: 0px;">Dashboard</span></h1>
+        <v-spacer></v-spacer>
+        <v-icon class="cursor-pointer" size="x-large" @click.native.stop="toggleTheme" icon="mdi-theme-light-dark"></v-icon>
+        <v-btn icon target="_blank" href="https://github.com/ekuiter/torte">
+          <v-icon size="x-large">mdi-github</v-icon>
+        </v-btn>
+      </div>
+    </v-container>
   </v-app-bar>
 
   <v-container>
@@ -23,12 +24,12 @@
         <v-col md="6">
 
           <v-autocomplete variant="solo-filled" class=" ma-2" v-model="selectedProject"
-            v-on:update:model-value="getPlot" label="Select Project" :items="sortProjects()">
+            v-on:update:model-value="getPlot" label="Select System" :items="sortProjects()">
           </v-autocomplete>
         </v-col>
         <v-col md="6">
           <v-autocomplete variant="solo-filled" class=" ma-2" v-model="selectedPlot" v-on:update:model-value="getPlot"
-            label="Select Plot" :items="sortPlots()" item-title="displayName" item-value="idName">
+            label="Select Metric" :items="sortPlots()" item-title="displayName" item-value="idName">
           </v-autocomplete>
         </v-col>
       </v-row>
@@ -40,7 +41,7 @@
         :history-data="getHistory()"></scatter-plot>
       <not-found-info-box v-else-if="notFound || (selectedProject != null && selectedPlot != null)"
         :plot-data="currentPlotData" :project="selectedProject"></not-found-info-box>
-      <ContentRenderer v-if="mainPageDescription && !(selectedPlot && selectedProject)" :value="mainPageDescription" />
+      <ContentRenderer class="main-page-description" v-if="mainPageDescription && !(selectedPlot && selectedProject)" :value="mainPageDescription" />
     </v-responsive>
   </v-container>
 </template>
@@ -154,7 +155,7 @@ function getPlot() {
     return
   }
   if (selectedPlot.value != null && selectedProject.value != null) {
-    window.location.hash = `/${selectedProject.value}~${selectedPlot.value}`
+    window.location.hash = `/${selectedProject.value}/${selectedPlot.value}`
     currentScatterData.value = {
       currentValue: data.projectData[selectedProject.value][selectedPlot.value].currentValue,
       history: data.projectData[selectedProject.value][selectedPlot.value].history,
@@ -165,18 +166,23 @@ function getPlot() {
     plotPath.value = path
   }
 }
+if (!Array.prototype.last){
+    Array.prototype.last = function(){
+        return this[this.length - 1];
+    };
+};
 if (!import.meta.env.SSR) {
   window.addEventListener('load', () => { init });
   init()
   if (window.location.hash !== "") {
-    if (window.location.hash.replace("#/", "").split("~").length == 0) {
+    if (window.location.hash.replace("#/", "").split("/").length == 0) {
       reset()
     }
-    selectedProject.value = window.location.hash.replace("#/", "").split("~")[0] ?? null
+    selectedProject.value = window.location.hash.replace("#/", "").split("/").slice(0, -1).join("/") ?? null
     if (selectedProject.value === "") {
       selectedPlot.value = null
     }
-    selectedPlot.value = window.location.hash.replace("#/", "").split("~")[1] ?? null
+    selectedPlot.value = window.location.hash.replace("#/", "").split("/").last() ?? null
     if (!isValidConfig()) {
       alert("given configuration was invalid. Reverted to default.")
     }

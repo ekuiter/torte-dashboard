@@ -8,3 +8,19 @@
 // @use 'vuetify/settings' with (
 //   $color-pack: false
 // );
+
+.main-page-description {
+  margin: 0 8px;
+}
+
+.main-page-description p {
+  margin-bottom: 12px;
+}
+
+.main-page-description a {
+  text-decoration: none;
+}
+
+.main-page-description a:hover {
+  text-decoration: underline;
+}

@@ -73,3 +73,5 @@ vuetify-project/*.sln
 vuetify-project/*.sw?
 vuetify-project/.vercel
 vuetify-project/node_modules/**
+
+.ipynb_checkpoints/
