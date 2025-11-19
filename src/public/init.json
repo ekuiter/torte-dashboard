@@ -1,94 +1,39 @@
 {
     "plotData": {
-        "configuration-evolution-arch": {
-            "idName": "configuration-evolution-arch",
-            "displayName": "Configuration Evolution Arch",
-            "plotType": "box",
-            "description": "<h1>Configuration Evolution Arch: Description</h1><br><h4>You can edit this in  the init.json under <tt>plotData.configuration-evolution-arch.description</tt></h4>"
-        },
-        "configuration-evolution-total": {
-            "idName": "configuration-evolution-total",
-            "displayName": "Configuration Evolution Total",
-            "plotType": "box",
-            "description": "<h1>Configuration Evolution Total: Description</h1><br><h4>You can edit this in  the init.json under <tt>plotData.configuration-evolution-total.description</tt></h4>"
-        },
-        "configuration-similarity": {
-            "idName": "configuration-similarity",
-            "displayName": "Configuration Similarity",
-            "plotType": "box",
-            "description": "<h1>Configuration Similarity: Description</h1><br><h4>You can edit this in  the init.json under <tt>plotData.configuration-similarity.description</tt></h4>"
-        },
-        "feature-evolution-arch": {
-            "idName": "feature-evolution-arch",
-            "displayName": "Feature Evolution Arch",
-            "plotType": "box",
-            "description": "<h1>Feature Evolution Arch: Description</h1><br><h4>You can edit this in  the init.json under <tt>plotData.feature-evolution-arch.description</tt></h4>"
-        },
-        "feature-evolution-total": {
-            "idName": "feature-evolution-total",
-            "displayName": "Feature Evolution Total",
-            "plotType": "box",
-            "description": "<h1>Feature Evolution Total: Description</h1><br><h4>You can edit this in  the init.json under <tt>plotData.feature-evolution-total.description</tt></h4>"
-        },
         "features": {
             "idName": "features",
-            "displayName": "Number of Features",
-            "plotType": "scatter",
-            "description": "<h1>Number of Features: Description</h1><br><h4>You can edit this in  the init.json under <tt>plotData.features.description</tt></h4>"
+            "displayName": "#Features",
+            "plotType": "scatter"
         },
         "jaccard-similarity": {
             "idName": "jaccard-similarity",
             "displayName": "Jaccard Similarity of Features",
-            "plotType": "box",
-            "description": "<h1>Jaccard Similarity of Features: Description</h1><br><h4>You can edit this in  the init.json under <tt>plotData.jaccard-similarity.description</tt></h4>"
+            "plotType": "box"
         },
         "model-count": {
             "idName": "model-count",
             "displayName": "Number of Configurations",
-            "plotType": "scatter",
-            "description": "<h1>Number of Configurations: Description</h1><br><h4>You can edit this in  the init.json under <tt>plotData.model-count.description</tt></h4>"
+            "plotType": "scatter"
         },
         "model-count-time": {
             "idName": "model-count-time",
-            "displayName": "Time for Counting",
-            "plotType": "scatter",
-            "description": "<h1>Time for Counting: Description</h1><br><h4>You can edit this in  the init.json under <tt>plotData.model-count-time.description</tt></h4>"
-        },
-        "prediction-accuracy-configurations": {
-            "idName": "prediction-accuracy-configurations",
-            "displayName": "Prediction Accuracy Configurations",
-            "plotType": "box",
-            "description": "<h1>Prediction Accuracy Configurations: Description</h1><br><h4>You can edit this in  the init.json under <tt>plotData.prediction-accuracy-configurations.description</tt></h4>"
-        },
-        "prediction-accuracy-configurations-by-features": {
-            "idName": "prediction-accuracy-configurations-by-features",
-            "displayName": "Prediction Accuracy Configurations By Features",
-            "plotType": "box",
-            "description": "<h1>Prediction Accuracy Configurations By Features: Description</h1><br><h4>You can edit this in  the init.json under <tt>plotData.prediction-accuracy-configurations-by-features.description</tt></h4>"
-        },
-        "prediction-accuracy-features": {
-            "idName": "prediction-accuracy-features",
-            "displayName": "Prediction Accuracy Features",
-            "plotType": "box",
-            "description": "<h1>Prediction Accuracy Features: Description</h1><br><h4>You can edit this in  the init.json under <tt>plotData.prediction-accuracy-features.description</tt></h4>"
+            "displayName": "Time for Counting Configurations",
+            "plotType": "scatter"
         },
         "share-of-feature-variables": {
             "idName": "share-of-feature-variables",
             "displayName": "Share of Feature Variables",
-            "plotType": "box",
-            "description": "<h1>Share of Feature Variables: Description</h1><br><h4>You can edit this in  the init.json under <tt>plotData.share-of-feature-variables.description</tt></h4>"
+            "plotType": "box"
         },
         "source_lines_of_code": {
             "idName": "source_lines_of_code",
-            "displayName": "Number of Source Lines of Code",
-            "plotType": "scatter",
-            "description": "<h1>Number of Source Lines of Code: Description</h1><br><h4>You can edit this in  the init.json under <tt>plotData.source_lines_of_code.description</tt></h4>"
+            "displayName": "Source Lines of Code",
+            "plotType": "scatter"
         },
         "total-features": {
             "idName": "total-features",
-            "displayName": "Total Number of Features",
-            "plotType": "scatter",
-            "description": "<h1>Total Number of Features: Description</h1><br><h4>You can edit this in  the init.json under <tt>plotData.total-features.description</tt></h4>"
+            "displayName": "Number of Features",
+            "plotType": "scatter"
         }
     },
     "projectData": {

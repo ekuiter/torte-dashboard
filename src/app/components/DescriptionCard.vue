@@ -4,7 +4,7 @@
             <span class="font-weight-black text-wrap">{{ title }}</span>
         </template>
 
-        <v-card-text class="bg-surface-light pt-4 text-left text-body-2" >
+        <v-card-text class="bg-surface-light pt-4 text-left text-body-2" v-if="value" >
             <div v-html="value"></div>
         </v-card-text>
     </v-card>

@@ -1,5 +1,8 @@
-# torte-dashboard
-Semi-Static web interface for visualization of pre-executed [`TORTE`](https://github.com/ekuiter/torte) simulations.
+# torte Dashboard
+
+Semi-static web interface for visualization of pre-executed [torte](https://github.com/ekuiter/torte) experiments.
+
+The currently deployed version visualizes experiment results of our [TOSEM'25](https://raw.githubusercontent.com/SoftVarE-Group/Papers/main/2025/2025-TOSEM-Kuiter.pdf) paper.
 
 ## 1. Usage
 

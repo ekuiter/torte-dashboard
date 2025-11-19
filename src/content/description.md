@@ -4,7 +4,7 @@ It integrates 10+ configurable software systems, various extractors and transfor
 
 Jump to: [**GitHub**](https://github.com/ekuiter/torte/) | [**Publications**](https://github.com/ekuiter/torte/#publications-and-artifacts) | [**Demo Video**](https://www.youtube.com/watch?v=VtaJiC_b8RA) | [**Feature-Model Histories**](https://github.com/ekuiter/torte/releases/tag/feature-model-histories) | [**Zenodo Community**](https://zenodo.org/communities/torte/)
 
-*torte Dashboard* visualizes the results of various experiments run in torte, such as the evolution of the number of features of Linux and BusyBox over the last decades.
+*torte Dashboard* visualizes the results of various experiments run in torte, such as the evolution of the number of <a href="/#/linux/all/total-features" target="_blank">features</a> and <a href="/#/linux/all/model-count" target="_blank">configurations</a> of Linux, BusyBox, and other systems over the last decades.
 <br>
 To view a visualization, simply select a system and metric above.
 
