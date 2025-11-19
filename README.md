@@ -105,5 +105,5 @@ downsides, upsides etc
 Motivated by a lack of frontend design skills, we came across a concept called *Static Site Generation* (SSG).
 
 We use `vuetify` (a vueJS extension framework) to effortlessly develop a beautiful frontend and `nuxt` to subsequently generate static html files.
-Specifically, we open a development server by calling `npm run dev` from within `src` and `npx nuxt build --preset github_pages` for SSG (in this case, specifically for github pages).
+Specifically, we open a development server by calling `npm run dev` from within `src` and `npx nuxt build --preset github_pages` for SSG (in this case, specifically for github pages, which can be deployed with `npx gh-pages --dotfiles -d .output/public`).
 After the project has been built, we can open a local server using `npx serve .output/public` or even move the `public` folder into a `<userName>.github.io` repository. 
